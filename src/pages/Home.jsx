@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import './Home.css'
 
 const steps = [
@@ -19,15 +20,18 @@ const steps = [
 ]
 
 const categories = [
-  { icon: '😐', title: 'Facial Expressions', count: '12 episodes' },
-  { icon: '🧍', title: 'Posture & Stance', count: '10 episodes' },
-  { icon: '🤲', title: 'Hand Gestures', count: '14 episodes' },
-  { icon: '👁️', title: 'Eye Contact', count: '8 episodes' },
-  { icon: '⚡', title: 'Micro-Expressions', count: '11 episodes' },
-  { icon: '💭', title: 'Emotions & Moods', count: '15 episodes' },
+  { icon: '💑', title: 'Read Your Partner', description: 'Decode the unspoken signals in your closest relationships.' },
+  { icon: '💘', title: 'Attraction Signals', description: 'Spot the signs of interest, chemistry, and genuine connection.' },
+  { icon: '💼', title: 'Workplace & Career', description: 'Read colleagues, bosses, and clients to gain the edge.' },
+  { icon: '🕵️', title: 'Spot a Liar', description: 'Detect deception through body language tells and slip-ups.' },
+  { icon: '😊', title: 'Read Emotions', description: 'Identify what people are really feeling beneath the surface.' },
+  { icon: '⚡', title: 'First Impressions', description: 'Make snap calls as figures flash for just a few seconds.' },
+  { icon: '🔬', title: 'Micro-Expression Expert', description: 'Catch fleeting expressions that last less than a second.' },
 ]
 
 export default function Home() {
+  const navigate = useNavigate()
+
   return (
     <main className="home">
       {/* Hero */}
@@ -66,10 +70,10 @@ export default function Home() {
         <h2 className="section-title">Browse by Category</h2>
         <div className="categories-grid">
           {categories.map((cat) => (
-            <button key={cat.title} className="category-card">
+            <button key={cat.title} className="category-card" onClick={() => navigate(`/episodes?category=${encodeURIComponent(cat.title)}`)}>
               <span className="category-icon">{cat.icon}</span>
               <h3 className="category-title">{cat.title}</h3>
-              <p className="category-count">{cat.count}</p>
+              <p className="category-desc">{cat.description}</p>
             </button>
           ))}
         </div>

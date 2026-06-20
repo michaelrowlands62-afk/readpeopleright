@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Home from './pages/Home'
+import Episodes from './pages/Episodes'
 import Game from './pages/Game'
 import './App.css'
 
@@ -14,6 +15,7 @@ function Layout() {
       <div className={isGame ? '' : 'page-content'}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/episodes" element={<Episodes />} />
           <Route path="/game" element={<Game />} />
         </Routes>
       </div>
