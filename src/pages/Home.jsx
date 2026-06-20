@@ -46,8 +46,8 @@ export default function Home() {
           that changes how you see every room you walk into.
         </p>
         <div className="hero-buttons">
-          <button className="btn btn-primary">Play Now</button>
-          <button className="btn btn-secondary">Browse Episodes</button>
+          <button className="btn btn-primary" onClick={() => navigate('/game?episode=1')}>Play Now</button>
+          <button className="btn btn-secondary" onClick={() => navigate('/episodes')}>Browse Episodes</button>
         </div>
       </section>
 

@@ -3,10 +3,9 @@ import { useSearchParams } from 'react-router-dom'
 import { EPISODES } from '../data/episodes'
 import './Game.css'
 
-const TIMER_SECONDS = 20
-const BASE_PTS      = 100
-const BONUS_PTS     = 100
-const RADIUS        = 40
+const TIMER_SECONDS       = 20
+const POINTS_PER_QUESTION = 10
+const RADIUS              = 40
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS
 
 export default function Game() {
@@ -96,8 +95,7 @@ export default function Game() {
     setTimeLeft(snapped)
 
     if (idx === q.correct) {
-      const bonus  = Math.round((snapped / TIMER_SECONDS) * BONUS_PTS)
-      const earned = BASE_PTS + bonus
+      const earned = POINTS_PER_QUESTION
       setScore(s => s + earned)
       setLastEarned(earned)
       setStreak(s => s + 1)
@@ -134,7 +132,7 @@ export default function Game() {
 
   // ── Start screen ─────────────────────────────────────────────────────────
   if (phase === 'start') {
-    const maxPts = QUESTIONS.length * (BASE_PTS + BONUS_PTS)
+    const maxPts = QUESTIONS.length * POINTS_PER_QUESTION
     return (
       <div className="game">
         <header className="game-bar">
@@ -166,7 +164,7 @@ export default function Game() {
 
   // ── Results screen ────────────────────────────────────────────────────────
   if (phase === 'results') {
-    const maxScore = QUESTIONS.length * (BASE_PTS + BONUS_PTS)
+    const maxScore = QUESTIONS.length * POINTS_PER_QUESTION
     const pct      = Math.round((score / maxScore) * 100)
     const grade    = pct >= 90 ? 'Expert Reader'
                    : pct >= 70 ? 'Skilled Observer'
