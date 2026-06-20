@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
+import { useSearchParams } from 'react-router-dom'
+import { EPISODES } from '../data/episodes'
 import './Game.css'
 
 const TIMER_SECONDS = 20
@@ -7,59 +9,11 @@ const BONUS_PTS     = 100
 const RADIUS        = 40
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS
 
-const QUESTIONS = [
-  {
-    prompt: "A person crosses their arms tightly over their chest while you are presenting an idea. What does this most likely signal?",
-    answers: ['Agreement', 'Defensiveness', 'Contempt', 'Enthusiasm'],
-    correct: 1,
-    fact: 'Crossed arms create a physical barrier — a classic self-protective gesture. It signals the listener feels threatened, disagrees, or is emotionally closing off. Context matters though: they may simply be cold.',
-  },
-  {
-    prompt: 'Someone stands with feet shoulder-width apart, chin raised and both hands resting firmly on their hips. What does this posture most likely project?',
-    answers: ['Nervousness', 'Boredom', 'Confidence', 'Submission'],
-    correct: 2,
-    fact: "The power pose expands the body's footprint and occupies space — a universal signal of high status and dominance observed across cultures and throughout the animal kingdom.",
-  },
-  {
-    prompt: 'During a conversation someone repeatedly touches their neck, tugs their collar and consistently avoids eye contact. What state are they most likely in?',
-    answers: ['Excited', 'Deeply focused', 'Bored', 'Anxious'],
-    correct: 3,
-    fact: 'Self-touching gestures — called pacifying behaviours — stimulate nerve endings and release calming chemicals. The neck and collar area is especially common as it soothes the vagus nerve.',
-  },
-  {
-    prompt: 'A person rests their head in their hand, their gaze drifts away from the speaker, and they sigh quietly. What does this cluster most likely reveal?',
-    answers: ['Deep thought', 'Boredom', 'Sympathy', 'Concentration'],
-    correct: 1,
-    fact: "Supporting the head with the hand is the body's way of fighting gravity when attention drops — the weight of the head literally becomes too much to hold up without assistance.",
-  },
-  {
-    prompt: 'Your conversation partner leans their upper body toward you, maintains steady eye contact, and their feet point directly at you. What does this cluster signal?',
-    answers: ['Aggression', 'Distrust', 'Genuine interest', 'Impatience'],
-    correct: 2,
-    fact: 'Leaning in and foot direction are largely subconscious signals. People point their feet toward what they want to move toward. Clusters of engagement cues are far more reliable than any single gesture.',
-  },
-  {
-    prompt: 'While answering your question, someone briefly covers their mouth with their hand and then lightly touches the side of their nose. What might this suggest?',
-    answers: ['Thoughtfulness', 'Possible deception', 'Physical discomfort', 'Enthusiasm'],
-    correct: 1,
-    fact: "Mouth-covering is thought to suppress words the subconscious doesn't want to say. It is not a lie detector on its own — but combined with other stress cues, it is context worth noting.",
-  },
-  {
-    prompt: 'Someone deliberately steps inside your personal space (under 45 cm), squares their shoulders toward you and holds sustained, unblinking eye contact. What is this most likely?',
-    answers: ['Showing warmth', 'Seeking reassurance', 'A dominance display', 'Friendly curiosity'],
-    correct: 2,
-    fact: "Deliberately entering the intimate zone combined with squared shoulders and sustained eye contact is a primal territorial move — a dominance display designed to unsettle and establish control.",
-  },
-  {
-    prompt: 'A negotiator holds their palms open and facing upward while speaking and keeps their torso fully unobstructed throughout the conversation. What does this typically convey?',
-    answers: ['Surrender', 'Confusion', 'Honesty and openness', 'Nervousness'],
-    correct: 2,
-    fact: "Open palms are one of the oldest trust signals in human behaviour — showing empty hands proved you were unarmed. Negotiators who use open palm gestures are consistently rated as more sincere and credible.",
-  },
-]
-
-
 export default function Game() {
+  const [searchParams] = useSearchParams()
+  const episodeId = parseInt(searchParams.get('episode'), 10) || 1
+  const episode   = EPISODES.find((e) => e.id === episodeId) ?? EPISODES[0]
+  const QUESTIONS = episode.questions
   const [phase,        setPhase]        = useState('start')   // 'start' | 'playing' | 'results'
   const [qIndex,       setQIndex]       = useState(0)
   const [selected,     setSelected]     = useState(null)
@@ -180,26 +134,27 @@ export default function Game() {
 
   // ── Start screen ─────────────────────────────────────────────────────────
   if (phase === 'start') {
+    const maxPts = QUESTIONS.length * (BASE_PTS + BONUS_PTS)
     return (
       <div className="game">
         <header className="game-bar">
-          <span className="game-episode">S01 E03 — The Negotiation</span>
-          <span className="game-badge">Body Language</span>
+          <span className="game-episode">{episode.title}</span>
+          <span className="game-badge">{episode.category}</span>
           <div className="game-bar-right" />
         </header>
         <div className="start-screen">
-          <p className="start-label">S01 E03 — The Negotiation</p>
-          <h1 className="start-title">Body Language Quiz</h1>
+          <p className="start-label">{episode.category}</p>
+          <h1 className="start-title">{episode.title}</h1>
           <p className="start-desc">
-            Test your body language reading skills across 8 questions.
+            Test your people-reading skills across {QUESTIONS.length} questions.
             Answer fast — your score depends on how much time you have left.
           </p>
           <div className="start-specs">
-            <span>8 Questions</span>
+            <span>{QUESTIONS.length} Questions</span>
             <span className="start-dot" aria-hidden="true">·</span>
             <span>20 Seconds Each</span>
             <span className="start-dot" aria-hidden="true">·</span>
-            <span>Up to 1,600 pts</span>
+            <span>Up to {maxPts.toLocaleString()} pts</span>
           </div>
           <button className="start-btn" onClick={() => setPhase('playing')}>
             Start Game
@@ -221,8 +176,8 @@ export default function Game() {
     return (
       <div className="game">
         <header className="game-bar">
-          <span className="game-episode">S01 E03 — The Negotiation</span>
-          <span className="game-badge">Body Language</span>
+          <span className="game-episode">{episode.title}</span>
+          <span className="game-badge">{episode.category}</span>
           <div className="game-bar-right">
             <div className="game-stats">
               <div className="game-stat">
@@ -287,8 +242,8 @@ export default function Game() {
       {/* TOP BAR */}
       {!ytMode && (
         <header className="game-bar">
-          <span className="game-episode">S01 E03 — The Negotiation</span>
-          <span className="game-badge">Body Language</span>
+          <span className="game-episode">{episode.title}</span>
+          <span className="game-badge">{episode.category}</span>
           <div className="game-bar-right">
             <div className="game-stats">
               <div className="game-stat">

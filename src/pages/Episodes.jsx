@@ -1,4 +1,5 @@
 import { useNavigate, useSearchParams } from 'react-router-dom'
+import { EPISODES } from '../data/episodes'
 import './Episodes.css'
 
 const CATEGORIES = [
@@ -9,41 +10,6 @@ const CATEGORIES = [
   'Read Emotions',
   'First Impressions',
   'Micro-Expression Expert',
-]
-
-const episodes = [
-  {
-    id: 1,
-    title: 'Body Language Basics',
-    description: 'Learn to read the fundamental signals of body language.',
-    category: 'Read Emotions',
-    difficulty: 'Beginner',
-    questions: 8,
-  },
-  {
-    id: 2,
-    title: 'The Negotiation',
-    description: 'Navigate a high stakes business negotiation by reading the room.',
-    category: 'Workplace & Career',
-    difficulty: 'Intermediate',
-    questions: 8,
-  },
-  {
-    id: 3,
-    title: 'Can You Spot The Lie',
-    description: 'Test your ability to detect dishonesty through body language.',
-    category: 'Spot a Liar',
-    difficulty: 'Intermediate',
-    questions: 8,
-  },
-  {
-    id: 4,
-    title: 'First Impressions',
-    description: 'React fast — figures appear for just a few seconds.',
-    category: 'First Impressions',
-    difficulty: 'Advanced',
-    questions: 8,
-  },
 ]
 
 const difficultyClass = {
@@ -58,8 +24,8 @@ export default function Episodes() {
   const activeCategory = searchParams.get('category') || 'All'
 
   const filtered = activeCategory === 'All'
-    ? episodes
-    : episodes.filter((ep) => ep.category === activeCategory)
+    ? EPISODES
+    : EPISODES.filter((ep) => ep.category === activeCategory)
 
   const setFilter = (cat) => {
     if (cat === 'All') {
@@ -93,31 +59,31 @@ export default function Episodes() {
       {filtered.length === 0 ? (
         <p className="episodes-empty">No episodes in this category yet — check back soon.</p>
       ) : (
-      <div className="episodes-grid">
-        {filtered.map((ep) => (
-          <div key={ep.id} className="episode-card">
-            <div className="episode-card-top">
-              <div className="episode-badges">
-                <span className="badge badge-category">{ep.category}</span>
-                <span className={`badge ${difficultyClass[ep.difficulty]}`}>
-                  {ep.difficulty}
-                </span>
+        <div className="episodes-grid">
+          {filtered.map((ep) => (
+            <div key={ep.id} className="episode-card">
+              <div className="episode-card-top">
+                <div className="episode-badges">
+                  <span className="badge badge-category">{ep.category}</span>
+                  <span className={`badge ${difficultyClass[ep.difficulty]}`}>
+                    {ep.difficulty}
+                  </span>
+                </div>
+                <h2 className="episode-title">{ep.title}</h2>
+                <p className="episode-description">{ep.description}</p>
               </div>
-              <h2 className="episode-title">{ep.title}</h2>
-              <p className="episode-description">{ep.description}</p>
+              <div className="episode-card-bottom">
+                <span className="episode-questions">{ep.questions.length} questions</span>
+                <button
+                  className="btn btn-play"
+                  onClick={() => navigate(`/game?episode=${ep.id}`)}
+                >
+                  Play
+                </button>
+              </div>
             </div>
-            <div className="episode-card-bottom">
-              <span className="episode-questions">{ep.questions} questions</span>
-              <button
-                className="btn btn-play"
-                onClick={() => navigate('/game')}
-              >
-                Play
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       )}
     </main>
   )
