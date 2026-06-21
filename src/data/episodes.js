@@ -8,34 +8,45 @@ export const EPISODES = [
     questionsByDifficulty: {
       beginner: [
         {
-          prompt: 'A person smiles broadly, showing their teeth, and the corners of their eyes crinkle into crow\'s feet. What does this expression most clearly show?',
-          answers: ['Sadness', 'Genuine happiness and warmth', 'Discomfort', 'Surprise'],
-          correct: 1,
-          fact: 'When a smile reaches the eyes it engages the orbicularis oculi muscle around the eye socket — a muscle that is very hard to contract on purpose. Crow\'s feet and crinkled eye corners are reliable signs the smile is genuine rather than performed.',
+          prompt: 'A woman faces you directly with her arms crossed tightly over her chest, weight shifted back, shoulders slightly raised and jaw set, holding an unblinking stare. What does this cluster most obviously suggest?',
+          answers: ['Comfort and relaxation', 'Curiosity about what you are saying', 'Defensiveness or discomfort', 'Happiness'],
+          correct: 2,
+          fact: 'Crossed arms, backward lean and a turned body are three of the most recognisable defensive signals in body language. Together they create a clear message: the person feels guarded, uncomfortable or resistant to what they are hearing.',
+          image: '1, Defensive — arms crossed RPR.png',
         },
         {
-          prompt: 'Someone frowns deeply, pulling their eyebrows together and downward, while you explain your idea. What does this expression most clearly signal?',
-          answers: ['Excitement about the idea', 'Concentration or disapproval', 'Boredom', 'Agreement'],
-          correct: 1,
-          fact: 'Furrowed brows are one of the most universally recognised expressions across all cultures. They signal that the brain is working hard to process something difficult — or that the person is unhappy with what they are hearing.',
-        },
-        {
-          prompt: 'A person is standing with their arms hanging loosely at their sides, shoulders relaxed and their back upright. What does this open posture signal?',
+          prompt: 'A woman stands with her hands planted firmly on her hips, feet wide apart, chest open, shoulders back and a relaxed confident smile on her face. What does this posture signal?',
           answers: ['Aggression', 'Tension and stress', 'Ease and confidence', 'Boredom'],
           correct: 2,
           fact: 'Relaxed arms and an upright posture suggest the person feels comfortable and unthreatened. When people are stressed or defensive they tend to tense their shoulders, cross their arms or make themselves smaller.',
+          image: '2, Confident — open stance RPR.png',
+        },
+        {
+          prompt: 'A woman stands with her shoulders pulled in and hunched forward, her hands clasped together and fidgeting in her lap, while her gaze darts anxiously to one side. What does this cluster of signals most clearly show?',
+          answers: ['Boredom and disinterest', 'Nervousness or anxiety', 'Deep concentration', 'Excitement'],
+          correct: 1,
+          fact: 'Hunching inward shrinks the body — a self-protective response triggered by stress or discomfort. Fidgeting hands release nervous energy the body cannot contain, and a sideways glance suggests the person is scanning for an exit or feels unsafe in the situation. Together these signals form one of the clearest clusters of anxiety.',
+          image: '3,  Nervous — hunched, fidgeting RPR.png',
         },
         {
           prompt: 'Someone nods steadily while you speak, maintains gentle eye contact and leans slightly in your direction. What does this cluster signal?',
           answers: ['Impatience', 'Disagreement', 'Distraction', 'Active listening and agreement'],
           correct: 3,
           fact: 'Nodding is one of the most universal signals of agreement and encouragement across cultures. Combined with eye contact and a slight forward lean it tells the speaker their words are landing and being actively received.',
+          image: '4,  Interested — leaning in RPR.png',
         },
         {
-          prompt: 'A person shakes their head slowly from side to side while you describe your plan. What does this gesture most obviously indicate?',
-          answers: ['They did not hear you clearly', 'Disagreement or doubt', 'They are feeling tired', 'They are thinking hard'],
+          prompt: 'A woman stands with her body angled away from you, one hand touching her neck, gaze averted to one side avoiding eye contact, her expression tense and closed. What does this cluster most likely signal?',
+          answers: ['Genuine interest in what you are saying', 'Discomfort or concealment', 'Calm and confidence', 'Friendly openness'],
           correct: 1,
-          fact: 'Head shaking from side to side is a near-universal signal of negation or disagreement. Unlike more subtle body language cues it is a deliberate and conscious gesture in most contexts, directly communicating doubt or a "no".',
+          fact: 'When someone angles their body away and avoids eye contact they are physically withdrawing from the interaction. A tense, closed expression adds to the picture: something is being held back. This cluster — turned body, averted gaze, tightened face — is one of the most consistent indicators that a person is uncomfortable, evasive, or not being fully honest.',
+          image: '5, Deceptive — face touching, looking away RPR.png',
+        },
+        {
+          prompt: 'A person smiles broadly, showing their teeth, and the corners of their eyes crinkle into crow\'s feet. What does this expression most clearly show?',
+          answers: ['Sadness', 'Genuine happiness and warmth', 'Discomfort', 'Surprise'],
+          correct: 1,
+          fact: 'When a smile reaches the eyes it engages the orbicularis oculi muscle around the eye socket — a muscle that is very hard to contract on purpose. Crow\'s feet and crinkled eye corners are reliable signs the smile is genuine rather than performed.',
         },
         {
           prompt: 'Someone raises both eyebrows high, opens their eyes wide and their mouth drops open slightly. What are they feeling?',
@@ -48,12 +59,6 @@ export const EPISODES = [
           answers: ['Nervousness', 'Enjoyment', 'Boredom or fatigue', 'Deep focus'],
           correct: 2,
           fact: 'Yawning and clock-checking are two of the clearest signals that attention has drifted. Together they form an unmistakable cluster: the listener\'s mind is elsewhere, and they are aware of how much time is passing.',
-        },
-        {
-          prompt: 'Someone crosses their arms, leans back away from you and turns slightly sideways while you are talking. What does this cluster most obviously suggest?',
-          answers: ['Comfort and relaxation', 'Curiosity about what you are saying', 'Defensiveness or discomfort', 'Happiness'],
-          correct: 2,
-          fact: 'Crossed arms, backward lean and a turned body are three of the most recognisable defensive signals in body language. Together they create a clear message: the person feels guarded, uncomfortable or resistant to what they are hearing.',
         },
         {
           prompt: 'A person extends their hand for a firm handshake and meets your gaze with a direct, open smile when you first meet. What does this typically communicate?',

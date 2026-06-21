@@ -8,6 +8,12 @@ const POINTS_PER_QUESTION = 10
 const RADIUS              = 40
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS
 
+const imageAssets = import.meta.glob('../assets/images/*', { eager: true })
+
+function getAssetUrl(filename) {
+  return imageAssets[`../assets/images/${filename}`]?.default ?? ''
+}
+
 const DIFFICULTY_CONFIG = {
   beginner:     { label: 'Beginner',     hint: 'Clear, obvious signals',          cls: 'diff-btn--beginner'     },
   intermediate: { label: 'Intermediate', hint: 'Standard body language reading',  cls: 'diff-btn--intermediate' },
@@ -348,7 +354,10 @@ export default function Game() {
           </svg>
         </div>
         <div className="game-figure">
-          <SilhouetteSVG />
+          {q.image
+            ? <img key={q.image} src={getAssetUrl(q.image)} alt="" className="question-img" />
+            : <SilhouetteSVG />
+          }
         </div>
       </div>
 
