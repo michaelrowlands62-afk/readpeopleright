@@ -8,12 +8,23 @@ const POINTS_PER_QUESTION = 10
 const RADIUS              = 40
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS
 
+const DIFFICULTY_CONFIG = {
+  beginner:     { label: 'Beginner',     hint: 'Clear, obvious signals',          cls: 'diff-btn--beginner'     },
+  intermediate: { label: 'Intermediate', hint: 'Standard body language reading',  cls: 'diff-btn--intermediate' },
+  advanced:     { label: 'Advanced',     hint: 'Subtle cues and fine detail',      cls: 'diff-btn--advanced'     },
+  expert:       { label: 'Expert',       hint: 'Nuanced, easily confused signals', cls: 'diff-btn--expert'       },
+}
+
 export default function Game() {
   const [searchParams] = useSearchParams()
   const episodeId = parseInt(searchParams.get('episode'), 10) || 1
   const episode   = EPISODES.find((e) => e.id === episodeId) ?? EPISODES[0]
-  const QUESTIONS = episode.questions
-  const [phase,        setPhase]        = useState('start')   // 'start' | 'playing' | 'results'
+  const hasDifficultyMode = !!episode.questionsByDifficulty
+  const [difficulty,    setDifficulty]  = useState(null)
+  const QUESTIONS = hasDifficultyMode
+    ? (difficulty ? episode.questionsByDifficulty[difficulty] : episode.questionsByDifficulty.intermediate)
+    : episode.questions
+  const [phase,        setPhase]        = useState('start')   // 'start' | 'difficulty' | 'playing' | 'results'
   const [qIndex,       setQIndex]       = useState(0)
   const [selected,     setSelected]     = useState(null)
   const [answered,     setAnswered]     = useState(false)
@@ -121,7 +132,12 @@ export default function Game() {
     setStreak(0)
     setCorrectCount(0)
     setLastEarned(0)
-    setPhase('playing')
+    if (hasDifficultyMode) {
+      setDifficulty(null)
+      setPhase('difficulty')
+    } else {
+      setPhase('playing')
+    }
   }
 
   function toggleYt(on) {
@@ -154,9 +170,39 @@ export default function Game() {
             <span className="start-dot" aria-hidden="true">·</span>
             <span>Up to {maxPts.toLocaleString()} pts</span>
           </div>
-          <button className="start-btn" onClick={() => setPhase('playing')}>
+          <button className="start-btn" onClick={() => setPhase(hasDifficultyMode ? 'difficulty' : 'playing')}>
             Start Game
           </button>
+        </div>
+      </div>
+    )
+  }
+
+  // ── Difficulty selection ──────────────────────────────────────────────────
+  if (phase === 'difficulty') {
+    return (
+      <div className="game">
+        <header className="game-bar">
+          <span className="game-episode">{episode.title}</span>
+          <span className="game-badge">{episode.category}</span>
+          <div className="game-bar-right" />
+        </header>
+        <div className="diff-screen">
+          <p className="diff-label">Choose Your Level</p>
+          <h1 className="diff-title">{episode.title}</h1>
+          <p className="diff-subtitle">Select a difficulty to begin</p>
+          <div className="diff-grid">
+            {Object.entries(DIFFICULTY_CONFIG).map(([key, cfg]) => (
+              <button
+                key={key}
+                className={`diff-btn ${cfg.cls}`}
+                onClick={() => { setDifficulty(key); setPhase('playing') }}
+              >
+                <span className="diff-btn-label">{cfg.label}</span>
+                <span className="diff-btn-hint">{cfg.hint}</span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     )

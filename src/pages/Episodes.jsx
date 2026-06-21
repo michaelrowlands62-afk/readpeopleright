@@ -73,7 +73,9 @@ export default function Episodes() {
                 <p className="episode-description">{ep.description}</p>
               </div>
               <div className="episode-card-bottom">
-                <span className="episode-questions">{ep.questions.length} questions</span>
+                <span className="episode-questions">
+                  {ep.questions?.length ?? Object.values(ep.questionsByDifficulty)[0].length} questions
+                </span>
                 <button
                   className="btn btn-play"
                   onClick={() => navigate(`/game?episode=${ep.id}`)}
