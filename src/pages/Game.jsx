@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { EPISODES } from '../data/episodes'
+import { supabase } from '../lib/supabase'
 import './Game.css'
 
 const TIMER_SECONDS       = 20
@@ -27,10 +28,12 @@ export default function Game() {
   const episode   = EPISODES.find((e) => e.id === episodeId) ?? EPISODES[0]
   const hasDifficultyMode = !!episode.questionsByDifficulty
   const [difficulty,    setDifficulty]  = useState(null)
-  const QUESTIONS = hasDifficultyMode
+  const [questions,     setQuestions]   = useState(null)
+  // Fall back to hardcoded data when Supabase returned nothing
+  const QUESTIONS = questions ?? (hasDifficultyMode
     ? (difficulty ? episode.questionsByDifficulty[difficulty] : episode.questionsByDifficulty.intermediate)
-    : episode.questions
-  const [phase,        setPhase]        = useState('start')   // 'start' | 'difficulty' | 'playing' | 'results'
+    : (episode.questions ?? []))
+  const [phase,        setPhase]        = useState('start')   // 'start' | 'difficulty' | 'loading' | 'playing' | 'results'
   const [qIndex,       setQIndex]       = useState(0)
   const [selected,     setSelected]     = useState(null)
   const [answered,     setAnswered]     = useState(false)
@@ -99,6 +102,38 @@ export default function Game() {
     return () => cancelAnimationFrame(timerRef.current)
   }, [qIndex, phase])
 
+  async function startPlaying(diff) {
+    setPhase('loading')
+    if (diff != null) setDifficulty(diff)
+    try {
+      let query = supabase
+        .from('questions')
+        .select('*')
+        .eq('episode', episode.title)
+        .eq('category', episode.category)
+      if (diff) query = query.eq('difficulty', diff.toLowerCase())
+      const { data, error } = await query
+      if (!error && data && data.length > 0) {
+        setQuestions(data.map(row => {
+          const answersArr = [row.answer_a, row.answer_b, row.answer_c, row.answer_d]
+          const correctIdx = answersArr.indexOf(row.correct_answer)
+          return {
+            prompt: row.question,
+            answers: answersArr,
+            correct: correctIdx >= 0 ? correctIdx : 0,
+            fact: row.fact ?? '',
+            imageUrl: row.image_url ?? null,
+          }
+        }))
+      } else {
+        setQuestions(null) // triggers hardcoded fallback via QUESTIONS
+      }
+    } catch {
+      setQuestions(null)
+    }
+    setPhase('playing')
+  }
+
   function handleAnswer(idx) {
     if (answeredRef.current) return
     answeredRef.current = true
@@ -138,11 +173,12 @@ export default function Game() {
     setStreak(0)
     setCorrectCount(0)
     setLastEarned(0)
+    setQuestions(null)
     if (hasDifficultyMode) {
       setDifficulty(null)
       setPhase('difficulty')
     } else {
-      setPhase('playing')
+      startPlaying(null)
     }
   }
 
@@ -150,6 +186,23 @@ export default function Game() {
     setYtMode(on)
     if (on) document.documentElement.requestFullscreen?.().catch(() => {})
     else     document.exitFullscreen?.().catch(() => {})
+  }
+
+  // ── Loading ───────────────────────────────────────────────────────────────
+  if (phase === 'loading') {
+    return (
+      <div className="game">
+        <header className="game-bar">
+          <span className="game-episode">{episode.title}</span>
+          <span className="game-badge">{episode.category}</span>
+          <div className="game-bar-right" />
+        </header>
+        <div className="start-screen">
+          <div className="game-loading-spinner" />
+          <p className="start-desc" style={{ marginTop: '1.5rem' }}>Loading questions…</p>
+        </div>
+      </div>
+    )
   }
 
   // ── Start screen ─────────────────────────────────────────────────────────
@@ -176,7 +229,7 @@ export default function Game() {
             <span className="start-dot" aria-hidden="true">·</span>
             <span>Up to {maxPts.toLocaleString()} pts</span>
           </div>
-          <button className="start-btn" onClick={() => setPhase(hasDifficultyMode ? 'difficulty' : 'playing')}>
+          <button className="start-btn" onClick={() => hasDifficultyMode ? setPhase('difficulty') : startPlaying(null)}>
             Start Game
           </button>
         </div>
@@ -202,7 +255,7 @@ export default function Game() {
               <button
                 key={key}
                 className={`diff-btn ${cfg.cls}`}
-                onClick={() => { setDifficulty(key); setPhase('playing') }}
+                onClick={() => startPlaying(key)}
               >
                 <span className="diff-btn-label">{cfg.label}</span>
                 <span className="diff-btn-hint">{cfg.hint}</span>
@@ -354,7 +407,9 @@ export default function Game() {
           </svg>
         </div>
         <div className="game-figure">
-          {q.image
+          {q.imageUrl
+            ? <img key={q.imageUrl} src={q.imageUrl} alt="" className="question-img" />
+            : q.image
             ? <img key={q.image} src={getAssetUrl(q.image)} alt="" className="question-img" />
             : <SilhouetteSVG />
           }
