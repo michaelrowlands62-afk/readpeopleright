@@ -3,20 +3,22 @@ import NavBar from './components/NavBar'
 import Home from './pages/Home'
 import Episodes from './pages/Episodes'
 import Game from './pages/Game'
+import Admin from './pages/Admin'
 import './App.css'
 
 function Layout() {
   const { pathname } = useLocation()
-  const isGame = pathname === '/game'
+  const isFullscreen = pathname === '/game' || pathname === '/admin'
 
   return (
     <>
-      {!isGame && <NavBar />}
-      <div className={isGame ? '' : 'page-content'}>
+      {!isFullscreen && <NavBar />}
+      <div className={isFullscreen ? '' : 'page-content'}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/episodes" element={<Episodes />} />
           <Route path="/game" element={<Game />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </div>
     </>
