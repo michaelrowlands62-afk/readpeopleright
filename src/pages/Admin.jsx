@@ -16,6 +16,16 @@ const CATEGORIES = [
 
 const DIFFICULTIES = ['Beginner', 'Intermediate', 'Advanced', 'Expert']
 
+const EPISODES = [
+  'Body Language Basics',
+  'The Negotiation',
+  'Can You Spot The Lie',
+  'First Impressions',
+  'First Date Signals',
+  'Know Your Partner',
+  'Flash Expressions',
+]
+
 function AdminLogin({ onSuccess }) {
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
@@ -68,7 +78,7 @@ function AdminContent({ onLogout }) {
   const [fact, setFact] = useState('')
   const [category, setCategory] = useState(CATEGORIES[0])
   const [difficulty, setDifficulty] = useState(DIFFICULTIES[0])
-  const [episode, setEpisode] = useState('')
+  const [episode, setEpisode] = useState('')  // empty string = no selection
   const [status, setStatus] = useState(null)
 
   const fileInputRef = useRef(null)
@@ -370,12 +380,16 @@ Rules:
 
             <label className="admin-label meta-full">
               Episode Name
-              <input
-                className="admin-input"
+              <select
+                className="admin-input admin-select admin-select--episode"
                 value={episode}
                 onChange={(e) => setEpisode(e.target.value)}
-                placeholder="e.g. Body Language Basics Beginner"
-              />
+              >
+                <option value="" disabled>Select an episode</option>
+                {EPISODES.map((ep) => (
+                  <option key={ep} value={ep}>{ep}</option>
+                ))}
+              </select>
             </label>
           </div>
         </section>

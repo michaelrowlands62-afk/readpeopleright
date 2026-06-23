@@ -222,6 +222,10 @@
   color: var(--text);
 }
 
+.admin-select--episode option[value=''] {
+  color: var(--border);
+}
+
 /* Answers */
 .answers-grid {
   display: grid;
