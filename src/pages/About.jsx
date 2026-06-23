@@ -30,24 +30,8 @@ export default function About() {
               <circle cx="12" cy="10" r="1" fill="#1a0f1f"/>
             </svg>
           </div>
-          <h1 className="about-hero-title">About ReadPeopleRight</h1>
+          <h1 className="about-hero-title">About Me</h1>
           <p className="about-hero-subtitle">The interactive body language learning platform</p>
-        </section>
-
-        {/* What Is ReadPeopleRight */}
-        <section className="about-section">
-          <h2 className="about-section-title">What Is ReadPeopleRight?</h2>
-          <div className="about-card about-prose">
-            <p>
-              ReadPeopleRight is a body language quiz game where you study images of real human poses
-              and facial expressions and identify what signal is being shown — all before a countdown
-              timer runs out. Each question is followed by a clear explanation of the psychology
-              behind what you saw, so every round teaches you something genuinely useful. The game
-              is designed to sharpen your ability to read people in real-life situations, whether
-              you are in a job interview, on a first date, or simply navigating everyday
-              conversations.
-            </p>
-          </div>
         </section>
 
         {/* Meet The Creator */}
@@ -68,6 +52,22 @@ export default function About() {
                 everyday interactions.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* What Is ReadPeopleRight */}
+        <section className="about-section">
+          <h2 className="about-section-title">What Is ReadPeopleRight?</h2>
+          <div className="about-card about-prose">
+            <p>
+              ReadPeopleRight is a body language quiz game where you study images of real human poses
+              and facial expressions and identify what signal is being shown — all before a countdown
+              timer runs out. Each question is followed by a clear explanation of the psychology
+              behind what you saw, so every round teaches you something genuinely useful. The game
+              is designed to sharpen your ability to read people in real-life situations, whether
+              you are in a job interview, on a first date, or simply navigating everyday
+              conversations.
+            </p>
           </div>
         </section>
 
