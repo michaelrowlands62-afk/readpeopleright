@@ -2,6 +2,8 @@ import { useState, useRef, useCallback } from 'react'
 import { supabase } from '../lib/supabase'
 import './Admin.css'
 
+const SESSION_KEY = 'admin_authed'
+
 const CATEGORIES = [
   'Read Your Partner',
   'Attraction Signals',
@@ -14,7 +16,47 @@ const CATEGORIES = [
 
 const DIFFICULTIES = ['Beginner', 'Intermediate', 'Advanced', 'Expert']
 
-export default function Admin() {
+function AdminLogin({ onSuccess }) {
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState(null)
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+    if (password === import.meta.env.VITE_ADMIN_PASSWORD) {
+      sessionStorage.setItem(SESSION_KEY, '1')
+      onSuccess()
+    } else {
+      setError('Incorrect password')
+      setPassword('')
+    }
+  }
+
+  return (
+    <main className="admin-login-page">
+      <div className="admin-login-card">
+        <div className="admin-login-brand">ReadPeopleRight</div>
+        <h1 className="admin-login-title">Admin Access</h1>
+        <form className="admin-login-form" onSubmit={handleLogin}>
+          <label className="admin-label">
+            Password
+            <input
+              className="admin-input"
+              type="password"
+              value={password}
+              onChange={(e) => { setPassword(e.target.value); setError(null) }}
+              placeholder="Enter password"
+              autoFocus
+            />
+          </label>
+          {error && <p className="admin-login-error">{error}</p>}
+          <button className="btn-save" type="submit">Login</button>
+        </form>
+      </div>
+    </main>
+  )
+}
+
+function AdminContent({ onLogout }) {
   const [imageFile, setImageFile] = useState(null)
   const [imagePreview, setImagePreview] = useState(null)
   const [isDragging, setIsDragging] = useState(false)
@@ -133,7 +175,6 @@ Rules:
       const ext = imageFile.name.split('.').pop()
       const fileName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
 
-      // Step 1 — storage upload
       console.log('[Admin] Uploading image:', fileName, imageFile.type, imageFile.size, 'bytes')
       const { error: uploadError } = await supabase.storage
         .from('question-images')
@@ -149,7 +190,6 @@ Rules:
         .from('question-images')
         .getPublicUrl(fileName)
 
-      // Step 2 — questions table insert
       const payload = {
         episode: episode.trim(),
         category,
@@ -192,8 +232,13 @@ Rules:
     <main className="admin">
       <div className="admin-container">
         <header className="admin-header">
-          <h1 className="admin-title">Admin — Upload Question</h1>
-          <p className="admin-subtitle">Analyse an image with Claude and save it to Supabase</p>
+          <div className="admin-header-row">
+            <div>
+              <h1 className="admin-title">Admin — Upload Question</h1>
+              <p className="admin-subtitle">Analyse an image with Claude and save it to Supabase</p>
+            </div>
+            <button className="btn-logout" onClick={onLogout}>Logout</button>
+          </div>
         </header>
 
         {/* Image upload */}
@@ -351,4 +396,16 @@ Rules:
       </div>
     </main>
   )
+}
+
+export default function Admin() {
+  const [isAuthed, setIsAuthed] = useState(() => sessionStorage.getItem(SESSION_KEY) === '1')
+
+  const handleLogout = () => {
+    sessionStorage.removeItem(SESSION_KEY)
+    setIsAuthed(false)
+  }
+
+  if (!isAuthed) return <AdminLogin onSuccess={() => setIsAuthed(true)} />
+  return <AdminContent onLogout={handleLogout} />
 }
