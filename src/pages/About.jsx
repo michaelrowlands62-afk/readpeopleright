@@ -31,7 +31,7 @@ export default function About() {
             </svg>
           </div>
           <h1 className="about-hero-title">About Me</h1>
-          <p className="about-hero-subtitle">The interactive body language learning platform</p>
+          <p className="about-hero-subtitle">Test Your People Reading Skills</p>
         </section>
 
         {/* Meet The Creator */}
@@ -43,7 +43,7 @@ export default function About() {
               <h3 className="about-creator-name">Natalie Rowlands</h3>
               <p className="about-creator-credential">BSc Forensic Psychology</p>
               <p className="about-creator-bio">
-                ReadPeopleRight was created by Natalie Rowlands, who holds a degree in Forensic
+                BodyLanguageIQ was created by Natalie Rowlands, who holds a degree in Forensic
                 Psychology. Her academic background in understanding human behaviour and nonverbal
                 communication inspired her to build a platform that makes body language education
                 accessible, engaging, and genuinely useful for everyone. The purpose of the site is
@@ -55,12 +55,12 @@ export default function About() {
           </div>
         </section>
 
-        {/* What Is ReadPeopleRight */}
+        {/* What Is BodyLanguageIQ */}
         <section className="about-section">
-          <h2 className="about-section-title">What Is ReadPeopleRight?</h2>
+          <h2 className="about-section-title">What Is BodyLanguageIQ?</h2>
           <div className="about-card about-prose">
             <p>
-              ReadPeopleRight is a body language quiz game where you study images of real human poses
+              BodyLanguageIQ is a body language quiz game where you study images of real human poses
               and facial expressions and identify what signal is being shown — all before a countdown
               timer runs out. Each question is followed by a clear explanation of the psychology
               behind what you saw, so every round teaches you something genuinely useful. The game
@@ -135,8 +135,8 @@ export default function About() {
             <p className="about-contact-text">
               For questions, feedback, or partnership enquiries, we would love to hear from you.
             </p>
-            <a href="mailto:hello@readpeopleright.com" className="about-contact-email">
-              hello@readpeopleright.com
+            <a href="mailto:hello@bodylanguageiq.com" className="about-contact-email">
+              hello@bodylanguageiq.com
             </a>
           </div>
         </section>

@@ -44,7 +44,7 @@ function AdminLogin({ onSuccess }) {
   return (
     <main className="admin-login-page">
       <div className="admin-login-card">
-        <div className="admin-login-brand">ReadPeopleRight</div>
+        <div className="admin-login-brand">BodyLanguageIQ</div>
         <h1 className="admin-login-title">Admin Access</h1>
         <form className="admin-login-form" onSubmit={handleLogin}>
           <label className="admin-label">

@@ -36,10 +36,9 @@ export default function Home() {
     <main className="home">
       {/* Hero */}
       <section className="hero">
-        <p className="hero-eyebrow">Body Language Training</p>
+        <p className="hero-eyebrow">Can You Read People?</p>
         <h1 className="hero-headline">
-          Learn to Read People.<br />
-          <span className="gold">Before Time Runs Out.</span>
+          Body Language IQ
         </h1>
         <p className="hero-sub">
           Watch real signals. Make your guess. Beat the clock. Build the skill
