@@ -5,6 +5,7 @@ import Episodes from './pages/Episodes'
 import Game from './pages/Game'
 import Admin from './pages/Admin'
 import About from './pages/About'
+import Contact from './pages/Contact'
 import './App.css'
 
 function Layout() {
@@ -21,6 +22,7 @@ function Layout() {
           <Route path="/game" element={<Game />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
     </>
