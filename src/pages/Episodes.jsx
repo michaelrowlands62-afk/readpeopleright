@@ -62,6 +62,9 @@ export default function Episodes() {
         <div className="episodes-grid">
           {filtered.map((ep) => (
             <div key={ep.id} className="episode-card">
+              {ep.title === 'Body Language Basics' && (
+                <span className="episode-popular">Most Popular</span>
+              )}
               <div className="episode-card-top">
                 <div className="episode-badges">
                   <span className="badge badge-category">{ep.category}</span>
