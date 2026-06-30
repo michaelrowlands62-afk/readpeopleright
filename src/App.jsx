@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Home from './pages/Home'
 import Episodes from './pages/Episodes'
+import Courses from './pages/Courses'
 import Game from './pages/Game'
 import Admin from './pages/Admin'
 import About from './pages/About'
@@ -19,6 +20,7 @@ function Layout() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/episodes" element={<Episodes />} />
+          <Route path="/courses" element={<Courses />} />
           <Route path="/game" element={<Game />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/about" element={<About />} />

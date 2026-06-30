@@ -77,6 +77,63 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Why Body Language Matters */}
+      <section className="why-matters">
+        <h2 className="section-title">Why Body Language Matters</h2>
+        <p className="why-matters-intro">
+          Most of what people communicate is never spoken aloud. Learning to read it changes everything.
+        </p>
+        <div className="why-grid">
+          <div className="why-card">
+            <span className="why-stat">93%</span>
+            <p className="why-text">of communication is delivered through tone and body language, not words alone.</p>
+          </div>
+          <div className="why-card">
+            <span className="why-stat">4 seconds</span>
+            <p className="why-text">is all it takes to form a lasting first impression of someone.</p>
+          </div>
+          <div className="why-card">
+            <span className="why-stat">7 signals</span>
+            <p className="why-text">are typically visible in any single interaction, most of which go unnoticed.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Platform Stats */}
+      <section className="platform-stats">
+        <div className="platform-stats-row">
+          <div className="platform-stat">
+            <span className="platform-stat-value">7</span>
+            <span className="platform-stat-label">Categories</span>
+          </div>
+          <div className="platform-stat">
+            <span className="platform-stat-value">70+</span>
+            <span className="platform-stat-label">Questions</span>
+          </div>
+          <div className="platform-stat">
+            <span className="platform-stat-value">4</span>
+            <span className="platform-stat-label">Difficulty Levels</span>
+          </div>
+          <div className="platform-stat">
+            <span className="platform-stat-value">100%</span>
+            <span className="platform-stat-label">Free To Play</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Courses Teaser */}
+      <section className="courses-teaser">
+        <div className="courses-teaser-card">
+          <h2 className="courses-teaser-title">Ready To Go Deeper?</h2>
+          <p className="courses-teaser-desc">
+            Explore our in-depth guides covering workplace signals, attraction, deception and more.
+          </p>
+          <button className="btn courses-teaser-btn" onClick={() => navigate('/courses')}>
+            Explore Courses
+          </button>
+        </div>
+      </section>
     </main>
   )
 }

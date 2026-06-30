@@ -102,16 +102,6 @@ export default function Contact() {
           </div>
         </section>
 
-        {/* Direct email */}
-        <section className="contact-alt">
-          <p className="contact-alt-text">
-            Alternatively, you can reach us directly at{' '}
-            <a href="mailto:hello@bodylanguageiq.com" className="contact-alt-email">
-              hello@bodylanguageiq.com
-            </a>
-          </p>
-        </section>
-
       </div>
     </main>
   )

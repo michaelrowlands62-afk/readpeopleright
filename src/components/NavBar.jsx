@@ -4,6 +4,7 @@ import './NavBar.css'
 const links = [
   { to: '/', label: 'Home' },
   { to: '/episodes', label: 'Episodes' },
+  { to: '/courses', label: 'Courses' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ]

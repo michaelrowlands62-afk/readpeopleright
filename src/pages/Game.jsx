@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams, useNavigate } from 'react-router-dom'
 import { EPISODES } from '../data/episodes'
 import { supabase } from '../lib/supabase'
 import './Game.css'
@@ -38,6 +38,7 @@ export default function Game() {
   const episodeId = parseInt(searchParams.get('episode'), 10) || 1
   const episode   = EPISODES.find((e) => e.id === episodeId) ?? EPISODES[0]
   const hasDifficultyMode = !!episode.questionsByDifficulty
+  const navigate = useNavigate()
   const [difficulty,    setDifficulty]  = useState(null)
   const [questions,     setQuestions]   = useState(null)
   // Fall back to hardcoded data when Supabase returned nothing
@@ -239,7 +240,16 @@ export default function Game() {
     return (
       <div className="game">
         <header className="game-bar">
-          <span className="game-episode">{episode.title}</span>
+          <div className="game-bar-left">
+            <button className="game-logo" onClick={() => navigate('/')} aria-label="BodyLanguageIQ home">
+              <svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                <ellipse cx="11" cy="11" rx="10" ry="6.5" stroke="#c9a84c" strokeWidth="1.75"/>
+                <circle cx="11" cy="11" r="3" fill="#c9a84c"/>
+                <circle cx="12" cy="10" r="1" fill="#1a0f1f"/>
+              </svg>
+              <span className="game-logo-wordmark">Body<span className="game-logo-accent">Language</span>IQ</span>
+            </button>
+          </div>
           <span className="game-badge">{episode.category}</span>
           <div className="game-bar-right" />
         </header>
@@ -270,7 +280,16 @@ export default function Game() {
     return (
       <div className="game">
         <header className="game-bar">
-          <span className="game-episode">{episode.title}</span>
+          <div className="game-bar-left">
+            <button className="game-logo" onClick={() => navigate('/')} aria-label="BodyLanguageIQ home">
+              <svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                <ellipse cx="11" cy="11" rx="10" ry="6.5" stroke="#c9a84c" strokeWidth="1.75"/>
+                <circle cx="11" cy="11" r="3" fill="#c9a84c"/>
+                <circle cx="12" cy="10" r="1" fill="#1a0f1f"/>
+              </svg>
+              <span className="game-logo-wordmark">Body<span className="game-logo-accent">Language</span>IQ</span>
+            </button>
+          </div>
           <span className="game-badge">{episode.category}</span>
           <div className="game-bar-right" />
         </header>
@@ -307,7 +326,16 @@ export default function Game() {
     return (
       <div className="game">
         <header className="game-bar">
-          <span className="game-episode">{episode.title}</span>
+          <div className="game-bar-left">
+            <button className="game-logo" onClick={() => navigate('/')} aria-label="BodyLanguageIQ home">
+              <svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                <ellipse cx="11" cy="11" rx="10" ry="6.5" stroke="#c9a84c" strokeWidth="1.75"/>
+                <circle cx="11" cy="11" r="3" fill="#c9a84c"/>
+                <circle cx="12" cy="10" r="1" fill="#1a0f1f"/>
+              </svg>
+              <span className="game-logo-wordmark">Body<span className="game-logo-accent">Language</span>IQ</span>
+            </button>
+          </div>
           <span className="game-badge">{episode.category}</span>
           <div className="game-bar-right">
             <div className="game-stats">
@@ -350,9 +378,14 @@ export default function Game() {
             </div>
           </div>
 
-          <button className="results-btn" onClick={handleRestart}>
-            Play Again
-          </button>
+          <div className="results-actions">
+            <button className="results-btn" onClick={handleRestart}>
+              Play Again
+            </button>
+            <button className="results-btn-secondary" onClick={() => navigate('/episodes')}>
+              Browse Episodes
+            </button>
+          </div>
         </div>
       </div>
     )
@@ -373,7 +406,16 @@ export default function Game() {
       {/* TOP BAR */}
       {!ytMode && (
         <header className="game-bar">
-          <span className="game-episode">{episode.title}</span>
+          <div className="game-bar-left">
+            <button className="game-logo" onClick={() => navigate('/')} aria-label="BodyLanguageIQ home">
+              <svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                <ellipse cx="11" cy="11" rx="10" ry="6.5" stroke="#c9a84c" strokeWidth="1.75"/>
+                <circle cx="11" cy="11" r="3" fill="#c9a84c"/>
+                <circle cx="12" cy="10" r="1" fill="#1a0f1f"/>
+              </svg>
+              <span className="game-logo-wordmark">Body<span className="game-logo-accent">Language</span>IQ</span>
+            </button>
+          </div>
           <span className="game-badge">{episode.category}</span>
           <div className="game-bar-right">
             <div className="game-stats">

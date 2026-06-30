@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './About.css'
 
 const categories = [
@@ -135,9 +136,7 @@ export default function About() {
             <p className="about-contact-text">
               For questions, feedback, or partnership enquiries, we would love to hear from you.
             </p>
-            <a href="mailto:hello@bodylanguageiq.com" className="about-contact-email">
-              hello@bodylanguageiq.com
-            </a>
+            <Link to="/contact" className="about-contact-btn">Contact Us</Link>
           </div>
         </section>
 
