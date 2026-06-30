@@ -15,6 +15,17 @@ function getAssetUrl(filename) {
   return imageAssets[`../assets/images/${filename}`]?.default ?? ''
 }
 
+const TARGET_QUESTIONS = 10
+
+function shuffled(arr) {
+  const a = [...arr]
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
+
 const DIFFICULTY_CONFIG = {
   beginner:     { label: 'Beginner',     hint: 'Clear, obvious signals',          cls: 'diff-btn--beginner'     },
   intermediate: { label: 'Intermediate', hint: 'Standard body language reading',  cls: 'diff-btn--intermediate' },
@@ -113,20 +124,37 @@ export default function Game() {
         .eq('category', episode.category)
       if (diff) query = query.eq('difficulty', diff.toLowerCase())
       const { data, error } = await query
-      if (!error && data && data.length > 0) {
-        setQuestions(data.map(row => {
-          const answersArr = [row.answer_a, row.answer_b, row.answer_c, row.answer_d]
-          const correctIdx = answersArr.indexOf(row.correct_answer)
-          return {
-            prompt: row.question,
-            answers: answersArr,
-            correct: correctIdx >= 0 ? correctIdx : 0,
-            fact: row.fact ?? '',
-            imageUrl: row.image_url ?? null,
-          }
-        }))
+
+      const fromSupabase = (!error && data && data.length > 0)
+        ? data.map(row => {
+            const answersArr = [row.answer_a, row.answer_b, row.answer_c, row.answer_d]
+            const correctIdx = answersArr.indexOf(row.correct_answer)
+            return {
+              prompt: row.question,
+              answers: answersArr,
+              correct: correctIdx >= 0 ? correctIdx : 0,
+              fact: row.fact ?? '',
+              imageUrl: row.image_url ?? null,
+            }
+          })
+        : []
+
+      if (fromSupabase.length === 0) {
+        // Nothing in Supabase — use hardcoded set as-is
+        setQuestions(null)
+      } else if (fromSupabase.length >= TARGET_QUESTIONS) {
+        // More than enough — randomly pick exactly TARGET_QUESTIONS
+        setQuestions(shuffled(fromSupabase).slice(0, TARGET_QUESTIONS))
       } else {
-        setQuestions(null) // triggers hardcoded fallback via QUESTIONS
+        // Partial — pad with hardcoded questions from the same episode/difficulty
+        const hardcoded = hasDifficultyMode
+          ? (diff ? episode.questionsByDifficulty[diff] : episode.questionsByDifficulty.intermediate) ?? []
+          : episode.questions ?? []
+        const supabasePrompts = new Set(fromSupabase.map(q => q.prompt))
+        const available = hardcoded.filter(q => !supabasePrompts.has(q.prompt))
+        const needed = TARGET_QUESTIONS - fromSupabase.length
+        const padding = shuffled(available).slice(0, needed)
+        setQuestions(shuffled([...fromSupabase, ...padding]))
       }
     } catch {
       setQuestions(null)
