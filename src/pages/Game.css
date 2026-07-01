@@ -806,3 +806,66 @@
   color: var(--text);
   background: var(--card);
 }
+
+/* ── MOBILE ── */
+
+.game-bar-right:empty {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .game-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    min-height: 44px;
+    padding: 8px 14px;
+    gap: 6px 10px;
+  }
+
+  .game-bar-left,
+  .game-logo {
+    min-width: 0;
+    order: 1;
+  }
+
+  .game-logo-wordmark {
+    min-width: 0;
+    max-width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .game-badge {
+    order: 2;
+    max-width: 38vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .game-bar-right {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: space-between;
+  }
+
+  .game-question {
+    padding: 18px 20px 8px;
+  }
+
+  .game-mid {
+    margin: 10px 20px 12px;
+    gap: 12px;
+  }
+
+  .game-answers {
+    padding: 6px 20px 10px;
+    gap: 10px;
+  }
+
+  .game-fact {
+    margin: 4px 20px 8px;
+  }
+}
