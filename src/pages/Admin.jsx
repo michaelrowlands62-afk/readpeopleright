@@ -162,7 +162,9 @@ Rules:
       }
 
       const data = await response.json()
-      const parsed = JSON.parse(data.content[0].text)
+      const rawText = data.content[0].text.trim()
+      const jsonText = rawText.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/i, '')
+      const parsed = JSON.parse(jsonText)
       setQuestion(parsed.question || '')
       setAnswers(Array.isArray(parsed.answers) ? parsed.answers : ['', '', '', ''])
       setCorrect(typeof parsed.correct === 'number' ? parsed.correct : 0)
