@@ -36,11 +36,23 @@ const DIFFICULTY_CONFIG = {
 export default function Game() {
   const [searchParams] = useSearchParams()
   const episodeId = parseInt(searchParams.get('episode'), 10) || 1
+  const difficultyParam = searchParams.get('difficulty')
+  const categoryParam = searchParams.get('category')
   const episode   = EPISODES.find((e) => e.id === episodeId) ?? EPISODES[0]
   const hasDifficultyMode = !!episode.questionsByDifficulty
   const navigate = useNavigate()
-  const [difficulty,    setDifficulty]  = useState(null)
+  const [difficulty,    setDifficulty]  = useState(difficultyParam)
+  const [category,      setCategory]    = useState(categoryParam)
   const [questions,     setQuestions]   = useState(null)
+
+  // Generate display title based on category and difficulty
+  const getDisplayTitle = () => {
+    if (category && difficulty) {
+      const diffLabel = DIFFICULTY_CONFIG[difficulty]?.label || difficulty
+      return `${category} — ${diffLabel}`
+    }
+    return episode.title
+  }
   // Fall back to hardcoded data when Supabase returned nothing
   const QUESTIONS = questions ?? (hasDifficultyMode
     ? (difficulty ? episode.questionsByDifficulty[difficulty] : episode.questionsByDifficulty.intermediate)
@@ -83,6 +95,13 @@ export default function Game() {
     el.classList.add('stat-pulse')
   }, [streak])
 
+  // Auto-start game if difficulty parameter is present in URL
+  useEffect(() => {
+    if (difficultyParam && phase === 'start') {
+      startPlaying(difficultyParam, categoryParam)
+    }
+  }, [difficultyParam, categoryParam])
+
   // Start / restart timer on each new question
   useEffect(() => {
     if (phase !== 'playing') return
@@ -114,16 +133,22 @@ export default function Game() {
     return () => cancelAnimationFrame(timerRef.current)
   }, [qIndex, phase])
 
-  async function startPlaying(diff) {
+  async function startPlaying(diff, cat) {
     setPhase('loading')
     if (diff != null) setDifficulty(diff)
+    if (cat != null) setCategory(cat)
+
+    const targetCategory = cat || category || episode.category
+    const targetDifficulty = diff || difficulty
+
     try {
       let query = supabase
         .from('questions')
         .select('*')
-        .eq('episode', episode.title)
-        .eq('category', episode.category)
-      if (diff) query = query.eq('difficulty', diff.toLowerCase())
+
+      if (targetCategory) query = query.eq('category', targetCategory)
+      if (targetDifficulty) query = query.eq('difficulty', targetDifficulty.toLowerCase())
+
       const { data, error } = await query
 
       const fromSupabase = (!error && data && data.length > 0)
@@ -147,12 +172,32 @@ export default function Game() {
         // More than enough — randomly pick exactly TARGET_QUESTIONS
         setQuestions(shuffled(fromSupabase).slice(0, TARGET_QUESTIONS))
       } else {
-        // Partial — pad with hardcoded questions from the same episode/difficulty
-        const hardcoded = hasDifficultyMode
-          ? (diff ? episode.questionsByDifficulty[diff] : episode.questionsByDifficulty.intermediate) ?? []
-          : episode.questions ?? []
+        // Partial — pad with hardcoded questions
+        // First try same category/difficulty from hardcoded episodes
+        let hardcoded = []
+        if (hasDifficultyMode && targetDifficulty) {
+          hardcoded = episode.questionsByDifficulty[targetDifficulty] ?? []
+        } else {
+          hardcoded = episode.questions ?? []
+        }
+
         const supabasePrompts = new Set(fromSupabase.map(q => q.prompt))
-        const available = hardcoded.filter(q => !supabasePrompts.has(q.prompt))
+        let available = hardcoded.filter(q => !supabasePrompts.has(q.prompt))
+
+        // If still not enough, try any hardcoded questions from any episode
+        if (available.length < TARGET_QUESTIONS - fromSupabase.length) {
+          const allHardcoded = []
+          EPISODES.forEach(ep => {
+            if (ep.questionsByDifficulty && targetDifficulty) {
+              const qs = ep.questionsByDifficulty[targetDifficulty] ?? []
+              allHardcoded.push(...qs)
+            } else if (ep.questions) {
+              allHardcoded.push(...ep.questions)
+            }
+          })
+          available = allHardcoded.filter(q => !supabasePrompts.has(q.prompt))
+        }
+
         const needed = TARGET_QUESTIONS - fromSupabase.length
         const padding = shuffled(available).slice(0, needed)
         setQuestions(shuffled([...fromSupabase, ...padding]))
@@ -222,8 +267,8 @@ export default function Game() {
     return (
       <div className="game">
         <header className="game-bar">
-          <span className="game-episode">{episode.title}</span>
-          <span className="game-badge">{episode.category}</span>
+          <span className="game-episode">{getDisplayTitle()}</span>
+          <span className="game-badge">{category || episode.category}</span>
           <div className="game-bar-right" />
         </header>
         <div className="start-screen">
@@ -250,12 +295,12 @@ export default function Game() {
               <span className="game-logo-wordmark">Body<span className="game-logo-accent">Language</span>IQ</span>
             </button>
           </div>
-          <span className="game-badge">{episode.category}</span>
+          <span className="game-badge">{category || episode.category}</span>
           <div className="game-bar-right" />
         </header>
         <div className="start-screen">
-          <p className="start-label">{episode.category}</p>
-          <h1 className="start-title">{episode.title}</h1>
+          <p className="start-label">{category || episode.category}</p>
+          <h1 className="start-title">{getDisplayTitle()}</h1>
           <p className="start-desc">
             Test your people-reading skills across {QUESTIONS.length} questions.
             Answer fast — your score depends on how much time you have left.
@@ -290,12 +335,12 @@ export default function Game() {
               <span className="game-logo-wordmark">Body<span className="game-logo-accent">Language</span>IQ</span>
             </button>
           </div>
-          <span className="game-badge">{episode.category}</span>
+          <span className="game-badge">{category || episode.category}</span>
           <div className="game-bar-right" />
         </header>
         <div className="diff-screen">
           <p className="diff-label">Choose Your Level</p>
-          <h1 className="diff-title">{episode.title}</h1>
+          <h1 className="diff-title">{getDisplayTitle()}</h1>
           <p className="diff-subtitle">Select a difficulty to begin</p>
           <div className="diff-grid">
             {Object.entries(DIFFICULTY_CONFIG).map(([key, cfg]) => (
@@ -336,7 +381,7 @@ export default function Game() {
               <span className="game-logo-wordmark">Body<span className="game-logo-accent">Language</span>IQ</span>
             </button>
           </div>
-          <span className="game-badge">{episode.category}</span>
+          <span className="game-badge">{category || episode.category}</span>
           <div className="game-bar-right">
             <div className="game-stats">
               <div className="game-stat">
@@ -416,7 +461,7 @@ export default function Game() {
               <span className="game-logo-wordmark">Body<span className="game-logo-accent">Language</span>IQ</span>
             </button>
           </div>
-          <span className="game-badge">{episode.category}</span>
+          <span className="game-badge">{category || episode.category}</span>
           <div className="game-bar-right">
             <div className="game-stats">
               <div className="game-stat">

@@ -1,38 +1,45 @@
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { EPISODES } from '../data/episodes'
+import { useEffect, useRef } from 'react'
 import './Episodes.css'
 
 const CATEGORIES = [
-  'Read Your Partner',
-  'Attraction Signals',
-  'Workplace & Career',
-  'Spot a Liar',
-  'Read Emotions',
-  'First Impressions',
-  'Micro-Expression Expert',
+  { icon: '💑', title: 'Read Your Partner', description: 'Decode the unspoken signals in your closest relationships.' },
+  { icon: '💘', title: 'Attraction Signals', description: 'Spot the signs of interest, chemistry, and genuine connection.' },
+  { icon: '💼', title: 'Workplace & Career', description: 'Read colleagues, bosses, and clients to gain the edge.' },
+  { icon: '🕵️', title: 'Spot a Liar', description: 'Detect deception through body language tells and slip-ups.' },
+  { icon: '😊', title: 'Read Emotions', description: 'Identify what people are really feeling beneath the surface.' },
+  { icon: '⚡', title: 'First Impressions', description: 'Make snap calls as figures flash for just a few seconds.' },
+  { icon: '🔬', title: 'Micro-Expression Expert', description: 'Catch fleeting expressions that last less than a second.' },
 ]
 
-const difficultyClass = {
-  Beginner: 'badge-beginner',
-  Intermediate: 'badge-intermediate',
-  Advanced: 'badge-advanced',
-}
+const DIFFICULTIES = [
+  { key: 'beginner', label: 'Beginner', className: 'diff-beginner' },
+  { key: 'intermediate', label: 'Intermediate', className: 'diff-intermediate' },
+  { key: 'advanced', label: 'Advanced', className: 'diff-advanced' },
+  { key: 'expert', label: 'Expert', className: 'diff-expert' },
+]
 
 export default function Episodes() {
   const navigate = useNavigate()
-  const [searchParams, setSearchParams] = useSearchParams()
-  const activeCategory = searchParams.get('category') || 'All'
+  const [searchParams] = useSearchParams()
+  const highlightedCategory = searchParams.get('category') || null
+  const categoryRefs = useRef({})
 
-  const filtered = activeCategory === 'All'
-    ? EPISODES
-    : EPISODES.filter((ep) => ep.category === activeCategory)
-
-  const setFilter = (cat) => {
-    if (cat === 'All') {
-      setSearchParams({})
-    } else {
-      setSearchParams({ category: cat })
+  // Scroll to highlighted category when page loads
+  useEffect(() => {
+    if (highlightedCategory && categoryRefs.current[highlightedCategory]) {
+      // Small delay to ensure DOM is fully rendered
+      setTimeout(() => {
+        categoryRefs.current[highlightedCategory]?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        })
+      }, 100)
     }
+  }, [highlightedCategory])
+
+  const handleDifficultyClick = (category, difficulty) => {
+    navigate(`/game?episode=1&category=${encodeURIComponent(category)}&difficulty=${difficulty}`)
   }
 
   return (
@@ -44,52 +51,32 @@ export default function Episodes() {
         </p>
       </div>
 
-      <div className="filter-bar">
-        {['All', ...CATEGORIES].map((cat) => (
-          <button
-            key={cat}
-            className={`filter-btn${activeCategory === cat ? ' filter-btn--active' : ''}`}
-            onClick={() => setFilter(cat)}
+      <div className="categories-container">
+        {CATEGORIES.map((cat) => (
+          <div
+            key={cat.title}
+            ref={(el) => categoryRefs.current[cat.title] = el}
+            className={`category-block${highlightedCategory === cat.title ? ' category-block--highlighted' : ''}`}
           >
-            {cat}
-          </button>
+            <div className="category-block-header">
+              <span className="category-block-icon">{cat.icon}</span>
+              <h3 className="category-block-title">{cat.title}</h3>
+              <p className="category-block-desc">{cat.description}</p>
+            </div>
+            <div className="difficulty-buttons">
+              {DIFFICULTIES.map((diff) => (
+                <button
+                  key={diff.key}
+                  className={`difficulty-btn ${diff.className}`}
+                  onClick={() => handleDifficultyClick(cat.title, diff.key)}
+                >
+                  {diff.label}
+                </button>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
-
-      {filtered.length === 0 ? (
-        <p className="episodes-empty">No episodes in this category yet — check back soon.</p>
-      ) : (
-        <div className="episodes-grid">
-          {filtered.map((ep) => (
-            <div key={ep.id} className="episode-card">
-              {ep.title === 'Body Language Basics' && (
-                <span className="episode-popular">Most Popular</span>
-              )}
-              <div className="episode-card-top">
-                <div className="episode-badges">
-                  <span className="badge badge-category">{ep.category}</span>
-                  <span className={`badge ${difficultyClass[ep.difficulty]}`}>
-                    {ep.difficulty}
-                  </span>
-                </div>
-                <h2 className="episode-title">{ep.title}</h2>
-                <p className="episode-description">{ep.description}</p>
-              </div>
-              <div className="episode-card-bottom">
-                <span className="episode-questions">
-                  {ep.questions?.length ?? Object.values(ep.questionsByDifficulty)[0].length} questions
-                </span>
-                <button
-                  className="btn btn-play"
-                  onClick={() => navigate(`/game?episode=${ep.id}`)}
-                >
-                  Play
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
     </main>
   )
 }

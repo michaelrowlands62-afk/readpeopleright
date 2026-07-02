@@ -7,7 +7,7 @@ const SESSION_KEY = 'admin_authed'
 const CATEGORIES = [
   'Read Your Partner',
   'Attraction Signals',
-  'Workplace and Career',
+  'Workplace & Career',
   'Spot a Liar',
   'Read Emotions',
   'First Impressions',
