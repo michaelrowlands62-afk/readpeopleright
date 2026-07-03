@@ -16,16 +16,6 @@ const CATEGORIES = [
 
 const DIFFICULTIES = ['Beginner', 'Intermediate', 'Advanced', 'Expert']
 
-const EPISODES = [
-  'Body Language Basics',
-  'The Negotiation',
-  'Can You Spot The Lie',
-  'First Impressions',
-  'First Date Signals',
-  'Know Your Partner',
-  'Flash Expressions',
-]
-
 function AdminLogin({ onSuccess }) {
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
@@ -78,7 +68,6 @@ function AdminContent({ onLogout }) {
   const [fact, setFact] = useState('')
   const [category, setCategory] = useState(CATEGORIES[0])
   const [difficulty, setDifficulty] = useState(DIFFICULTIES[0])
-  const [episode, setEpisode] = useState('')  // empty string = no selection
   const [status, setStatus] = useState(null)
 
   const fileInputRef = useRef(null)
@@ -113,46 +102,32 @@ function AdminContent({ onLogout }) {
     setStatus(null)
     try {
       const base64 = imagePreview.split(',')[1]
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
+      const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
-          'x-api-key': import.meta.env.VITE_CLAUDE_API_KEY,
-          'anthropic-version': '2023-06-01',
-          'content-type': 'application/json',
-          'anthropic-dangerous-direct-browser-access': 'true',
+          'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'claude-haiku-4-5-20251001',
-          max_tokens: 1024,
+          model: 'gpt-4o-mini',
           messages: [
             {
               role: 'user',
               content: [
                 {
-                  type: 'image',
-                  source: { type: 'base64', media_type: imageFile.type, data: base64 },
+                  type: 'text',
+                  text: 'You are a body language expert. Analyse the body language signals shown in this image. Return a JSON object only with no markdown formatting containing these fields: question (a clear question about what the body language signals), answer_a, answer_b, answer_c, answer_d (four plausible answer options), correct_answer (the exact text of the correct answer matching one of the four options), fact (an educational explanation of the body language signal shown).',
                 },
                 {
-                  type: 'text',
-                  text: `Analyse the body language in this image and generate a quiz question for a body language reading app.
-
-Return ONLY a JSON object with this exact structure — no markdown, no explanation:
-{
-  "question": "What does this body language signal?",
-  "answers": ["Option A", "Option B", "Option C", "Option D"],
-  "correct": 0,
-  "fact": "Educational explanation of what this body language means and why."
-}
-
-Rules:
-- question: a clear, engaging question about what the body language signals
-- answers: exactly 4 plausible options, only one correct
-- correct: 0-based index of the correct answer
-- fact: 1–2 sentences on the psychology or science behind it`,
+                  type: 'image_url',
+                  image_url: {
+                    url: `data:${imageFile.type};base64,${base64}`,
+                  },
                 },
               ],
             },
           ],
+          max_tokens: 1024,
         }),
       })
 
@@ -162,12 +137,23 @@ Rules:
       }
 
       const data = await response.json()
-      const rawText = data.content[0].text.trim()
+      const rawText = data.choices[0].message.content.trim()
       const jsonText = rawText.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/i, '')
       const parsed = JSON.parse(jsonText)
+
       setQuestion(parsed.question || '')
-      setAnswers(Array.isArray(parsed.answers) ? parsed.answers : ['', '', '', ''])
-      setCorrect(typeof parsed.correct === 'number' ? parsed.correct : 0)
+      setAnswers([
+        parsed.answer_a || '',
+        parsed.answer_b || '',
+        parsed.answer_c || '',
+        parsed.answer_d || ''
+      ])
+
+      // Find which answer matches the correct_answer
+      const answerOptions = [parsed.answer_a, parsed.answer_b, parsed.answer_c, parsed.answer_d]
+      const correctIndex = answerOptions.findIndex(ans => ans === parsed.correct_answer)
+      setCorrect(correctIndex !== -1 ? correctIndex : 0)
+
       setFact(parsed.fact || '')
     } catch (err) {
       setStatus({ type: 'error', message: `Analysis failed: ${err.message}` })
@@ -177,8 +163,8 @@ Rules:
   }
 
   const handleSave = async () => {
-    if (!imageFile || !question.trim() || !episode.trim()) {
-      setStatus({ type: 'error', message: 'Image, question, and episode name are all required.' })
+    if (!imageFile || !question.trim()) {
+      setStatus({ type: 'error', message: 'Image and question are required.' })
       return
     }
     setIsSaving(true)
@@ -203,7 +189,6 @@ Rules:
         .getPublicUrl(fileName)
 
       const payload = {
-        episode: episode.trim(),
         category,
         difficulty: difficulty.toLowerCase(),
         image_url: urlData.publicUrl,
@@ -232,7 +217,6 @@ Rules:
       setAnswers(['', '', '', ''])
       setCorrect(0)
       setFact('')
-      setEpisode('')
     } catch (err) {
       setStatus({ type: 'error', message: `Save failed: ${err.message}` })
     } finally {
@@ -247,7 +231,7 @@ Rules:
           <div className="admin-header-row">
             <div>
               <h1 className="admin-title">Admin — Upload Question</h1>
-              <p className="admin-subtitle">Analyse an image with Claude and save it to Supabase</p>
+              <p className="admin-subtitle">Analyse an image with OpenAI and save it to Supabase</p>
             </div>
             <button className="btn-logout" onClick={onLogout}>Logout</button>
           </div>
@@ -376,20 +360,6 @@ Rules:
               >
                 {DIFFICULTIES.map((d) => (
                   <option key={d} value={d}>{d}</option>
-                ))}
-              </select>
-            </label>
-
-            <label className="admin-label meta-full">
-              Episode Name
-              <select
-                className="admin-input admin-select admin-select--episode"
-                value={episode}
-                onChange={(e) => setEpisode(e.target.value)}
-              >
-                <option value="" disabled>Select an episode</option>
-                {EPISODES.map((ep) => (
-                  <option key={ep} value={ep}>{ep}</option>
                 ))}
               </select>
             </label>
