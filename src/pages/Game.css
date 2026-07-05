@@ -868,4 +868,9 @@
   .game-fact {
     margin: 4px 20px 8px;
   }
+
+  .game-fact-body {
+    max-height: 120px;
+    overflow-y: auto;
+  }
 }
