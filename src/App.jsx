@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Episodes from './pages/Episodes'
 import Courses from './pages/Courses'
 import Dictionary from './pages/Dictionary'
+import PersonalityTest from './pages/PersonalityTest'
 import Game from './pages/Game'
 import Admin from './pages/Admin'
 import About from './pages/About'
@@ -23,6 +24,10 @@ const PAGE_META = {
   '/dictionary': {
     title: 'Body Language Dictionary - BodyLanguageIQ',
     description: 'A comprehensive A–Z guide to nonverbal signals and body language cues. Explore 60 entries covering stress, attraction, deception, confidence and more — each with clear explanations.',
+  },
+  '/personality-test': {
+    title: 'Body Language Personality Test - BodyLanguageIQ',
+    description: 'Discover your natural body language style with our 12-question personality test. Are you a Connector, Observer, Performer, Diplomat, Protector or Authority?',
   },
   '/courses': {
     title: 'Courses - BodyLanguageIQ',
@@ -59,6 +64,7 @@ function Layout() {
           <Route path="/episodes" element={<Episodes />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/dictionary" element={<Dictionary />} />
+          <Route path="/personality-test" element={<PersonalityTest />} />
           <Route path="/game" element={<Game />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/about" element={<About />} />
