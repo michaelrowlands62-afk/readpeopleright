@@ -13,6 +13,11 @@ const ENTRIES = [
     category: 'Stress Signals',
   },
   {
+    name: 'Anchoring',
+    description: 'Keeping feet planted firmly and evenly when speaking signals groundedness and authority. Shifting weight constantly suggests nervousness.',
+    category: 'Confidence Signals',
+  },
+  {
     name: 'Arms Crossed',
     description: 'Often signals defensiveness or discomfort, though context matters as it can simply mean someone is cold or comfortable.',
     category: 'Defensive Signals',
@@ -23,9 +28,34 @@ const ENTRIES = [
     category: 'Deception Signals',
   },
   {
+    name: 'Avoidance Shuffle',
+    description: 'Repeatedly moving slightly away from someone during conversation signals discomfort with their proximity.',
+    category: 'Defensive Signals',
+  },
+  {
+    name: 'Back Turned',
+    description: 'Presenting the back to someone in a social setting is one of the strongest signals of disinterest or dismissal.',
+    category: 'Defensive Signals',
+  },
+  {
+    name: 'Barrier Objects',
+    description: 'Placing bags, cups or folders between yourself and others creates psychological distance and signals a desire for protection.',
+    category: 'Defensive Signals',
+  },
+  {
     name: 'Barrier Crossing',
     description: 'Reaching across the body to touch the opposite arm or shoulder, a subtle self-protective gesture.',
     category: 'Defensive Signals',
+  },
+  {
+    name: 'Belly Button Rule',
+    description: 'The direction your navel points reveals your true focus of attention, even when your face is turned elsewhere.',
+    category: 'Engagement Signals',
+  },
+  {
+    name: 'Blank Stare',
+    description: 'A fixed expressionless gaze with minimal blinking can indicate shock, dissociation or deliberate emotional shutdown.',
+    category: 'Stress Signals',
   },
   {
     name: 'Blinking Rate Increase',
@@ -40,6 +70,11 @@ const ENTRIES = [
   {
     name: 'Brow Furrow',
     description: 'Drawing the eyebrows together signals confusion, concentration or mild displeasure.',
+    category: 'Emotion Signals',
+  },
+  {
+    name: 'Brow Raise',
+    description: 'A quick single eyebrow raise signals scepticism or disbelief, while both brows raised signals genuine surprise.',
     category: 'Emotion Signals',
   },
   {
@@ -63,8 +98,48 @@ const ENTRIES = [
     category: 'Confidence Signals',
   },
   {
+    name: 'Chin Stroking',
+    description: 'Touching or stroking the chin during conversation signals evaluation and deep consideration of what is being said.',
+    category: 'Engagement Signals',
+  },
+  {
+    name: 'Clenched Fists',
+    description: 'Tightly closed fists signal suppressed anger or strong determination, depending on surrounding context.',
+    category: 'Stress Signals',
+  },
+  {
+    name: 'Closed Eyes During Speech',
+    description: 'Briefly closing eyes while making a point signals conviction and emphasis, not deception.',
+    category: 'Confidence Signals',
+  },
+  {
+    name: 'Contempt Micro-Expression',
+    description: 'A one-sided lip raise lasting a fraction of a second is one of the most reliable signals of contempt or superiority.',
+    category: 'Deception Signals',
+  },
+  {
+    name: 'Controlled Breathing',
+    description: 'Deliberately slow breathing during stress signals emotional regulation and composure under pressure.',
+    category: 'Confidence Signals',
+  },
+  {
+    name: 'Cowering',
+    description: 'Making the body small by hunching, pulling limbs inward and avoiding eye contact is a submission and fear response.',
+    category: 'Stress Signals',
+  },
+  {
+    name: 'Cradling',
+    description: 'Holding an object like a cup with both hands close to the chest creates a self-comforting barrier during anxiety.',
+    category: 'Stress Signals',
+  },
+  {
     name: 'Crossed Ankles',
     description: 'Often a subtler version of crossed arms, indicating restraint or mild discomfort, especially common in formal settings.',
+    category: 'Defensive Signals',
+  },
+  {
+    name: 'Crossed Wrists',
+    description: 'Crossing the wrists while standing is a subtle restraint gesture often seen when someone feels judged or exposed.',
     category: 'Defensive Signals',
   },
   {
@@ -73,9 +148,34 @@ const ENTRIES = [
     category: 'Defensive Signals',
   },
   {
+    name: 'Deliberate Touch',
+    description: 'Intentionally touching someone on the arm or shoulder during conversation signals warmth, dominance or romantic interest depending on context.',
+    category: 'Attraction Signals',
+  },
+  {
     name: 'Direct Eye Contact',
     description: 'Sustained, comfortable eye contact typically signals confidence, honesty and genuine engagement, though cultural norms vary widely.',
     category: 'Trust Signals',
+  },
+  {
+    name: 'Displacement Activity',
+    description: 'Performing unnecessary actions like straightening papers or adjusting clothing during stress is a way of releasing nervous energy.',
+    category: 'Stress Signals',
+  },
+  {
+    name: 'Double Nod',
+    description: 'Nodding twice quickly during conversation signals agreement and encourages the speaker to continue.',
+    category: 'Engagement Signals',
+  },
+  {
+    name: 'Downward Palm',
+    description: 'Holding the palm face down while speaking signals authority and a desire to control or suppress.',
+    category: 'Confidence Signals',
+  },
+  {
+    name: 'Drooping Eyelids',
+    description: 'Heavy lowered eyelids can signal tiredness, boredom or in some contexts a deliberate attempt to appear seductive.',
+    category: 'Emotion Signals',
   },
   {
     name: 'Duchenne Smile',
@@ -86,6 +186,11 @@ const ENTRIES = [
     name: 'Earlobe Tugging',
     description: 'Pulling or touching the earlobe is a self-soothing gesture often signalling indecision or mild anxiety.',
     category: 'Stress Signals',
+  },
+  {
+    name: 'Elbow Placement',
+    description: 'Taking up elbow room at a table by spreading the arms wide signals confidence and territorial ownership of space.',
+    category: 'Confidence Signals',
   },
   {
     name: 'Eye Block',
@@ -108,9 +213,29 @@ const ENTRIES = [
     category: 'Engagement Signals',
   },
   {
+    name: 'Eye Flash',
+    description: 'A brief widening of the eyes during conversation signals genuine surprise or heightened interest at that specific moment.',
+    category: 'Engagement Signals',
+  },
+  {
+    name: 'Eye Rub',
+    description: 'Rubbing the eye during conversation is often an attempt to block out something uncomfortable or to avoid eye contact.',
+    category: 'Deception Signals',
+  },
+  {
     name: 'Facial Symmetry Check',
     description: 'Comparing both sides of the face during an expression to assess authenticity, a technique used in deception detection.',
     category: 'Deception Signals',
+  },
+  {
+    name: 'Fake Laugh',
+    description: 'A forced laugh tends to be shorter, louder and more abrupt than genuine laughter and rarely involves the whole face.',
+    category: 'Deception Signals',
+  },
+  {
+    name: 'Finger Pointing',
+    description: 'Pointing a finger directly at someone is perceived as aggressive and accusatory in most cultures.',
+    category: 'Confidence Signals',
   },
   {
     name: 'Finger Tapping',
@@ -118,9 +243,24 @@ const ENTRIES = [
     category: 'Stress Signals',
   },
   {
+    name: 'Fist Pump',
+    description: 'A contained fist pump or arm pull signals private celebration or genuine satisfaction with an outcome.',
+    category: 'Emotion Signals',
+  },
+  {
+    name: 'Fixed Smile',
+    description: 'A smile that stays exactly the same without natural variation is almost always performed rather than genuine.',
+    category: 'Deception Signals',
+  },
+  {
     name: 'Foot Pointing',
     description: "The direction someone's feet point often reveals where their attention or interest truly lies, even when their upper body faces elsewhere.",
     category: 'Attraction Signals',
+  },
+  {
+    name: 'Foot Tap',
+    description: 'Repetitive foot tapping signals impatience, boredom or suppressed anxiety about something.',
+    category: 'Stress Signals',
   },
   {
     name: 'Forward Lean',
@@ -143,9 +283,29 @@ const ENTRIES = [
     category: 'Emotion Signals',
   },
   {
+    name: 'Gravity Defying Gestures',
+    description: 'Upward movements like raised heels, upward palms or lifted chin signal positive emotional states and confidence.',
+    category: 'Confidence Signals',
+  },
+  {
+    name: 'Grooming Another',
+    description: "Adjusting someone else's clothing or hair signals intimacy, affection and a high level of comfort with that person.",
+    category: 'Attraction Signals',
+  },
+  {
+    name: 'Grounding Stance',
+    description: 'Standing with feet wider than shoulder width and weight evenly distributed signals calm authority and readiness.',
+    category: 'Confidence Signals',
+  },
+  {
     name: 'Hair Touching',
     description: 'Repeatedly touching or twirling hair can signal nervousness, but in social contexts may also signal flirtation or attraction.',
     category: 'Attraction Signals',
+  },
+  {
+    name: 'Hand Barrier',
+    description: 'Holding both hands in front of the body creates a subtle psychological shield and signals mild defensiveness.',
+    category: 'Defensive Signals',
   },
   {
     name: 'Hand on Heart',
@@ -163,9 +323,19 @@ const ENTRIES = [
     category: 'Stress Signals',
   },
   {
+    name: 'Head Shake During Agreement',
+    description: 'Shaking the head no while verbally agreeing is a classic contradiction signal revealing true disagreement.',
+    category: 'Deception Signals',
+  },
+  {
     name: 'Head Tilt',
     description: 'Tilting the head to one side signals curiosity, interest or active listening.',
     category: 'Engagement Signals',
+  },
+  {
+    name: 'Hostility Cluster',
+    description: 'A combination of crossed arms, clenched jaw, narrowed eyes and forward lean together forms a reliable hostility cluster.',
+    category: 'Defensive Signals',
   },
   {
     name: 'Illustrator Gestures',
@@ -173,9 +343,19 @@ const ENTRIES = [
     category: 'Engagement Signals',
   },
   {
+    name: 'Index Finger Display',
+    description: 'Resting the index finger along the cheek while the thumb supports the chin signals critical evaluation of what is being said.',
+    category: 'Engagement Signals',
+  },
+  {
     name: 'Interlaced Fingers',
     description: 'Clasping the hands together with interlaced fingers, especially when raised, often signals frustration or restrained tension.',
     category: 'Stress Signals',
+  },
+  {
+    name: 'Inward Feet',
+    description: 'Pointing toes inward signals submission, shyness or a desire to appear non-threatening.',
+    category: 'Defensive Signals',
   },
   {
     name: 'Jaw Clenching',
@@ -213,9 +393,29 @@ const ENTRIES = [
     category: 'Stress Signals',
   },
   {
+    name: 'Lip Lick',
+    description: 'Briefly licking the lips signals anxiety, anticipation or attraction depending on surrounding body language.',
+    category: 'Stress Signals',
+  },
+  {
+    name: 'Lip Pulling',
+    description: 'Pulling the lower lip inward with the teeth signals that a person is holding back words they want to say.',
+    category: 'Stress Signals',
+  },
+  {
+    name: 'Loaded Pause',
+    description: 'A deliberate pause before answering can signal careful thought, but when combined with gaze aversion may indicate fabrication.',
+    category: 'Deception Signals',
+  },
+  {
     name: 'Locked Ankles',
     description: 'Tightly locking the ankles together while seated is a classic restraint gesture associated with withholding emotion.',
     category: 'Defensive Signals',
+  },
+  {
+    name: 'Lowered Head Nod',
+    description: 'Nodding with the head slightly bowed signals respectful agreement and deference to the speaker.',
+    category: 'Engagement Signals',
   },
   {
     name: 'Microexpression',
