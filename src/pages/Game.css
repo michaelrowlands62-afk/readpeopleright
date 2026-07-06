@@ -323,22 +323,17 @@
   color: #f09090 !important;
 }
 
-/* ── FACT PANEL ── */
+/* ── ACTION BUTTONS ── */
 
-.game-fact {
+.game-action-buttons {
   display: flex;
-  gap: 8px;
-  align-items: flex-start;
-  margin: 0 24px 4px;
-  padding: 8px 12px;
-  background: var(--card);
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  animation: factSlideIn 0.28s ease;
+  gap: 10px;
+  padding: 8px 24px 12px;
   flex-shrink: 0;
+  animation: actionButtonsSlideIn 0.28s ease;
 }
 
-@keyframes factSlideIn {
+@keyframes actionButtonsSlideIn {
   from {
     opacity: 0;
     transform: translateY(10px);
@@ -349,46 +344,161 @@
   }
 }
 
-.game-fact--correct {
+.game-action-btn {
+  flex: 1;
+  border-radius: 8px;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s, border-color 0.15s, color 0.15s;
+  text-align: center;
+}
+
+.game-action-btn--primary {
+  background: var(--gold);
+  color: #1a0f1f;
+  border: none;
+}
+
+.game-action-btn--primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+
+.game-action-btn--primary:active {
+  transform: translateY(0);
+}
+
+.game-action-btn--secondary {
+  background: transparent;
+  color: var(--muted);
+  border: 1.5px solid var(--border);
+}
+
+.game-action-btn--secondary:hover {
+  color: var(--text);
+  border-color: var(--gold);
+  transform: translateY(-1px);
+}
+
+.game-action-btn--secondary:active {
+  transform: translateY(0);
+}
+
+/* ── EXPLANATION PANEL ── */
+
+.game-explanation-panel {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 1000;
+  animation: explanationSlideIn 0.32s ease;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@keyframes explanationSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.game-explanation-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.game-explanation-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.game-explanation-header--correct {
   border-color: rgba(76, 175, 130, 0.6);
 }
 
-.game-fact--wrong {
+.game-explanation-header--wrong {
   border-color: rgba(224, 85, 85, 0.6);
 }
 
-.game-fact-icon {
-  font-size: 1.05rem;
+.game-explanation-icon {
+  font-size: 1.8rem;
   line-height: 1;
   flex-shrink: 0;
-  margin-top: 1px;
 }
 
-.game-fact-content {
-  flex: 1;
-  min-width: 0;
-}
-
-.game-fact-title {
+.game-explanation-title {
   font-weight: 700;
-  font-size: 0.8rem;
-  margin: 0 0 2px;
+  font-size: 1.1rem;
+  margin: 0;
   color: var(--gold-light);
 }
 
-.game-fact--correct .game-fact-title {
+.game-explanation-header--correct .game-explanation-title {
   color: #7de8b4;
 }
 
-.game-fact--wrong .game-fact-title {
+.game-explanation-header--wrong .game-explanation-title {
   color: #f09090;
 }
 
-.game-fact-body {
-  font-size: 0.77rem;
-  color: var(--muted);
+.game-explanation-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.game-explanation-text {
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.7;
   margin: 0;
-  line-height: 1.4;
+  text-align: left;
+}
+
+.game-explanation-next {
+  background: var(--gold);
+  color: #1a0f1f;
+  border: none;
+  border-radius: 12px;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 16px 36px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.game-explanation-next:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.game-explanation-next:active {
+  transform: translateY(0);
 }
 
 /* ── STAT PULSE ANIMATION ── */
@@ -865,12 +975,34 @@
     gap: 10px;
   }
 
-  .game-fact {
-    margin: 4px 20px 8px;
+  .game-action-buttons {
+    padding: 8px 20px 12px;
+    gap: 8px;
+    flex-direction: column;
   }
 
-  .game-fact-body {
-    max-height: 120px;
-    overflow-y: auto;
+  .game-action-btn {
+    width: 100%;
+  }
+
+  .game-explanation-content {
+    padding: 24px 20px;
+  }
+
+  .game-explanation-header {
+    padding: 14px 16px;
+    margin-bottom: 20px;
+  }
+
+  .game-explanation-icon {
+    font-size: 1.5rem;
+  }
+
+  .game-explanation-title {
+    font-size: 0.95rem;
+  }
+
+  .game-explanation-text {
+    font-size: 0.95rem;
   }
 }

@@ -67,6 +67,7 @@ export default function Game() {
   const [correctCount, setCorrectCount] = useState(0)
   const [lastEarned,   setLastEarned]   = useState(0)
   const [ytMode,       setYtMode]       = useState(false)
+  const [showExplanation, setShowExplanation] = useState(false)
 
   const timerRef    = useRef(null)
   const startRef    = useRef(null)
@@ -234,6 +235,7 @@ export default function Game() {
 
   function handleNext() {
     cancelAnimationFrame(timerRef.current)
+    setShowExplanation(false)
     if (qIndex + 1 >= QUESTIONS.length) {
       setPhase('results')
     } else {
@@ -554,31 +556,42 @@ export default function Game() {
         </div>
       )}
 
-      {/* FACT PANEL + NEXT */}
-      {!ytMode && answered && (
-        <>
-          <div className={`game-fact${isCorrect ? ' game-fact--correct' : timedOut ? '' : ' game-fact--wrong'}`}>
-            <div className="game-fact-icon">
-              {timedOut ? '⏱' : isCorrect ? '✓' : '✗'}
-            </div>
-            <div className="game-fact-content">
-              <p className="game-fact-title">
+      {/* ACTION BUTTONS */}
+      {!ytMode && answered && !showExplanation && (
+        <div className="game-action-buttons">
+          <button className="game-action-btn game-action-btn--secondary" onClick={() => setShowExplanation(true)}>
+            See Explanation
+          </button>
+          <button className="game-action-btn game-action-btn--primary" onClick={handleNext}>
+            {isLast ? 'See Results' : 'Next Question'} →
+          </button>
+        </div>
+      )}
+
+      {/* EXPLANATION PANEL */}
+      {!ytMode && showExplanation && (
+        <div className="game-explanation-panel">
+          <div className="game-explanation-content">
+            <div className={`game-explanation-header${isCorrect ? ' game-explanation-header--correct' : timedOut ? '' : ' game-explanation-header--wrong'}`}>
+              <div className="game-explanation-icon">
+                {timedOut ? '⏱' : isCorrect ? '✓' : '✗'}
+              </div>
+              <p className="game-explanation-title">
                 {timedOut
                   ? `Time's up · It was "${q.answers[q.correct]}"`
                   : isCorrect
                   ? `+${lastEarned} pts`
                   : `It was "${q.answers[q.correct]}"`}
               </p>
-              <p className="game-fact-body">{q.fact}</p>
             </div>
-          </div>
-
-          <div className="game-next-wrap">
-            <button className="game-next-btn" onClick={handleNext}>
+            <div className="game-explanation-body">
+              <p className="game-explanation-text">{q.fact}</p>
+            </div>
+            <button className="game-explanation-next" onClick={handleNext}>
               {isLast ? 'See Results' : 'Next Question'} →
             </button>
           </div>
-        </>
+        </div>
       )}
 
       {/* YT EXIT */}
