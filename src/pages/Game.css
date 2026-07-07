@@ -412,7 +412,6 @@
 }
 
 .game-explanation-content {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 24px 24px;
@@ -462,12 +461,10 @@
 }
 
 .game-explanation-body {
-  flex: 1;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 8px 0;
-  flex-shrink: 0;
 }
 
 .game-explanation-text {
@@ -491,8 +488,7 @@
   cursor: pointer;
   transition: background 0.15s, transform 0.1s;
   width: 100%;
-  margin-top: 16px;
-  flex-shrink: 0;
+  margin-top: 24px;
 }
 
 .game-explanation-next:hover {
@@ -1015,7 +1011,7 @@
   }
 
   .game-explanation-next {
-    margin-top: 12px;
+    margin-top: 20px;
     padding: 13px 32px;
   }
 }
