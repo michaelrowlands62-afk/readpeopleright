@@ -21,8 +21,11 @@
   text-decoration: none;
 }
 
-.navbar-eye {
+.navbar-logo-img {
+  height: 40px;
+  width: auto;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 .navbar-wordmark {
