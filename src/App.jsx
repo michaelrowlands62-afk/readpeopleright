@@ -57,8 +57,8 @@ const PAGE_META = {
     description: 'Discover your Relationship Connection Score. Answer 15 questions about how you and your partner interact physically and emotionally. Perfect for couples to compare results.',
   },
   '/lie-detector': {
-    title: 'Lie Detector - BodyLanguageIQ',
-    description: 'Learn to spot deception through micro-expressions and body language tells. Coming soon!',
+    title: 'Lie Detector Test: Can You Spot a Liar? | BodyLanguageIQ',
+    description: 'Think you can spot a liar? Test your deception detection skills with 10 real body language scenarios. Get your Lie Detector Rating now.',
   },
   '/guides': {
     title: 'Body Language Guides — Learn to Read People | BodyLanguageIQ',
@@ -100,7 +100,7 @@ const PAGE_META = {
 
 function Layout() {
   const { pathname } = useLocation()
-  const isFullscreen = pathname === '/game' || pathname === '/admin'
+  const isFullscreen = pathname === '/game' || pathname === '/admin' || pathname === '/lie-detector'
 
   useEffect(() => {
     const meta = PAGE_META[pathname]
