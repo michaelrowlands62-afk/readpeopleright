@@ -92,6 +92,10 @@ export default function LieDetector() {
   const [shareSuccess, setShareSuccess] = useState(false)
   const navigate = useNavigate()
 
+  function handleLogoClick() {
+    navigate('/')
+  }
+
   function handleStartTest() {
     setState('scenario')
   }
@@ -155,8 +159,21 @@ export default function LieDetector() {
 
   if (state === 'intro') {
     return (
-      <main className="lie-detector">
-        <div className="ld-intro">
+      <div className="ld-container">
+        <header className="ld-header">
+          <button
+            className="ld-logo"
+            onClick={handleLogoClick}
+            aria-label="BodyLanguageIQ home"
+          >
+            <img src="/Logo.png.png" alt="BodyLanguageIQ logo" className="ld-logo-img" />
+            <span className="ld-logo-wordmark">
+              Body<span className="ld-logo-accent">Language</span>IQ
+            </span>
+          </button>
+        </header>
+        <main className="lie-detector">
+          <div className="ld-intro">
           <div className="ld-ecg-container">
             <svg className="ld-ecg" viewBox="0 0 1000 100" preserveAspectRatio="none">
               <polyline
@@ -180,6 +197,7 @@ export default function LieDetector() {
           <p className="ld-intro-note">Based on real body language psychology.</p>
         </div>
       </main>
+    </div>
     )
   }
 
@@ -188,7 +206,20 @@ export default function LieDetector() {
     const progress = ((currentScenario + 1) / SCENARIOS.length) * 100
 
     return (
-      <main className="lie-detector">
+      <div className="ld-container">
+        <header className="ld-header">
+          <button
+            className="ld-logo"
+            onClick={handleLogoClick}
+            aria-label="BodyLanguageIQ home"
+          >
+            <img src="/Logo.png.png" alt="BodyLanguageIQ logo" className="ld-logo-img" />
+            <span className="ld-logo-wordmark">
+              Body<span className="ld-logo-accent">Language</span>IQ
+            </span>
+          </button>
+        </header>
+        <main className="lie-detector">
         <div className="ld-scenario-wrapper">
           <div className={`ld-flash ${flashVisible ? (isCorrect ? 'ld-flash--correct' : 'ld-flash--wrong') : ''}`} />
 
@@ -268,6 +299,7 @@ export default function LieDetector() {
           </div>
         </div>
       </main>
+    </div>
     )
   }
 
@@ -295,7 +327,20 @@ export default function LieDetector() {
     }
 
     return (
-      <main className="lie-detector">
+      <div className="ld-container">
+        <header className="ld-header">
+          <button
+            className="ld-logo"
+            onClick={handleLogoClick}
+            aria-label="BodyLanguageIQ home"
+          >
+            <img src="/Logo.png.png" alt="BodyLanguageIQ logo" className="ld-logo-img" />
+            <span className="ld-logo-wordmark">
+              Body<span className="ld-logo-accent">Language</span>IQ
+            </span>
+          </button>
+        </header>
+        <main className="lie-detector">
         <div className="ld-results">
           <div className="ld-polygraph-container">
             <svg className="ld-polygraph" viewBox="0 0 1000 150" preserveAspectRatio="none">
@@ -333,6 +378,7 @@ export default function LieDetector() {
           </div>
         </div>
       </main>
+    </div>
     )
   }
 }

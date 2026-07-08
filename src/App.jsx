@@ -37,8 +37,8 @@ const PAGE_META = {
     description: 'A comprehensive A–Z guide to nonverbal signals and body language cues. Explore 60 entries covering stress, attraction, deception, confidence and more — each with clear explanations.',
   },
   '/personality-test': {
-    title: 'Body Language Personality Test - BodyLanguageIQ',
-    description: 'Discover your natural body language style with our 12-question personality test. Are you a Connector, Observer, Performer, Diplomat, Protector or Authority?',
+    title: 'Body Language Personality Test: What Does Your Body Language Say About You | BodyLanguageIQ',
+    description: 'Discover your body language personality type in two levels. Find out whether you are a Connector, Observer, Performer, Diplomat, Protector or Authority and what it reveals about you.',
   },
   '/courses': {
     title: 'Courses - BodyLanguageIQ',
@@ -53,8 +53,8 @@ const PAGE_META = {
     description: 'Have a question, feedback or partnership enquiry? Get in touch with the BodyLanguageIQ team using our contact form.',
   },
   '/relationship-quiz': {
-    title: 'Relationship Body Language Quiz — How Connected Are You? | BodyLanguageIQ',
-    description: 'Discover your Relationship Connection Score. Answer 15 questions about how you and your partner interact physically and emotionally. Perfect for couples to compare results.',
+    title: 'Relationship Mastery Test: How Deeply Do You Know Each Other | BodyLanguageIQ',
+    description: 'Three levels of relationship body language questions. Test your emotional attunement and nonverbal connection. How well do you really know your partner.',
   },
   '/lie-detector': {
     title: 'Lie Detector Test: Can You Spot a Liar? | BodyLanguageIQ',

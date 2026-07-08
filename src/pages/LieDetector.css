@@ -1,12 +1,68 @@
+/* ── LIE DETECTOR CONTAINER ── */
+
+.ld-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* ── LIE DETECTOR HEADER ── */
+
+.ld-header {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 56px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.ld-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.ld-logo:hover {
+  opacity: 0.8;
+}
+
+.ld-logo-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.ld-logo-wordmark {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  font-family: var(--sans);
+}
+
+.ld-logo-accent {
+  color: var(--gold);
+}
+
 /* ── LIE DETECTOR SHELL ── */
 
 .lie-detector {
-  min-height: 100vh;
+  flex: 1;
   background: var(--bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 20px;
   animation: fadeIn 0.5s ease;
 }
 
@@ -605,8 +661,25 @@
 /* ── MOBILE RESPONSIVE ── */
 
 @media (max-width: 600px) {
+  .ld-header {
+    height: 52px;
+    padding: 0 16px;
+  }
+
+  .ld-logo-img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .ld-logo-wordmark {
+    font-size: 13px;
+    max-width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .lie-detector {
-    padding: 20px 16px;
+    padding: 16px;
   }
 
   .ld-intro {
@@ -750,8 +823,22 @@
 }
 
 @media (max-width: 400px) {
+  .ld-header {
+    height: 48px;
+    padding: 0 12px;
+  }
+
+  .ld-logo-img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .ld-logo-wordmark {
+    font-size: 12px;
+  }
+
   .lie-detector {
-    padding: 12px 12px;
+    padding: 12px;
   }
 
   .ld-ecg-container {
