@@ -17,6 +17,21 @@ import GuideMyths from './pages/GuideMyths'
 import GuideWorkplaceBodyLanguage from './pages/GuideWorkplaceBodyLanguage'
 import GuideFirstDate from './pages/GuideFirstDate'
 import GuideAroundTheWorld from './pages/GuideAroundTheWorld'
+import GuideReadingEyes from './pages/GuideReadingEyes'
+import GuideVideoCalls from './pages/GuideVideoCalls'
+import GuideNervousBodyLanguage from './pages/GuideNervousBodyLanguage'
+import GuidePublicSpeaking from './pages/GuidePublicSpeaking'
+import GuideArguments from './pages/GuideArguments'
+import GuideReadingChildren from './pages/GuideReadingChildren'
+import GuideStressSignals from './pages/GuideStressSignals'
+import GuidePowerBodyLanguage from './pages/GuidePowerBodyLanguage'
+import GuideLyingSignals from './pages/GuideLyingSignals'
+import GuideMaleAttractionSignals from './pages/GuideMaleAttractionSignals'
+import GuideAlphaBodyLanguage from './pages/GuideAlphaBodyLanguage'
+import GuideSuccessBodyLanguage from './pages/GuideSuccessBodyLanguage'
+import GuideRelationshipTypes from './pages/GuideRelationshipTypes'
+import GuideNegotiationBodyLanguage from './pages/GuideNegotiationBodyLanguage'
+import GuideBodyLanguageAtParty from './pages/GuideBodyLanguageAtParty'
 import Game from './pages/Game'
 import Admin from './pages/Admin'
 import About from './pages/About'
@@ -96,6 +111,66 @@ const PAGE_META = {
     title: 'Body Language Around The World: Cultural Differences Explained | BodyLanguageIQ',
     description: 'The same gesture means different things in different cultures. Learn the essential cultural body language differences to avoid costly misunderstandings in international situations.',
   },
+  '/guides/reading-eyes': {
+    title: "How to Read Someone's Eyes: The Complete Guide | BodyLanguageIQ",
+    description: 'Learn to read the eyes accurately. Pupil dilation, eye contact patterns, gaze direction and the micro signals that reveal true emotion before conscious control takes over.',
+  },
+  '/guides/video-calls': {
+    title: 'Body Language on Video Calls: The Complete Guide | BodyLanguageIQ',
+    description: 'Master the unique body language of video calls. Learn what your camera angle, eye contact, background and posture communicate to others on screen and how to project confidence remotely.',
+  },
+  '/guides/nervous-body-language': {
+    title: 'Nervous Body Language: Signs of Anxiety and How to Manage Them | BodyLanguageIQ',
+    description: 'Learn to recognise the signs of nervousness in yourself and others. Understand what triggers anxiety signals, how to read them accurately and how to manage them in high pressure situations.',
+  },
+  '/guides/public-speaking': {
+    title: 'Body Language for Public Speaking: Command Any Room | BodyLanguageIQ',
+    description: 'Master the body language of confident public speaking. Learn the posture, gestures, eye contact and movement that turn nervous presenters into compelling and memorable speakers.',
+  },
+  '/guides/arguments': {
+    title: 'Reading Body Language in Arguments: What People Really Mean | BodyLanguageIQ',
+    description: 'Arguments have their own body language grammar. Learn to read escalation signals, genuine distress versus performance and the nonverbal cues that reveal what your partner really means during conflict.',
+  },
+  '/guides/reading-children': {
+    title: 'Reading Children\'s Body Language: What Your Child Is Really Telling You | BodyLanguageIQ',
+    description: 'Children cannot always express what they feel in words. Learn to read the nonverbal signals that reveal how your child is really feeling, from anxiety and fear to joy and genuine confidence.',
+  },
+  '/guides/stress-signals': {
+    title: 'Body Language Signs of Stress: How to Read and Recognise Anxiety | BodyLanguageIQ',
+    description: 'Stress leaks through the body before the mind acknowledges it. Learn to recognise the early physical signals of stress in yourself and others and respond before it escalates.',
+  },
+  '/guides/power-body-language': {
+    title: 'Power Body Language: The Signals of Dominance, Status and Authority | BodyLanguageIQ',
+    description: 'Understand the nonverbal signals of dominance, status and authority. Learn how power expresses itself physically and how to project calm confidence in any situation.',
+  },
+  '/guides/lying-signs': {
+    title: 'Body Language Signs Someone Is Lying to You: A Personal Guide | BodyLanguageIQ',
+    description: 'A personal guide to spotting deception in everyday situations. The signals that reveal dishonesty in partners, colleagues and friends and why context always matters.',
+  },
+  '/guides/male-attraction-signals': {
+    title: 'Body Language of Attraction in Men: What to Look For | BodyLanguageIQ',
+    description: 'The specific signals men display when genuinely attracted to someone. Learn to distinguish real interest from social politeness and read the subtle cues most people miss.',
+  },
+  '/guides/alpha-body-language': {
+    title: 'Alpha Body Language: The Signals of Natural Confidence and Authority | BodyLanguageIQ',
+    description: 'What genuine confidence and natural authority look like in the body. The signals that project leadership and calm command without aggression or performance.',
+  },
+  '/guides/success-body-language': {
+    title: 'Body Language Secrets of Successful People: What They Do Differently | BodyLanguageIQ',
+    description: 'What do the most successful people do differently with their body language? The nonverbal habits that build trust, project competence and open doors before a word is spoken.',
+  },
+  '/guides/relationship-types': {
+    title: 'Body Language in Different Relationships: Friends, Family, Colleagues and Partners | BodyLanguageIQ',
+    description: 'Friends, family, colleagues and romantic partners all have different nonverbal languages. Learn to read the unique body language patterns of each type of relationship.',
+  },
+  '/guides/negotiation-body-language': {
+    title: 'Body Language in Negotiations: Read the Room and Win | BodyLanguageIQ',
+    description: 'Negotiations are won and lost in the nonverbal space. Learn to read the signals that reveal genuine interest, resistance and readiness to agree before the other side says a word.',
+  },
+  '/guides/social-situations': {
+    title: 'How to Read Body Language at a Party: Social Signals Explained | BodyLanguageIQ',
+    description: 'Social gatherings are rich with nonverbal signals. Learn to read who is genuinely enjoying themselves, who wants to leave and what the body language of real connection looks like in a crowd.',
+  },
 }
 
 function Layout() {
@@ -131,6 +206,21 @@ function Layout() {
           <Route path="/guides/workplace-body-language" element={<GuideWorkplaceBodyLanguage />} />
           <Route path="/guides/first-date" element={<GuideFirstDate />} />
           <Route path="/guides/around-the-world" element={<GuideAroundTheWorld />} />
+          <Route path="/guides/reading-eyes" element={<GuideReadingEyes />} />
+          <Route path="/guides/video-calls" element={<GuideVideoCalls />} />
+          <Route path="/guides/nervous-body-language" element={<GuideNervousBodyLanguage />} />
+          <Route path="/guides/public-speaking" element={<GuidePublicSpeaking />} />
+          <Route path="/guides/arguments" element={<GuideArguments />} />
+          <Route path="/guides/reading-children" element={<GuideReadingChildren />} />
+          <Route path="/guides/stress-signals" element={<GuideStressSignals />} />
+          <Route path="/guides/power-body-language" element={<GuidePowerBodyLanguage />} />
+          <Route path="/guides/lying-signs" element={<GuideLyingSignals />} />
+          <Route path="/guides/male-attraction-signals" element={<GuideMaleAttractionSignals />} />
+          <Route path="/guides/alpha-body-language" element={<GuideAlphaBodyLanguage />} />
+          <Route path="/guides/success-body-language" element={<GuideSuccessBodyLanguage />} />
+          <Route path="/guides/relationship-types" element={<GuideRelationshipTypes />} />
+          <Route path="/guides/negotiation-body-language" element={<GuideNegotiationBodyLanguage />} />
+          <Route path="/guides/social-situations" element={<GuideBodyLanguageAtParty />} />
           <Route path="/game" element={<Game />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/about" element={<About />} />
