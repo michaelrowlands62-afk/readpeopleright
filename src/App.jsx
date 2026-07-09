@@ -57,8 +57,8 @@ const PAGE_META = {
     description: 'Three levels of relationship body language questions. Test your emotional attunement and nonverbal connection. How well do you really know your partner.',
   },
   '/lie-detector': {
-    title: 'Lie Detector Test: Can You Spot a Liar? | BodyLanguageIQ',
-    description: 'Think you can spot a liar? Test your deception detection skills with 10 real body language scenarios. Get your Lie Detector Rating now.',
+    title: 'Lie Detector Test: Three Levels of Deception Detection | BodyLanguageIQ',
+    description: 'Can you spot a liar? Three levels of increasing difficulty. Beginner, Intermediate and Expert. Score 40 out of 50 to unlock the next level. Test your deception detection skills now.',
   },
   '/guides': {
     title: 'Body Language Guides — Learn to Read People | BodyLanguageIQ',
