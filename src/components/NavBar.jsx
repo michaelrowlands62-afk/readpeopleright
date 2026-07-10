@@ -7,6 +7,7 @@ const playLinks = [
   { to: '/personality-test', label: 'Personality Test' },
   { to: '/relationship-quiz', label: 'Relationship Quiz' },
   { to: '/lie-detector', label: 'Lie Detector' },
+  { to: '/poker-face', label: 'Poker Face Challenge' },
 ]
 
 const learnLinks = [

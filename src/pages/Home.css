@@ -4,49 +4,6 @@
   padding: 0 24px 80px;
 }
 
-/* ── Hero ── */
-.hero {
-  text-align: center;
-  padding: 96px 0 80px;
-}
-
-.hero-eyebrow {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin: 0 0 20px;
-}
-
-.hero-headline {
-  font-size: clamp(36px, 6vw, 64px);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--text);
-  margin: 0 0 24px;
-}
-
-.gold {
-  color: var(--gold);
-}
-
-.hero-sub {
-  font-size: 18px;
-  line-height: 1.65;
-  color: var(--muted);
-  max-width: 560px;
-  margin: 0 auto 40px;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 /* ── Buttons ── */
 .btn {
   display: inline-flex;
@@ -58,7 +15,8 @@
   font-weight: 600;
   cursor: pointer;
   border: none;
-  transition: opacity 0.15s, transform 0.15s;
+  transition: all 0.15s ease;
+  font-family: inherit;
 }
 
 .btn:hover {
@@ -86,307 +44,491 @@
   color: var(--gold);
 }
 
-/* ── Section shared ── */
-.section-title {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--text);
-  margin: 0 0 40px;
-  text-align: center;
+.btn-game,
+.btn-guide,
+.btn-resource {
+  background: var(--gold);
+  color: #1a0f1f;
+  padding: 12px 28px;
+  font-size: 14px;
 }
 
-/* ── How It Works ── */
-.how-it-works {
-  padding: 64px 0;
+.btn-resource--outlined {
+  background: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+}
+
+.btn-resource--outlined:hover {
+  background: rgba(201, 168, 76, 0.1);
+}
+
+.btn-view-all {
+  background: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  padding: 14px 36px;
+  font-size: 16px;
+}
+
+.btn-view-all:hover {
+  background: rgba(201, 168, 76, 0.1);
+}
+
+/* ── Section 1: Hero ── */
+.hero {
+  text-align: center;
+  padding: 96px 0 80px;
+}
+
+.hero-h1 {
+  font-size: clamp(40px, 7vw, 72px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+
+.hero-h2 {
+  font-size: clamp(24px, 5vw, 40px);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--gold);
+  margin: 0 0 32px;
+}
+
+.hero-paragraph {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Section 2: What Is Body Language ── */
+.what-is-section {
+  padding: 80px 0;
   border-top: 1px solid var(--border);
 }
 
-.steps {
+.section-heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 48px;
+  text-align: center;
+}
+
+.what-is-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.what-is-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ── Section 3: Games ── */
+.games-section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-subtitle {
+  font-size: 17px;
+  color: var(--muted);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+.games-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
-@media (max-width: 700px) {
-  .steps {
-    grid-template-columns: 1fr;
-  }
+.game-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  transition: all 0.15s ease;
 }
 
-.step-card {
+.game-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.game-card--full-width {
+  grid-column: 1 / -1;
+}
+
+.game-emoji {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.game-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.game-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ── Section 4: Applications ── */
+.applications-section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+}
+
+.applications-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.application-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 32px 28px;
 }
 
-.step-number {
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--gold);
-  margin-bottom: 16px;
-}
-
-.step-title {
+.application-title {
   font-size: 20px;
   font-weight: 700;
-  color: var(--text);
-  margin: 0 0 12px;
+  color: var(--gold);
+  margin: 0 0 16px;
 }
 
-.step-desc {
+.application-card p {
   font-size: 15px;
-  line-height: 1.6;
-  color: var(--muted);
-  margin: 0;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0 0 16px;
 }
 
-/* ── Categories ── */
-.categories {
-  padding: 64px 0 0;
+.application-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Section 5: Guides ── */
+.guides-section {
+  padding: 80px 0;
   border-top: 1px solid var(--border);
 }
 
-.categories-grid {
+.featured-guides-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
 }
 
-@media (max-width: 860px) {
-  .categories-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .categories-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.category-card {
+.guide-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 28px 24px;
-  text-align: left;
-  cursor: pointer;
-  transition: border-color 0.15s, transform 0.15s;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
+  transition: all 0.15s ease;
 }
 
-.category-card:hover {
+.guide-card:hover {
   border-color: var(--gold);
   transform: translateY(-2px);
 }
 
-.category-icon {
-  font-size: 28px;
-  line-height: 1;
-}
-
-.category-title {
-  font-size: 16px;
+.guide-title {
+  font-size: 18px;
   font-weight: 700;
   color: var(--text);
   margin: 0;
 }
 
-.category-desc {
-  font-size: 13px;
-  line-height: 1.5;
+.guide-description {
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--muted);
   margin: 0;
+  flex-grow: 1;
 }
 
-/* ── Why Body Language Matters ── */
+.view-all-container {
+  display: flex;
+  justify-content: center;
+}
 
-.why-matters {
-  padding: 64px 0;
+/* ── Section 6: Resources ── */
+.resources-section {
+  padding: 80px 0;
   border-top: 1px solid var(--border);
 }
 
-.why-matters-intro {
-  text-align: center;
-  font-size: 17px;
-  line-height: 1.65;
-  color: var(--muted);
-  max-width: 560px;
-  margin: -20px auto 48px;
-}
-
-.why-grid {
+.resources-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
 }
 
-.why-card {
+.resource-card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 36px 28px 32px;
+  border-radius: 12px;
+  padding: 40px 32px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  text-align: center;
+  gap: 20px;
 }
 
-.why-stat {
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
+.resource-title {
+  font-size: 22px;
   font-weight: 700;
-  color: var(--gold);
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-
-.why-text {
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--muted);
+  color: var(--text);
   margin: 0;
 }
 
-@media (max-width: 700px) {
-  .why-grid {
+.resource-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* ── Responsive Design ── */
+@media (max-width: 900px) {
+  .games-grid {
     grid-template-columns: 1fr;
   }
 
-  .why-card {
-    padding: 28px 24px;
-    flex-direction: row;
-    align-items: flex-start;
-    text-align: left;
+  .applications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-guides-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 0 20px 60px;
+  }
+
+  .hero {
+    padding: 72px 0 60px;
+  }
+
+  .hero-h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .hero-h2 {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .hero-paragraph {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .what-is-section {
+    padding: 60px 0;
+  }
+
+  .what-is-content {
     gap: 20px;
   }
 
-  .why-stat {
-    flex-shrink: 0;
-    width: 100px;
-    font-size: 1.75rem;
-  }
-}
-
-/* ── Platform Stats ── */
-
-.platform-stats {
-  padding: 64px 0;
-  border-top: 1px solid var(--border);
-}
-
-.platform-stats-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.platform-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 40px 24px;
-  border-right: 1px solid var(--border);
-  text-align: center;
-}
-
-.platform-stat:last-child {
-  border-right: none;
-}
-
-.platform-stat-value {
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  font-weight: 700;
-  color: var(--gold-light);
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-
-.platform-stat-label {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  line-height: 1.3;
-}
-
-@media (max-width: 700px) {
-  .platform-stats-row {
-    grid-template-columns: repeat(2, 1fr);
+  .what-is-content p {
+    font-size: 15px;
+    line-height: 1.7;
   }
 
-  .platform-stat {
-    padding: 32px 16px;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+  .section-heading {
+    font-size: 26px;
+    margin-bottom: 32px;
   }
 
-  .platform-stat:nth-child(2n) {
-    border-right: none;
+  .section-subtitle {
+    font-size: 16px;
+    margin-bottom: 32px;
   }
 
-  .platform-stat:nth-last-child(-n+2) {
-    border-bottom: none;
+  .games-section {
+    padding: 60px 0;
   }
-}
 
-/* ── Courses Teaser ── */
-
-.courses-teaser {
-  padding: 64px 0 0;
-  border-top: 1px solid var(--border);
-}
-
-.courses-teaser-card {
-  background: var(--card);
-  border: 1px solid var(--gold);
-  border-radius: 16px;
-  padding: 56px 40px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  box-shadow: 0 0 40px rgba(201, 168, 76, 0.08);
-}
-
-.courses-teaser-title {
-  font-size: clamp(22px, 3.5vw, 32px);
-  font-weight: 700;
-  color: var(--text);
-  margin: 0;
-  letter-spacing: -0.01em;
-}
-
-.courses-teaser-desc {
-  font-size: 17px;
-  line-height: 1.65;
-  color: var(--muted);
-  max-width: 480px;
-  margin: 0;
-}
-
-.courses-teaser-btn {
-  background: var(--gold);
-  color: #1a0f1f;
-  font-size: 16px;
-  margin-top: 4px;
-}
-
-@media (max-width: 600px) {
-  .courses-teaser-card {
-    padding: 40px 24px;
+  .games-grid {
     gap: 16px;
+  }
+
+  .game-card {
+    padding: 24px 20px;
+  }
+
+  .game-emoji {
+    font-size: 40px;
+  }
+
+  .game-title {
+    font-size: 18px;
+  }
+
+  .game-text {
+    font-size: 13px;
+  }
+
+  .applications-section {
+    padding: 60px 0;
+  }
+
+  .application-card {
+    padding: 24px 20px;
+  }
+
+  .application-title {
+    font-size: 18px;
+  }
+
+  .application-card p {
+    font-size: 14px;
+  }
+
+  .guides-section {
+    padding: 60px 0;
+  }
+
+  .featured-guides-grid {
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .guide-card {
+    padding: 20px 16px;
+  }
+
+  .guide-title {
+    font-size: 16px;
+  }
+
+  .guide-description {
+    font-size: 13px;
+  }
+
+  .resources-section {
+    padding: 60px 0;
+  }
+
+  .resources-grid {
+    gap: 24px;
+  }
+
+  .resource-card {
+    padding: 32px 24px;
+  }
+
+  .resource-title {
+    font-size: 20px;
+  }
+
+  .resource-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 0 16px 48px;
+  }
+
+  .hero {
+    padding: 60px 0 48px;
+  }
+
+  .hero-h1 {
+    font-size: 28px;
+  }
+
+  .hero-h2 {
+    font-size: 18px;
+  }
+
+  .hero-paragraph {
+    font-size: 15px;
+  }
+
+  .btn {
+    padding: 12px 28px;
+    font-size: 14px;
+  }
+
+  .section-heading {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .section-subtitle {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .game-emoji {
+    font-size: 36px;
+  }
+
+  .application-card {
+    padding: 20px 16px;
+  }
+
+  .resource-card {
+    padding: 24px 16px;
   }
 }

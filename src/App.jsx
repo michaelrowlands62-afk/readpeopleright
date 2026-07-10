@@ -8,6 +8,7 @@ import Dictionary from './pages/Dictionary'
 import PersonalityTest from './pages/PersonalityTest'
 import RelationshipQuiz from './pages/RelationshipQuiz'
 import LieDetector from './pages/LieDetector'
+import PokerFace from './pages/PokerFace'
 import Guides from './pages/Guides'
 import GuideSpotALiar from './pages/GuideSpotALiar'
 import GuideConfidentBodyLanguage from './pages/GuideConfidentBodyLanguage'
@@ -40,8 +41,8 @@ import './App.css'
 
 const PAGE_META = {
   '/': {
-    title: 'BodyLanguageIQ - Can You Read People? Test Your Body Language Skills',
-    description: 'Test your body language IQ with our free interactive quiz game. Watch real signals, make your guess, and learn what people are really communicating through posture, gestures and expression.',
+    title: 'BodyLanguageIQ: Free Body Language Quizzes, Games and Guides | Read People Better',
+    description: 'Learn to read body language with free interactive quizzes, games and in-depth guides. Test your skills across 7 categories including deception detection, attraction signals and workplace dynamics.',
   },
   '/episodes': {
     title: 'Browse Episodes - BodyLanguageIQ',
@@ -74,6 +75,10 @@ const PAGE_META = {
   '/lie-detector': {
     title: 'Lie Detector Test: Three Levels of Deception Detection | BodyLanguageIQ',
     description: 'Can you spot a liar? Three levels of increasing difficulty. Beginner, Intermediate and Expert. Score 40 out of 50 to unlock the next level. Test your deception detection skills now.',
+  },
+  '/poker-face': {
+    title: 'The Poker Face Challenge: Can You See Through a Poker Face? | BodyLanguageIQ',
+    description: '10 scenarios. 10 people trying not to be read. Test your ability to read people who are actively concealing their true reaction. Get your Poker Face Rating now.',
   },
   '/guides': {
     title: 'Body Language Guides — Learn to Read People | BodyLanguageIQ',
@@ -175,7 +180,7 @@ const PAGE_META = {
 
 function Layout() {
   const { pathname } = useLocation()
-  const isFullscreen = pathname === '/game' || pathname === '/admin' || pathname === '/lie-detector'
+  const isFullscreen = pathname === '/game' || pathname === '/admin' || pathname === '/lie-detector' || pathname === '/poker-face'
 
   useEffect(() => {
     const meta = PAGE_META[pathname]
@@ -197,6 +202,7 @@ function Layout() {
           <Route path="/personality-test" element={<PersonalityTest />} />
           <Route path="/relationship-quiz" element={<RelationshipQuiz />} />
           <Route path="/lie-detector" element={<LieDetector />} />
+          <Route path="/poker-face" element={<PokerFace />} />
           <Route path="/guides" element={<Guides />} />
           <Route path="/guides/spot-a-liar" element={<GuideSpotALiar />} />
           <Route path="/guides/confident-body-language" element={<GuideConfidentBodyLanguage />} />
