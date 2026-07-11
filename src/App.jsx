@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import NavBar from './components/NavBar'
+import Footer from './components/Footer'
 import Home from './pages/Home'
 import Episodes from './pages/Episodes'
 import Courses from './pages/Courses'
@@ -37,6 +38,8 @@ import Game from './pages/Game'
 import Admin from './pages/Admin'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import NotFound from './pages/NotFound'
 import './App.css'
 
 const PAGE_META = {
@@ -67,6 +70,10 @@ const PAGE_META = {
   '/contact': {
     title: 'Contact Us - BodyLanguageIQ',
     description: 'Have a question, feedback or partnership enquiry? Get in touch with the BodyLanguageIQ team using our contact form.',
+  },
+  '/privacy-policy': {
+    title: 'Privacy Policy | BodyLanguageIQ',
+    description: 'BodyLanguageIQ privacy policy. Learn how we collect, use and protect your data.',
   },
   '/relationship-quiz': {
     title: 'Relationship Mastery Test: How Deeply Do You Know Each Other | BodyLanguageIQ',
@@ -231,8 +238,11 @@ function Layout() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
+      {!isFullscreen && <Footer />}
     </>
   )
 }

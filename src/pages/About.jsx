@@ -1,20 +1,22 @@
 import { Link } from 'react-router-dom'
 import './About.css'
 
-const categories = [
-  { icon: '💑', title: 'Read Your Partner', description: 'Decode the unspoken signals in your closest relationships and understand what your partner is really communicating.' },
-  { icon: '💘', title: 'Attraction Signals', description: 'Learn to spot genuine signs of interest, chemistry, and romantic intent through posture, gaze, and gesture.' },
-  { icon: '💼', title: 'Workplace & Career', description: 'Read colleagues, managers, and clients more accurately to navigate professional situations with confidence.' },
-  { icon: '🕵️', title: 'Spot a Liar', description: 'Identify deception through the subtle body language tells and micro-behaviours that give people away.' },
-  { icon: '😊', title: 'Read Emotions', description: 'Recognise what people are genuinely feeling beneath the surface, even when they are trying to hide it.' },
-  { icon: '⚡', title: 'First Impressions', description: 'Train your ability to make fast, accurate reads of a person from just a brief glance.' },
-  { icon: '🔬', title: 'Micro-Expression Expert', description: 'Catch the fleeting involuntary expressions that flash across a face in under a second.' },
+const whatYouCanDo = [
+  { emoji: '🧠', title: 'Body Language Quiz', description: 'Seven categories covering deception, attraction, workplace dynamics, micro-expressions and more. Four difficulty levels from Beginner to Expert with real photographic images and a 20 second countdown clock.' },
+  { emoji: '🔍', title: 'Lie Detector Test', description: 'Read ten scenarios and decide — truth or lie? Three levels of increasing difficulty test your ability to spot deception signals in realistic everyday situations.' },
+  { emoji: '👁️', title: 'Poker Face Challenge', description: 'Ten scenarios featuring people actively concealing their true reaction. Three levels from Beginner to Expert challenge you to see beneath even the most controlled surface.' },
+  { emoji: '👤', title: 'Body Language Personality Test', description: 'Answer 24 questions across two levels and discover whether you are a Connector, Observer, Performer, Diplomat, Protector or Authority. Find out what your body language says about you.' },
+  { emoji: '❤️', title: 'Relationship Body Language Quiz', description: 'Three levels of relationship body language questions covering physical connection, emotional attunement and the subtlest signals of deep partnership. Compare results with your partner.' },
+  { emoji: '📚', title: 'Body Language Guides', description: 'Twenty three in-depth guides covering every aspect of reading people — from spotting liars and reading attraction signals to body language in negotiations, arguments and video calls.' },
 ]
 
-const steps = [
-  { number: '01', title: 'Choose an Episode', description: 'Pick from one of seven categories based on what you want to learn — from spotting liars to reading attraction signals.' },
-  { number: '02', title: 'Study the Image', description: 'A real photograph appears on screen. Study it carefully and read every posture, gesture, and facial expression you can see.' },
-  { number: '03', title: 'Answer Before Time Runs Out', description: 'Choose your answer from four options before the countdown reaches zero, then read the explanation to understand what you saw.' },
+const whatYouWillLearn = [
+  { emoji: '🔎', title: 'Spotting Deception', description: 'Learn the real clusters and context-dependent signals that reveal dishonesty — and unlearn the popular myths that make most people worse at detecting lies than they would be by chance.' },
+  { emoji: '😍', title: 'Reading Attraction', description: 'Develop the ability to distinguish genuine romantic interest from social politeness and read the subtle signals of attraction that most people miss entirely.' },
+  { emoji: '💼', title: 'Workplace Dynamics', description: 'Read colleagues, managers, clients and interviewers more accurately and understand the nonverbal power dynamics that shape every professional interaction.' },
+  { emoji: '💪', title: 'Projecting Confidence', description: 'Understand what genuinely confident body language looks like, how it differs from performed confidence and how to develop it deliberately in yourself.' },
+  { emoji: '👥', title: 'Relationship Attunement', description: 'Build the ability to read what your partner is genuinely feeling rather than what they are saying and develop the nonverbal sensitivity that deepens long term relationships.' },
+  { emoji: '🔬', title: 'Micro-Expression Awareness', description: 'Train your ability to catch the fleeting involuntary expressions that flash across a face in fractions of a second before conscious control reasserts itself.' },
 ]
 
 export default function About() {
@@ -72,31 +74,31 @@ export default function About() {
           </div>
         </section>
 
-        {/* How It Works */}
+        {/* What You Can Do Here */}
         <section className="about-section">
-          <h2 className="about-section-title">How It Works</h2>
-          <div className="about-steps">
-            {steps.map((step) => (
-              <div key={step.number} className="about-step-card">
-                <span className="about-step-number">{step.number}</span>
-                <h3 className="about-step-title">{step.title}</h3>
-                <p className="about-step-desc">{step.description}</p>
+          <h2 className="about-section-title">What You Can Do Here</h2>
+          <p className="about-section-intro">BodyLanguageIQ is far more than a quiz. Here is everything the platform has to offer.</p>
+          <div className="about-features-grid">
+            {whatYouCanDo.map((feature) => (
+              <div key={feature.title} className="about-feature-card">
+                <span className="about-feature-emoji">{feature.emoji}</span>
+                <h3 className="about-feature-title">{feature.title}</h3>
+                <p className="about-feature-desc">{feature.description}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Our Categories */}
+        {/* What You Will Learn */}
         <section className="about-section">
-          <h2 className="about-section-title">Our Categories</h2>
-          <div className="about-categories">
-            {categories.map((cat) => (
-              <div key={cat.title} className="about-category-card">
-                <span className="about-category-icon">{cat.icon}</span>
-                <div>
-                  <h3 className="about-category-title">{cat.title}</h3>
-                  <p className="about-category-desc">{cat.description}</p>
-                </div>
+          <h2 className="about-section-title">What You Will Learn</h2>
+          <p className="about-section-intro">Every game, test and guide on BodyLanguageIQ is designed to build practical skills you can use in real life.</p>
+          <div className="about-skills-grid">
+            {whatYouWillLearn.map((skill) => (
+              <div key={skill.title} className="about-skill-card">
+                <span className="about-skill-emoji">{skill.emoji}</span>
+                <h3 className="about-skill-title">{skill.title}</h3>
+                <p className="about-skill-desc">{skill.description}</p>
               </div>
             ))}
           </div>
@@ -119,9 +121,11 @@ export default function About() {
                 your training.
               </p>
               <a
-                href="#"
+                href="https://youtube.com"
                 className="btn-youtube"
                 aria-label="Watch on YouTube"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Watch Now
               </a>

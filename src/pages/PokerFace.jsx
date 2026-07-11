@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import NavBar from '../components/NavBar'
+import Footer from '../components/Footer'
 import './PokerFace.css'
 
 const BEGINNER_SCENARIOS = [
@@ -617,6 +618,7 @@ export default function PokerFace() {
             </div>
           </main>
         </div>
+        <Footer />
       </div>
     )
   }
@@ -643,6 +645,7 @@ export default function PokerFace() {
             </div>
           </main>
         </div>
+        <Footer />
       </div>
     )
   }
@@ -781,6 +784,7 @@ export default function PokerFace() {
             </div>
           </main>
         </div>
+        <Footer />
       </div>
     )
   }

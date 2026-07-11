@@ -115,77 +115,81 @@
   margin: 0;
 }
 
-/* ── How It Works steps ── */
-.about-steps {
+/* ── Section Intro ── */
+.about-section-intro {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 32px;
+  font-weight: 500;
+}
+
+/* ── What You Can Do Here ── */
+.about-features-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-.about-step-card {
+.about-feature-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 28px 24px;
 }
 
-.about-step-number {
+.about-feature-emoji {
   display: block;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--gold);
+  font-size: 32px;
+  line-height: 1;
   margin-bottom: 14px;
 }
 
-.about-step-title {
-  font-size: 18px;
+.about-feature-title {
+  font-size: 17px;
   font-weight: 700;
   color: var(--text);
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 }
 
-.about-step-desc {
+.about-feature-desc {
   font-size: 14px;
   line-height: 1.65;
   color: var(--muted);
   margin: 0;
 }
 
-/* ── Categories ── */
-.about-categories {
+/* ── What You Will Learn ── */
+.about-skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 20px;
 }
 
-.about-category-card {
+.about-skill-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 22px 24px;
-  display: flex;
-  gap: 18px;
-  align-items: flex-start;
+  padding: 28px 24px;
 }
 
-.about-category-icon {
-  font-size: 26px;
+.about-skill-emoji {
+  display: block;
+  font-size: 32px;
   line-height: 1;
-  flex-shrink: 0;
-  margin-top: 2px;
+  margin-bottom: 14px;
 }
 
-.about-category-title {
-  font-size: 15px;
+.about-skill-title {
+  font-size: 17px;
   font-weight: 700;
   color: var(--text);
-  margin: 0 0 6px;
+  margin: 0 0 12px;
 }
 
-.about-category-desc {
-  font-size: 13px;
-  line-height: 1.6;
+.about-skill-desc {
+  font-size: 14px;
+  line-height: 1.65;
   color: var(--muted);
   margin: 0;
 }
@@ -270,11 +274,11 @@
 
 /* ── Responsive ── */
 @media (max-width: 760px) {
-  .about-steps {
+  .about-features-grid {
     grid-template-columns: 1fr;
   }
 
-  .about-categories {
+  .about-skills-grid {
     grid-template-columns: 1fr;
   }
 

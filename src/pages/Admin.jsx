@@ -108,58 +108,26 @@ function AdminContent({ onLogout }) {
     setStatus(null)
     try {
       const base64 = imagePreview.split(',')[1]
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+
+      // Call Netlify function instead of OpenAI directly
+      const response = await fetch('/.netlify/functions/analyse-image', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'gpt-4o-mini',
-          messages: [
-            {
-              role: 'user',
-              content: [
-                {
-                  type: 'text',
-                  text: `You are a body language expert creating questions for an interactive quiz. This image is for the "${category}" category at ${difficulty} difficulty level.
-
-CRITICAL: The question and answers MUST be specifically about ${category}, NOT generic body language. Follow these category-specific guidelines:
-
-${category === 'Attraction Signals' ? '- Focus ONLY on romantic interest, flirting cues, and attraction signals. Do NOT create generic body language questions.' : ''}
-${category === 'Read Your Partner' ? '- Focus ONLY on intimate relationship dynamics, partner communication, and couple body language. Do NOT create generic questions.' : ''}
-${category === 'Workplace & Career' ? '- Focus ONLY on professional settings, office dynamics, business interactions, and career-related signals. Do NOT create generic questions.' : ''}
-${category === 'Spot a Liar' ? '- Focus ONLY on deception detection, dishonesty cues, and lying indicators. Do NOT create generic questions.' : ''}
-${category === 'Read Emotions' ? '- Focus ONLY on emotional states, feelings, and mood indicators. Do NOT create generic questions.' : ''}
-${category === 'First Impressions' ? '- Focus ONLY on initial meeting signals, introduction dynamics, and first-encounter body language. Do NOT create generic questions.' : ''}
-${category === 'Micro-Expression Expert' ? '- Focus ONLY on rapid facial expressions, fleeting emotional signals, and brief involuntary reactions. Do NOT create generic questions.' : ''}
-
-Analyse the specific body language signals shown in this image that are relevant to ${category}. Write a question and four answer options that are specifically tailored to ${category}, not generic body language descriptions.
-
-Return a JSON object only with no markdown formatting containing: question (a clear question about what the body language signals), answer_a, answer_b, answer_c, answer_d (four plausible answer options), correct_answer (the exact text of the correct answer matching one of the four options), fact (an educational explanation of the body language signal shown).`,
-                },
-                {
-                  type: 'image_url',
-                  image_url: {
-                    url: `data:${imageFile.type};base64,${base64}`,
-                  },
-                },
-              ],
-            },
-          ],
-          max_tokens: 1024,
+          imageData: base64,
+          category: category,
+          difficulty: difficulty,
         }),
       })
 
       if (!response.ok) {
         const err = await response.json()
-        throw new Error(err.error?.message || `API error ${response.status}`)
+        throw new Error(err.error || `Server error ${response.status}`)
       }
 
-      const data = await response.json()
-      const rawText = data.choices[0].message.content.trim()
-      const jsonText = rawText.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/i, '')
-      const parsed = JSON.parse(jsonText)
+      const parsed = await response.json()
 
       setQuestion(parsed.question || '')
       setAnswers([
