@@ -770,12 +770,12 @@ export default function RelationshipQuiz() {
             </svg>
 
             {allThreePassed && (
-              <h1 className="rq-congratulations">Congratulations You Are Soul Mates</h1>
+              <h2 className="rq-congratulations">Congratulations You Are Soul Mates</h2>
             )}
 
             {!allThreePassed && (
               <>
-                <h1 className="rq-results-title">{ratingTitle}</h1>
+                <h2 className="rq-results-title">{ratingTitle}</h2>
                 <p className="rq-results-desc">{ratingDesc}</p>
               </>
             )}

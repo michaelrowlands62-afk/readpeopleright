@@ -8,6 +8,7 @@ const playLinks = [
   { to: '/relationship-quiz', label: 'Relationship Quiz' },
   { to: '/lie-detector', label: 'Lie Detector' },
   { to: '/poker-face', label: 'Poker Face Challenge' },
+  { to: '/real-or-fake', label: 'Real or Fake Emotion' },
 ]
 
 const learnLinks = [

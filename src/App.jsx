@@ -10,6 +10,7 @@ import PersonalityTest from './pages/PersonalityTest'
 import RelationshipQuiz from './pages/RelationshipQuiz'
 import LieDetector from './pages/LieDetector'
 import PokerFace from './pages/PokerFace'
+import RealOrFake from './pages/RealOrFake'
 import Guides from './pages/Guides'
 import GuideSpotALiar from './pages/GuideSpotALiar'
 import GuideConfidentBodyLanguage from './pages/GuideConfidentBodyLanguage'
@@ -45,19 +46,19 @@ import './App.css'
 const PAGE_META = {
   '/': {
     title: 'BodyLanguageIQ: Free Body Language Quizzes, Games and Guides | Read People Better',
-    description: 'Learn to read body language with free interactive quizzes, games and in-depth guides. Test your skills across 7 categories including deception detection, attraction signals and workplace dynamics.',
+    description: 'Learn body language with quizzes, games and guides. Test your skills in deception detection, attraction signals and workplace dynamics at BodyLanguageIQ.',
   },
   '/episodes': {
     title: 'Browse Episodes - BodyLanguageIQ',
-    description: 'Choose from 7 body language categories including deception detection, attraction signals and workplace reads. Each episode is a quick, addictive quiz to sharpen your nonverbal skills.',
+    description: 'Choose from 7 body language categories. Each quiz sharpens your skills in deception detection, attraction, workplace and social dynamics at BodyLanguageIQ.',
   },
   '/dictionary': {
     title: 'Body Language Dictionary - BodyLanguageIQ',
-    description: 'A comprehensive A–Z guide to nonverbal signals and body language cues. Explore 60 entries covering stress, attraction, deception, confidence and more — each with clear explanations.',
+    description: 'A comprehensive A-Z guide to nonverbal signals and body language. Explore 60 entries covering stress, attraction, deception and confidence at BodyLanguageIQ.',
   },
   '/personality-test': {
     title: 'Body Language Personality Test: What Does Your Body Language Say About You | BodyLanguageIQ',
-    description: 'Discover your body language personality type in two levels. Find out whether you are a Connector, Observer, Performer, Diplomat, Protector or Authority and what it reveals about you.',
+    description: 'Discover your body language personality type. Find out if you are a Connector, Observer, Performer, Diplomat, Protector or Authority at BodyLanguageIQ.',
   },
   '/courses': {
     title: 'Courses - BodyLanguageIQ',
@@ -69,119 +70,123 @@ const PAGE_META = {
   },
   '/contact': {
     title: 'Contact Us - BodyLanguageIQ',
-    description: 'Have a question, feedback or partnership enquiry? Get in touch with the BodyLanguageIQ team using our contact form.',
+    description: 'Get in touch with BodyLanguageIQ team now. Contact us today with all your questions, feedback or partnership enquiries through our body language form.',
   },
   '/privacy-policy': {
     title: 'Privacy Policy | BodyLanguageIQ',
-    description: 'BodyLanguageIQ privacy policy. Learn how we collect, use and protect your data.',
+    description: 'Read the complete BodyLanguageIQ privacy policy to understand exactly how we collect, store, use, secure and protect your personal information rights.',
   },
   '/relationship-quiz': {
     title: 'Relationship Mastery Test: How Deeply Do You Know Each Other | BodyLanguageIQ',
-    description: 'Three levels of relationship body language questions. Test your emotional attunement and nonverbal connection. How well do you really know your partner.',
+    description: 'Test your emotional attunement across three relationship body language levels. Discover how well you read nonverbal connection signals and connection.',
   },
   '/lie-detector': {
     title: 'Lie Detector Test: Three Levels of Deception Detection | BodyLanguageIQ',
-    description: 'Can you spot a liar? Three levels of increasing difficulty. Beginner, Intermediate and Expert. Score 40 out of 50 to unlock the next level. Test your deception detection skills now.',
+    description: 'Master deception detection across three progressively challenging levels of difficulty. Beginner, Intermediate and Expert. Score 40+ to unlock levels.',
   },
   '/poker-face': {
     title: 'The Poker Face Challenge: Can You See Through a Poker Face? | BodyLanguageIQ',
-    description: '10 scenarios. 10 people trying not to be read. Test your ability to read people who are actively concealing their true reaction. Get your Poker Face Rating now.',
+    description: 'Challenge yourself reading 10 people trying to hide their emotions. Develop expert skills to detect concealed emotional reactions at BodyLanguageIQ online.',
+  },
+  '/real-or-fake': {
+    title: 'Real or Fake Emotion: Can You Tell Genuine from Performed? | BodyLanguageIQ',
+    description: 'Can you distinguish genuine emotions from performed reactions Play through three levels testing your emotional intelligence skills at BodyLanguageIQ..',
   },
   '/guides': {
     title: 'Body Language Guides — Learn to Read People | BodyLanguageIQ',
-    description: 'Free in-depth body language guides covering job interviews, attraction signals, confidence, deception detection and more. Learn to read people better in every situation.',
+    description: 'Free in-depth body language guides covering job interviews, attraction signals, confidence, workplace dynamics and social situations at BodyLanguageIQ.',
   },
   '/guides/spot-a-liar': {
     title: 'How to Spot a Liar: Body Language Signs of Deception | BodyLanguageIQ',
-    description: 'Learn the body language signals experts use to detect deception. Discover the clusters, micro-expressions and contradictions that reveal when someone is not telling the truth.',
+    description: 'Learn body language signals experts use to detect deception. Discover clusters and contradictions that reveal lying at BodyLanguageIQ.',
   },
   '/guides/confident-body-language': {
     title: 'Confident Body Language: 10 Changes You Can Make Today | BodyLanguageIQ',
-    description: 'Learn how to look and feel more confident through body language. Ten practical changes backed by psychology that you can start using immediately.',
+    description: 'Learn how to look and feel more confident through body language. Ten practical changes backed by psychology at BodyLanguageIQ.',
   },
   '/guides/attraction-signals': {
     title: 'Attraction Signals: How to Tell if Someone Likes You | BodyLanguageIQ',
-    description: 'Learn the 12 most reliable body language signals of genuine attraction. Discover what really reveals romantic interest and what is just friendliness.',
+    description: 'Learn 12 reliable body language signals of genuine attraction. Discover what reveals true romantic interest at BodyLanguageIQ.',
   },
   '/guides/job-interview': {
     title: 'Job Interview Body Language: How to Make the Right Impression | BodyLanguageIQ',
-    description: 'Master the body language signals that win job interviews. Learn what interviewers are really reading and how to present yourself with confidence from the moment you walk in.',
+    description: 'Master body language signals that win job interviews. Learn what interviewers read and how to project confidence at BodyLanguageIQ.',
   },
   '/guides/myths': {
     title: 'Body Language Myths Debunked: What the Science Actually Says | BodyLanguageIQ',
-    description: 'The most common body language myths fact checked against real psychology research. Discover what is true, what is false and what is far more complicated than you thought.',
+    description: 'Body language myths fact checked against psychology research. Discover what is true, false and complicated at BodyLanguageIQ.',
   },
   '/guides/workplace-body-language': {
     title: 'Reading Body Language at Work: The Complete Workplace Guide | BodyLanguageIQ',
-    description: 'Learn to read workplace body language signals. Understand office politics, read your boss and colleagues accurately and present yourself as a confident professional.',
+    description: 'Learn workplace body language signals. Understand office politics and present yourself confidently at BodyLanguageIQ.',
   },
   '/guides/first-date': {
     title: 'First Date Body Language: What to Look For and What to Show | BodyLanguageIQ',
-    description: 'Learn the body language signals that reveal genuine interest on a first date. Discover what to look for, what to show and how to read the signals that matter most.',
+    description: 'Learn body language signals that reveal genuine interest on first dates. Discover what to look for and show.',
   },
   '/guides/around-the-world': {
     title: 'Body Language Around The World: Cultural Differences Explained | BodyLanguageIQ',
-    description: 'The same gesture means different things in different cultures. Learn the essential cultural body language differences to avoid costly misunderstandings in international situations.',
+    description: 'Learn essential cultural body language differences to avoid misunderstandings. Gestures mean different things across cultures.',
   },
   '/guides/reading-eyes': {
     title: "How to Read Someone's Eyes: The Complete Guide | BodyLanguageIQ",
-    description: 'Learn to read the eyes accurately. Pupil dilation, eye contact patterns, gaze direction and the micro signals that reveal true emotion before conscious control takes over.',
+    description: 'Learn to read eyes accurately. Pupil dilation, eye contact and micro signals reveal true emotion at BodyLanguageIQ.',
   },
   '/guides/video-calls': {
     title: 'Body Language on Video Calls: The Complete Guide | BodyLanguageIQ',
-    description: 'Master the unique body language of video calls. Learn what your camera angle, eye contact, background and posture communicate to others on screen and how to project confidence remotely.',
+    description: 'Master body language on video calls. Learn how camera angle, eye contact and posture project confidence at BodyLanguageIQ.',
   },
   '/guides/nervous-body-language': {
     title: 'Nervous Body Language: Signs of Anxiety and How to Manage Them | BodyLanguageIQ',
-    description: 'Learn to recognise the signs of nervousness in yourself and others. Understand what triggers anxiety signals, how to read them accurately and how to manage them in high pressure situations.',
+    description: 'Learn to recognise nervousness in yourself and others. Understand triggers and manage anxiety at BodyLanguageIQ.',
   },
   '/guides/public-speaking': {
     title: 'Body Language for Public Speaking: Command Any Room | BodyLanguageIQ',
-    description: 'Master the body language of confident public speaking. Learn the posture, gestures, eye contact and movement that turn nervous presenters into compelling and memorable speakers.',
+    description: 'Master body language for confident public speaking. Learn posture, gestures and eye contact that command rooms.',
   },
   '/guides/arguments': {
     title: 'Reading Body Language in Arguments: What People Really Mean | BodyLanguageIQ',
-    description: 'Arguments have their own body language grammar. Learn to read escalation signals, genuine distress versus performance and the nonverbal cues that reveal what your partner really means during conflict.',
+    description: 'Learn to read escalation signals and nonverbal cues that reveal what your partner means during conflict.',
   },
   '/guides/reading-children': {
     title: 'Reading Children\'s Body Language: What Your Child Is Really Telling You | BodyLanguageIQ',
-    description: 'Children cannot always express what they feel in words. Learn to read the nonverbal signals that reveal how your child is really feeling, from anxiety and fear to joy and genuine confidence.',
+    description: 'Learn nonverbal signals that reveal how your child is feeling. Understand anxiety, fear, joy and confidence.',
   },
   '/guides/stress-signals': {
     title: 'Body Language Signs of Stress: How to Read and Recognise Anxiety | BodyLanguageIQ',
-    description: 'Stress leaks through the body before the mind acknowledges it. Learn to recognise the early physical signals of stress in yourself and others and respond before it escalates.',
+    description: 'Learn to recognise stress signals in yourself and others. Respond before stress escalates at BodyLanguageIQ.',
   },
   '/guides/power-body-language': {
     title: 'Power Body Language: The Signals of Dominance, Status and Authority | BodyLanguageIQ',
-    description: 'Understand the nonverbal signals of dominance, status and authority. Learn how power expresses itself physically and how to project calm confidence in any situation.',
+    description: 'Understand nonverbal signals of dominance and authority. Learn how power expresses itself physically.',
   },
   '/guides/lying-signs': {
     title: 'Body Language Signs Someone Is Lying to You: A Personal Guide | BodyLanguageIQ',
-    description: 'A personal guide to spotting deception in everyday situations. The signals that reveal dishonesty in partners, colleagues and friends and why context always matters.',
+    description: 'Guide to spotting deception in everyday situations. Discover signals that reveal dishonesty.',
   },
   '/guides/male-attraction-signals': {
     title: 'Body Language of Attraction in Men: What to Look For | BodyLanguageIQ',
-    description: 'The specific signals men display when genuinely attracted to someone. Learn to distinguish real interest from social politeness and read the subtle cues most people miss.',
+    description: 'Discover signals men display when genuinely attracted. Learn to distinguish real interest at BodyLanguageIQ.',
   },
   '/guides/alpha-body-language': {
     title: 'Alpha Body Language: The Signals of Natural Confidence and Authority | BodyLanguageIQ',
-    description: 'What genuine confidence and natural authority look like in the body. The signals that project leadership and calm command without aggression or performance.',
+    description: 'What genuine confidence and natural authority look like in the body. The signals that project leadership.',
   },
   '/guides/success-body-language': {
     title: 'Body Language Secrets of Successful People: What They Do Differently | BodyLanguageIQ',
-    description: 'What do the most successful people do differently with their body language? The nonverbal habits that build trust, project competence and open doors before a word is spoken.',
+    description: 'Nonverbal habits of successful people that build trust and open doors at BodyLanguageIQ.',
   },
   '/guides/relationship-types': {
     title: 'Body Language in Different Relationships: Friends, Family, Colleagues and Partners | BodyLanguageIQ',
-    description: 'Friends, family, colleagues and romantic partners all have different nonverbal languages. Learn to read the unique body language patterns of each type of relationship.',
+    description: 'Learn unique body language patterns of friends, family, colleagues and partners at BodyLanguageIQ.',
   },
   '/guides/negotiation-body-language': {
     title: 'Body Language in Negotiations: Read the Room and Win | BodyLanguageIQ',
-    description: 'Negotiations are won and lost in the nonverbal space. Learn to read the signals that reveal genuine interest, resistance and readiness to agree before the other side says a word.',
+    description: 'Read signals revealing genuine interest, resistance and readiness to agree in negotiations.',
   },
   '/guides/social-situations': {
     title: 'How to Read Body Language at a Party: Social Signals Explained | BodyLanguageIQ',
-    description: 'Social gatherings are rich with nonverbal signals. Learn to read who is genuinely enjoying themselves, who wants to leave and what the body language of real connection looks like in a crowd.',
+    description: 'Learn who is genuinely enjoying themselves and what real connection looks like in a crowd.',
   },
 }
 
@@ -210,6 +215,7 @@ function Layout() {
           <Route path="/relationship-quiz" element={<RelationshipQuiz />} />
           <Route path="/lie-detector" element={<LieDetector />} />
           <Route path="/poker-face" element={<PokerFace />} />
+          <Route path="/real-or-fake" element={<RealOrFake />} />
           <Route path="/guides" element={<Guides />} />
           <Route path="/guides/spot-a-liar" element={<GuideSpotALiar />} />
           <Route path="/guides/confident-body-language" element={<GuideConfidentBodyLanguage />} />

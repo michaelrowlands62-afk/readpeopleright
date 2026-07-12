@@ -752,7 +752,7 @@ export default function LieDetector() {
                   </svg>
                 </div>
 
-                <h1 className="ld-results-title">Your Score</h1>
+                <h2 className="ld-results-title">Your Score</h2>
                 <div className="ld-score-display">
                   <span className="ld-score-value">{score}</span>
                   <span className="ld-score-max">out of 50</span>

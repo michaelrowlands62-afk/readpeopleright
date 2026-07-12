@@ -290,9 +290,9 @@
   background: var(--card);
   border: 1.5px solid var(--border);
   border-radius: 8px;
-  color: var(--text);
+  color: #f5f0ff;
   font-family: var(--sans);
-  font-size: 0.84rem;
+  font-size: 16px;
   font-weight: 600;
   padding: 8px 10px;
   cursor: pointer;
@@ -468,8 +468,8 @@
 }
 
 .game-explanation-text {
-  font-size: 1.05rem;
-  color: var(--text);
+  font-size: 16px;
+  color: #f5f0ff;
   line-height: 1.6;
   margin: 0;
   text-align: left;
@@ -720,8 +720,8 @@
 }
 
 .start-desc {
-  font-size: 1rem;
-  color: var(--muted);
+  font-size: 16px;
+  color: #f5f0ff;
   max-width: 400px;
   line-height: 1.65;
   margin: 0 0 28px;
@@ -1006,7 +1006,7 @@
   }
 
   .game-explanation-text {
-    font-size: 0.95rem;
+    font-size: 16px;
     line-height: 1.55;
   }
 

@@ -315,8 +315,8 @@
 }
 
 .ld-scenario-text {
-  font-size: 1rem;
-  color: var(--text);
+  font-size: 16px;
+  color: #f5f0ff;
   line-height: 1.5;
   margin: 0 0 12px;
   font-weight: 500;
@@ -509,8 +509,8 @@
 }
 
 .ld-explanation-text {
-  font-size: 0.85rem;
-  color: var(--text);
+  font-size: 16px;
+  color: #f5f0ff;
   line-height: 1.4;
   margin: 0;
 }
@@ -620,8 +620,8 @@
 }
 
 .ld-rating-text {
-  font-size: 0.95rem;
-  color: var(--muted);
+  font-size: 16px;
+  color: #f5f0ff;
   line-height: 1.5;
   margin: 0 0 24px;
   max-width: 600px;
@@ -752,7 +752,7 @@
   }
 
   .ld-scenario-text {
-    font-size: 1rem;
+    font-size: 16px;
     margin-bottom: 16px;
     line-height: 1.6;
   }
@@ -784,7 +784,7 @@
   }
 
   .ld-explanation-text {
-    font-size: 0.85rem;
+    font-size: 16px;
     line-height: 1.5;
   }
 
@@ -830,7 +830,7 @@
   }
 
   .ld-rating-text {
-    font-size: 0.9rem;
+    font-size: 16px;
     line-height: 1.4;
     margin-bottom: 20px;
   }
@@ -1143,7 +1143,7 @@
   }
 
   .ld-scenario-text {
-    font-size: 1rem;
+    font-size: 16px;
     margin-bottom: 16px;
     line-height: 1.6;
   }
@@ -1175,7 +1175,7 @@
   }
 
   .ld-explanation-text {
-    font-size: 0.85rem;
+    font-size: 16px;
     line-height: 1.5;
   }
 
@@ -1221,7 +1221,7 @@
   }
 
   .ld-rating-text {
-    font-size: 0.9rem;
+    font-size: 16px;
     line-height: 1.4;
     margin-bottom: 20px;
   }

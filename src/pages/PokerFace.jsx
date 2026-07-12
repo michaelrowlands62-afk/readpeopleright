@@ -582,7 +582,7 @@ export default function PokerFace() {
         <div className="pf-container">
           <main className="pf-main">
             <div className="pf-level-select">
-              <h1 className="pf-level-title">The Poker Face Challenge</h1>
+              <h2 className="pf-level-title">The Poker Face Challenge</h2>
               <p className="pf-level-subtitle">Choose your difficulty level</p>
 
               <div className="pf-levels-grid">
