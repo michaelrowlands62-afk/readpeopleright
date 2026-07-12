@@ -342,7 +342,7 @@ export default function Game() {
         </header>
         <div className="diff-screen">
           <p className="diff-label">Choose Your Level</p>
-          <h1 className="diff-title">{getDisplayTitle()}</h1>
+          <h2 className="diff-title">{getDisplayTitle()}</h2>
           <p className="diff-subtitle">Select a difficulty to begin</p>
           <div className="diff-grid">
             {Object.entries(DIFFICULTY_CONFIG).map(([key, cfg]) => (
@@ -400,7 +400,7 @@ export default function Game() {
 
         <div className="results">
           <div className="results-icon" aria-hidden="true">🎯</div>
-          <h1 className="results-title">Episode Complete</h1>
+          <h2 className="results-title">Episode Complete</h2>
           <p className="results-grade">{grade}</p>
 
           <div className="results-score-wrap">
@@ -496,7 +496,7 @@ export default function Game() {
       {/* QUESTION */}
       <div className="game-question">
         <p className="game-q-num">Question {qIndex + 1} of {QUESTIONS.length}</p>
-        <h1 className="game-prompt">{q.prompt}</h1>
+        <h2 className="game-prompt">{q.prompt}</h2>
       </div>
 
       {/* MID: CLOCK LEFT + FIGURE RIGHT */}
