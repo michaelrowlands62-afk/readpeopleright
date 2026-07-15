@@ -121,7 +121,7 @@ export default function About() {
                 your training.
               </p>
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@BodyLanguageIQOfficial"
                 className="btn-youtube"
                 aria-label="Watch on YouTube"
                 target="_blank"
