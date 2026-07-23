@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -256,6 +257,7 @@ function Layout() {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Layout />
     </BrowserRouter>
   )
