@@ -103,6 +103,19 @@ export default function Game() {
     }
   }, [difficultyParam, categoryParam])
 
+  // Preload next question's image
+  useEffect(() => {
+    if (phase !== 'playing' || !QUESTIONS || qIndex >= QUESTIONS.length - 1) return
+    const nextQuestion = QUESTIONS[qIndex + 1]
+    if (!nextQuestion) return
+
+    const imageUrl = nextQuestion.imageUrl || (nextQuestion.image ? getAssetUrl(nextQuestion.image) : null)
+    if (!imageUrl) return
+
+    const img = new Image()
+    img.src = imageUrl
+  }, [qIndex, QUESTIONS, phase])
+
   // Start / restart timer on each new question
   useEffect(() => {
     if (phase !== 'playing') return
