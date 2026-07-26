@@ -1,5 +1,37 @@
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import './GuideArticle.css'
+
+const FAQ_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What are the most reliable signs someone is lying?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "The most reliable deception signals are clusters rather than individual tells. Look for changes from the person's baseline behaviour, contradictions between words and body language, self soothing gestures appearing specifically when certain topics arise, and micro expressions of emotion that contradict the managed surface expression.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is eye contact a reliable sign of lying?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No, eye contact is one of the least reliable deception indicators. Research shows no consistent relationship between gaze aversion and lying. Many liars deliberately maintain strong eye contact precisely because they know avoiding it looks suspicious.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What body language signals actually reveal deception?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The most evidence based deception signals include micro expressions, contradictions between verbal and nonverbal communication, self soothing gestures appearing specifically in response to certain questions, changes from established baseline behaviour and clusters of stress signals appearing together rather than individually.',
+      },
+    },
+  ],
+}
 
 const RELATED_GUIDES = [
   {
@@ -29,6 +61,16 @@ const RELATED_GUIDES = [
 ]
 
 export default function GuideSpotALiar() {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify(FAQ_SCHEMA)
+    document.head.appendChild(script)
+    return () => {
+      document.head.removeChild(script)
+    }
+  }, [])
+
   return (
     <main className="guide-article">
       <Link to="/guides" className="ga-back-link">← All Guides</Link>

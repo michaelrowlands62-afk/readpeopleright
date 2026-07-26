@@ -15,6 +15,7 @@ const learnLinks = [
   { to: '/dictionary', label: 'Body Language Dictionary' },
   { to: '/courses', label: 'Courses' },
   { to: '/guides', label: 'Guides' },
+  { to: '/faq', label: 'FAQ' },
 ]
 
 export default function NavBar() {

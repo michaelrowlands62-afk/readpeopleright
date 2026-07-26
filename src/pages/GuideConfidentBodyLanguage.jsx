@@ -1,5 +1,37 @@
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import './GuideArticle.css'
+
+const FAQ_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What does confident body language look like?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Genuinely confident body language involves an upright open posture, deliberate unhurried movement, comfortable sustained eye contact, minimal self touching or fidgeting, a measured speaking pace and the ability to remain physically still and calm under pressure. The key distinction is that genuine confidence looks effortless rather than performed.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you fake confident body language?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You can adopt the physical characteristics of confidence deliberately and research shows this produces real changes in how others perceive you and how you feel internally. However performed confidence tends to look slightly too deliberate. The most effective approach is to remove the physical habits that undermine your natural confidence rather than performing a different character.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do you appear more confident immediately?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The quickest changes with immediate impact are slowing down all physical movements including walking pace and gestures, reducing self touching behaviours like face touching and fidgeting, standing with feet shoulder width apart and weight evenly distributed, and making slightly more eye contact than feels comfortable. These changes are visible to others within seconds.',
+      },
+    },
+  ],
+}
 
 const RELATED_GUIDES = [
   {
@@ -23,6 +55,16 @@ const RELATED_GUIDES = [
 ]
 
 export default function GuideConfidentBodyLanguage() {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify(FAQ_SCHEMA)
+    document.head.appendChild(script)
+    return () => {
+      document.head.removeChild(script)
+    }
+  }, [])
+
   return (
     <main className="guide-article">
       <Link to="/guides" className="ga-back-link">← All Guides</Link>

@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Episodes from './pages/Episodes'
 import Courses from './pages/Courses'
 import Dictionary from './pages/Dictionary'
+import FAQ from './pages/FAQ'
 import PersonalityTest from './pages/PersonalityTest'
 import RelationshipQuiz from './pages/RelationshipQuiz'
 import LieDetector from './pages/LieDetector'
@@ -56,6 +57,10 @@ const PAGE_META = {
   '/dictionary': {
     title: 'Body Language Dictionary - BodyLanguageIQ',
     description: 'A comprehensive A-Z guide to nonverbal signals and body language. Explore 60 entries covering stress, attraction, deception and confidence at BodyLanguageIQ.',
+  },
+  '/faq': {
+    title: 'Body Language FAQ: Your Questions Answered | BodyLanguageIQ',
+    description: 'Answers to the most common body language questions. What does crossed arms mean, how do you spot a liar, what are micro expressions and more.',
   },
   '/personality-test': {
     title: 'Body Language Personality Test: What Does Your Body Language Say About You | BodyLanguageIQ',
@@ -212,6 +217,7 @@ function Layout() {
           <Route path="/episodes" element={<Episodes />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/dictionary" element={<Dictionary />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/personality-test" element={<PersonalityTest />} />
           <Route path="/relationship-quiz" element={<RelationshipQuiz />} />
           <Route path="/lie-detector" element={<LieDetector />} />

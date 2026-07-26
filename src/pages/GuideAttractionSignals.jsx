@@ -1,5 +1,37 @@
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import './GuideArticle.css'
+
+const FAQ_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How can you tell if someone is attracted to you?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Genuine attraction tends to produce a cluster of signals including sustained eye contact, body orientation toward you, unconscious mirroring of your posture and gestures, preening behaviours, reduced distance and increased animation specifically in your presence. No single signal is conclusive, look for multiple signals appearing together.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the most reliable sign of attraction?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Unconscious mirroring is one of the most reliable attraction signals because it happens below conscious awareness and is difficult to fake. Someone who genuinely adopts similar postures and gesture timing to yours without realising they are doing so is showing genuine connection and interest.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you fake attraction signals?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Some attraction signals can be performed deliberately but the most reliable ones are involuntary: pupil dilation, genuine Duchenne smiling involving the eye muscles, and unconscious mirroring all occur below conscious control and are very difficult to produce artificially.',
+      },
+    },
+  ],
+}
 
 const RELATED_GUIDES = [
   {
@@ -29,6 +61,16 @@ const RELATED_GUIDES = [
 ]
 
 export default function GuideAttractionSignals() {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify(FAQ_SCHEMA)
+    document.head.appendChild(script)
+    return () => {
+      document.head.removeChild(script)
+    }
+  }, [])
+
   return (
     <main className="guide-article">
       <Link to="/guides" className="ga-back-link">← All Guides</Link>
