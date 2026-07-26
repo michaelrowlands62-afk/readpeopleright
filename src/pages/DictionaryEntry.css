@@ -1,0 +1,213 @@
+/* ── DICTIONARY ENTRY PAGE TEMPLATE ──
+   Shared layout for all /dictionary/[slug] pages. */
+
+.de-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 56px 24px 96px;
+}
+
+/* ── Back link ── */
+
+.de-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 28px;
+  transition: color 0.15s;
+}
+
+.de-back-link:hover {
+  color: var(--gold);
+}
+
+/* ── Header ── */
+
+.de-header {
+  margin-bottom: 8px;
+}
+
+.de-category {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.de-title {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+.de-lead {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ── Sections ── */
+
+.de-section {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+}
+
+.de-h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin: 0 0 18px;
+  line-height: 1.3;
+}
+
+.de-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ── Bullet list ── */
+
+.de-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.de-list li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+  padding-left: 26px;
+  position: relative;
+}
+
+.de-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* ── Related signals ── */
+
+.de-related-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.de-related-chip {
+  display: inline-block;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 18px;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.de-related-chip:hover {
+  border-color: rgba(201, 168, 76, 0.5);
+  color: var(--gold-light);
+}
+
+/* ── Learn more CTA ── */
+
+.de-cta {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 32px;
+  text-align: center;
+}
+
+.de-cta-text {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0 0 22px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.de-cta-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: #1a0f1f;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  padding: 14px 34px;
+  border-radius: 10px;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.de-cta-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.de-cta-btn:active {
+  transform: translateY(0);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 600px) {
+  .de-page {
+    padding: 40px 18px 72px;
+  }
+
+  .de-lead {
+    font-size: 16px;
+  }
+
+  .de-section {
+    padding: 32px 0;
+  }
+
+  .de-h2 {
+    font-size: 21px;
+  }
+
+  .de-text,
+  .de-list li {
+    font-size: 15px;
+  }
+
+  .de-cta {
+    padding: 30px 22px;
+  }
+
+  .de-cta-btn {
+    width: 100%;
+  }
+}
