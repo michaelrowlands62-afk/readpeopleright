@@ -21,6 +21,12 @@ const RELATED_GUIDES = [
     accent: 'gold',
     description: 'Master the signals that win interviews. Learn what interviewers are really reading and how to present yourself with confidence.',
   },
+  {
+    title: 'Alpha Body Language',
+    to: '/guides/alpha-body-language',
+    accent: 'green',
+    description: 'What genuine confidence and natural authority look like in the body. The signals that project leadership without aggression.',
+  },
 ]
 
 export default function GuidePowerBodyLanguage() {
@@ -74,7 +80,7 @@ export default function GuidePowerBodyLanguage() {
       <section className="ga-section">
         <h2 className="ga-h2">The Steeple and Other Power Gestures</h2>
         <p className="ga-text">
-          Certain gestures are so consistently associated with confidence and authority that they have become reliable indicators of genuine self assurance. The steeple — fingertips pressed together to form a pointed arch — signals confidence in one's own position and is used most frequently by people who are certain of what they are saying. Hands clasped behind the back signal authority and a surveying quality — the person has nothing to hide and no need to protect themselves. The chin raise signals confidence and a degree of challenge or superiority. Open expansive gestures made without self consciousness signal comfort with taking up space and with being observed.
+          Certain gestures are so consistently associated with confidence and authority that they have become reliable indicators of genuine self assurance. The <Link to="/dictionary">steeple</Link> — fingertips pressed together to form a pointed arch — signals confidence in one's own position and is used most frequently by people who are certain of what they are saying. Hands clasped behind the back signal authority and a surveying quality — the person has nothing to hide and no need to protect themselves. The <Link to="/dictionary">chin raise</Link> signals confidence and a degree of challenge or superiority. Open expansive gestures made without self consciousness signal comfort with taking up space and with being observed.
         </p>
       </section>
 
@@ -88,7 +94,7 @@ export default function GuidePowerBodyLanguage() {
       <section className="ga-section">
         <h2 className="ga-h2">Calm Under Pressure</h2>
         <p className="ga-text">
-          Perhaps the most powerful signal of genuine authority is physical calm under conditions that would cause most people visible stress. The ability to maintain slow steady breathing, an unhurried pace, a relaxed facial expression and an open posture while under significant pressure is read by observers as evidence of genuine confidence and capability. This is why experienced leaders, skilled negotiators and people with deep expertise in their field tend to appear physically calmer in high pressure situations than those around them — not because they feel less but because they have learned through experience that calm is both effective and legible as a signal of power.
+          Perhaps the most powerful signal of genuine authority is physical calm under conditions that would cause most people visible stress. The ability to maintain slow steady breathing, an unhurried pace, a relaxed facial expression and an open posture while under significant pressure is read by observers as evidence of genuine confidence and capability. This is why experienced leaders, skilled <Link to="/guides/negotiation-body-language">negotiators</Link> and people with deep expertise in their field tend to appear physically calmer in high pressure situations than those around them — not because they feel less but because they have learned through experience that calm is both effective and legible as a signal of power.
         </p>
       </section>
 
@@ -102,7 +108,7 @@ export default function GuidePowerBodyLanguage() {
       <section className="ga-section">
         <h2 className="ga-h2">Developing Your Own Power Presence</h2>
         <p className="ga-text">
-          Physical presence and authority can be developed through deliberate practice. The most evidence-based approaches involve adopting expansive confident postures before high stakes situations — research suggests this produces measurable changes in stress hormones and confidence. Slowing down all physical movements including walking pace, gesture speed and speech rate is one of the simplest and most immediately effective changes available. Reducing self touching and fidgeting removes the most visible anxiety signals. Practising comfortable sustained eye contact in low stakes interactions builds the habit for high stakes ones. The goal is not to perform power but to remove the physical habits that actively undermine the confidence and authority you already possess.
+          Physical presence and authority can be developed through deliberate practice. The most evidence-based approaches involve adopting <Link to="/guides/confident-body-language">expansive confident postures</Link> before high stakes situations — research suggests this produces measurable changes in stress hormones and confidence, in the form of a <Link to="/dictionary">power pose</Link>. Slowing down all physical movements including walking pace, gesture speed and speech rate is one of the simplest and most immediately effective changes available. Reducing self touching and fidgeting removes the most visible anxiety signals. Practising comfortable sustained eye contact in low stakes interactions builds the habit for high stakes ones. The goal is not to perform power but to remove the physical habits that actively undermine the confidence and authority you already possess.
         </p>
       </section>
 

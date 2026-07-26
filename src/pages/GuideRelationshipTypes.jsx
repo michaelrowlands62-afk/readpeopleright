@@ -60,7 +60,7 @@ export default function GuideRelationshipTypes() {
       <section className="ga-section">
         <h2 className="ga-h2">Body Language With Colleagues</h2>
         <p className="ga-text">
-          Workplace relationships produce a distinctive body language register that sits between formal and personal. The physical management that characterises professional interaction — controlled emotional expression, maintained personal space, careful touch protocols, managed facial expression — relaxes in proportion to the genuine closeness of the relationship. Colleagues who are genuinely friendly will show some of the ease of friendship in their body language while maintaining more awareness of context than they would with a close personal friend. The most revealing workplace body language often appears in the moments before and after formal interactions — in corridors, at the coffee machine, in the seconds before a meeting officially begins — when the management of professional impression temporarily relaxes.
+          <Link to="/guides/workplace-body-language">Workplace relationships</Link> produce a distinctive body language register that sits between formal and personal. The physical management that characterises professional interaction — controlled emotional expression, maintained personal space, careful touch protocols, managed facial expression — relaxes in proportion to the genuine closeness of the relationship. Colleagues who are genuinely friendly will show some of the ease of friendship in their body language while maintaining more awareness of context than they would with a close personal friend. The most revealing workplace body language often appears in the moments before and after formal interactions — in corridors, at the coffee machine, in the seconds before a meeting officially begins — when the management of professional impression temporarily relaxes.
         </p>
       </section>
 
@@ -74,14 +74,14 @@ export default function GuideRelationshipTypes() {
       <section className="ga-section">
         <h2 className="ga-h2">Body Language With Authority Figures</h2>
         <p className="ga-text">
-          Interactions with authority figures — managers, parents, officials, experts — produce characteristic body language shifts that reflect the power differential being navigated. Most people display subtle submission signals in the presence of genuine authority even when they are unaware of doing so — a slight reduction in the expansiveness of their physical presence, more careful management of facial expression, more frequent monitoring of the authority figure's response before continuing to speak, a slight elevation of vocal pitch under the tension of wanting to make a good impression. Reading these signals in yourself and others helps reveal the genuine status dynamics operating beneath the surface of any interaction.
+          Interactions with <Link to="/guides/power-body-language">authority figures</Link> — managers, parents, officials, experts — produce characteristic body language shifts that reflect the power differential being navigated. Most people display subtle submission signals in the presence of genuine authority even when they are unaware of doing so — a slight reduction in the expansiveness of their physical presence, more careful management of facial expression, more frequent monitoring of the authority figure's response before continuing to speak, a slight elevation of vocal pitch under the tension of wanting to make a good impression. Reading these signals in yourself and others helps reveal the genuine status dynamics operating beneath the surface of any interaction.
         </p>
       </section>
 
       <section className="ga-section">
         <h2 className="ga-h2">Body Language With Strangers</h2>
         <p className="ga-text">
-          Interactions with strangers produce the most consciously managed body language of any relationship type. Without the shared history that allows interpretation of ambiguous signals people in initial encounters rely heavily on the clearest and most universal signals — open posture, comfortable eye contact, genuine smiling and appropriate distance — to communicate benign intent and social competence. The body language of strangers is simultaneously the most legible because the signals used are the most universal and the least informative because the absence of baseline knowledge makes individual signals harder to interpret accurately.
+          Interactions with strangers produce the most consciously managed body language of any relationship type. Without the shared history that allows interpretation of ambiguous signals people in initial encounters rely heavily on the clearest and most universal signals — <Link to="/dictionary">open posture</Link>, comfortable eye contact, genuine smiling and appropriate distance — to communicate benign intent and social competence. The body language of strangers is simultaneously the most legible because the signals used are the most universal and the least informative because the absence of baseline knowledge makes individual signals harder to interpret accurately.
         </p>
       </section>
 
@@ -98,7 +98,7 @@ export default function GuideRelationshipTypes() {
           <p className="ga-cta-text">
             Understanding how body language changes across relationship contexts makes you a more accurate and sensitive reader of people. Test your skills with our interactive quiz.
           </p>
-          <Link to="/episodes" className="ga-cta-btn">
+          <Link to={`/episodes?category=${encodeURIComponent('Read Your Partner')}`} className="ga-cta-btn">
             Test Your Body Language Skills
           </Link>
         </div>

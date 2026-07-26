@@ -39,7 +39,7 @@ export default function GuideLyingSignals() {
       <header className="ga-header">
         <h1 className="ga-title">Body Language Signs Someone Is Lying to You: A Personal Guide</h1>
         <p className="ga-intro">
-          Spotting deception in people you know is a different skill from detecting lies in strangers. With someone familiar you have the single most valuable tool in deception detection — a baseline. You know how they normally look, move, speak and behave. You know their habits, their tells and their natural rhythms. This guide focuses on reading deception signals in personal contexts — partners, friends, colleagues and family members — where familiarity is your greatest asset.
+          Spotting deception in people you know is a different skill from detecting lies in strangers. With someone familiar you have the single most valuable tool in deception detection — a baseline. You know how they normally look, move, speak and behave. You know their habits, their tells and their natural rhythms. This guide focuses on reading deception signals in personal contexts — <Link to="/guides/relationship-types">partners, friends</Link>, <Link to="/guides/workplace-body-language">colleagues</Link> and family members — where familiarity is your greatest asset.
         </p>
       </header>
 
@@ -53,21 +53,21 @@ export default function GuideLyingSignals() {
       <section className="ga-section">
         <h2 className="ga-h2">Changes in Eye Contact</h2>
         <p className="ga-text">
-          The popular belief that liars avoid eye contact is unreliable with strangers but more meaningful with people you know well. If someone who normally makes comfortable relaxed eye contact with you suddenly avoids it when discussing a specific topic that is a meaningful change. Equally if someone who normally has easy relaxed eye contact suddenly maintains unusually intense or unblinking eye contact on a specific claim — overcompensating because they know the myth — that is also worth noting. What you are looking for is a change from their normal pattern not the presence of any particular type of eye contact.
+          The popular belief that liars <Link to="/dictionary">avoid eye contact</Link> is unreliable with strangers but more meaningful with people you know well. If someone who normally makes comfortable relaxed eye contact with you suddenly avoids it when discussing a specific topic that is a meaningful change. Equally if someone who normally has easy relaxed eye contact suddenly maintains unusually intense or unblinking eye contact on a specific claim — overcompensating because they know the myth — that is also worth noting. What you are looking for is a change from their normal pattern not the presence of any particular type of eye contact.
         </p>
       </section>
 
       <section className="ga-section">
         <h2 className="ga-h2">Changes in Speech</h2>
         <p className="ga-text">
-          People who know each other well develop a natural conversational rhythm — a typical pace, typical vocabulary, typical patterns of hesitation and elaboration. Deception often disrupts this rhythm in detectable ways. A person who normally speaks freely and spontaneously becoming unusually careful and measured on a specific topic is showing you something. Someone who normally gives brief direct answers suddenly over-elaborating and providing unsolicited detail on a particular claim is displaying one of the most consistent verbal deception signals. Someone whose voice rises in pitch or whose speech rate increases specifically when discussing a certain subject may be managing internal stress about that subject.
+          People who know each other well develop a natural conversational rhythm — a typical pace, typical vocabulary, typical patterns of hesitation and elaboration. Deception often disrupts this rhythm in detectable ways. A person who normally speaks freely and spontaneously becoming unusually careful and measured on a specific topic is showing you something. Someone who normally gives brief direct answers suddenly over-elaborating and providing unsolicited detail on a particular claim is displaying one of the most consistent verbal deception signals. Someone whose <Link to="/dictionary">voice rises in pitch</Link> or whose speech rate increases specifically when discussing a certain subject may be managing internal stress about that subject.
         </p>
       </section>
 
       <section className="ga-section">
         <h2 className="ga-h2">Changes in Gesture</h2>
         <p className="ga-text">
-          Habitual gestures — the way someone naturally uses their hands when speaking, their typical head movements, their usual facial expressiveness — are so ingrained that changes from them are immediately noticeable to someone who knows the person well. A naturally expressive person who becomes physically still and contained on a specific topic is suppressing something. A person who normally gestures freely whose hands become hidden or controlled during a particular conversation is showing you a change worth noting. The sudden appearance of self soothing gestures — face touching, neck rubbing, hair playing — in someone who does not normally display these is particularly significant.
+          Habitual gestures — the way someone naturally uses their hands when speaking, their typical head movements, their usual facial expressiveness — are so ingrained that changes from them are immediately noticeable to someone who knows the person well. A naturally expressive person who becomes physically still and contained on a specific topic is suppressing something. A person who normally gestures freely whose hands become hidden or controlled during a particular conversation is showing you a change worth noting. The sudden appearance of <Link to="/dictionary">self soothing gestures</Link> — face touching, neck rubbing, hair playing — in someone who does not normally display these is particularly significant.
         </p>
       </section>
 

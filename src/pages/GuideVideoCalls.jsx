@@ -74,7 +74,7 @@ export default function GuideVideoCalls() {
       <section className="ga-section">
         <h2 className="ga-h2">Posture on Screen</h2>
         <p className="ga-text">
-          Posture is just as important on video as in person and arguably more visible since the camera tends to highlight the upper body and head. Sitting upright with relaxed shoulders projects engagement and confidence. Slumping or leaning back signals disengagement. Leaning forward slightly toward the camera during important points signals interest and emphasis — the video equivalent of leaning in across a table. Avoid swivelling in an office chair which creates a distracting visual rhythm and signals restlessness.
+          Posture is just as important on video as in person and arguably more visible since the camera tends to highlight the upper body and head. Sitting upright with relaxed shoulders projects engagement and <Link to="/guides/confident-body-language">confidence</Link>. Slumping or leaning back signals disengagement. <Link to="/dictionary">Leaning forward</Link> slightly toward the camera during important points signals interest and emphasis — the video equivalent of leaning in across a table. Avoid swivelling in an office chair which creates a distracting visual rhythm and signals restlessness.
         </p>
       </section>
 
@@ -88,7 +88,7 @@ export default function GuideVideoCalls() {
       <section className="ga-section">
         <h2 className="ga-h2">Reading Others on Video</h2>
         <p className="ga-text">
-          Reading body language on video calls requires adjustments to your normal approach. You are typically seeing only the head and shoulders of the other person which removes a significant amount of the body language information available in person. Focus more heavily on facial expressions, eye contact patterns and the quality of vocal delivery. Micro expressions are often more visible on video than in person because the face fills more of your visual field. Watch for inconsistencies between what someone says and how their face responds. Someone whose face goes slightly blank or whose eyes move away at a specific moment in a conversation is showing you something worth noticing.
+          Reading body language on video calls requires adjustments to your normal approach. You are typically seeing only the head and shoulders of the other person which removes a significant amount of the body language information available in person. Focus more heavily on facial expressions, eye contact patterns and the quality of vocal delivery. <Link to="/dictionary">Micro expressions</Link> are often more visible on video than in person because the face fills more of your visual field — the same signals covered in our guide on <Link to="/guides/spot-a-liar">how to spot a liar</Link>. Watch for inconsistencies between what someone says and how their face responds. Someone whose face goes slightly blank or whose eyes move away at a specific moment in a conversation is showing you something worth noticing.
         </p>
       </section>
 
@@ -105,7 +105,7 @@ export default function GuideVideoCalls() {
           <p className="ga-cta-text">
             Understanding body language helps in every communication context. Test your ability to read nonverbal signals with our interactive quiz.
           </p>
-          <Link to="/episodes" className="ga-cta-btn">
+          <Link to={`/episodes?category=${encodeURIComponent('Workplace & Career')}`} className="ga-cta-btn">
             Test Your Body Language Skills
           </Link>
         </div>

@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import './Dictionary.css'
 
 const ENTRIES = [
@@ -530,6 +531,15 @@ export default function Dictionary() {
         <h1 className="dict-hero-title">Body Language Dictionary</h1>
         <p className="dict-hero-subtitle">Your complete guide to reading nonverbal signals.</p>
       </section>
+
+      <p className="dict-guides-note">
+        Want to see these signals in context? Start with our guides on{' '}
+        <Link to="/guides/spot-a-liar">How to Spot a Liar</Link>,{' '}
+        <Link to="/guides/attraction-signals">Attraction Signals Explained</Link>,{' '}
+        <Link to="/guides/confident-body-language">Confident Body Language</Link>,{' '}
+        <Link to="/guides/stress-signals">Body Language Signs of Stress</Link> and{' '}
+        <Link to="/guides/reading-eyes">How to Read Someone's Eyes</Link>.
+      </p>
 
       <div className="dict-search-wrap">
         <svg className="dict-search-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">

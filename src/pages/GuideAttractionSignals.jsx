@@ -20,6 +20,12 @@ const RELATED_GUIDES = [
     accent: 'green',
     description: 'How to look and feel more confident through body language. Ten changes you can make starting today.',
   },
+  {
+    title: 'Body Language of Attraction in Men',
+    to: '/guides/male-attraction-signals',
+    accent: 'gold',
+    description: 'The specific signals men display when genuinely attracted to someone. Learn to distinguish real interest from social politeness.',
+  },
 ]
 
 export default function GuideAttractionSignals() {
@@ -58,7 +64,7 @@ export default function GuideAttractionSignals() {
           <p className="ga-text">
             Genuine attraction tends to produce sustained eye contact that lingers slightly longer
             than normal social interaction would require. The person holds your gaze and finds
-            reasons to return to it. Combined with slightly dilated pupils which the brain produces
+            reasons to return to it. Combined with slightly <Link to="/dictionary">dilated pupils</Link> which the brain produces
             involuntarily in response to someone found attractive this is one of the most reliable
             early signals of interest.
           </p>
@@ -67,8 +73,8 @@ export default function GuideAttractionSignals() {
         <div className="ga-h3-block">
           <h3 className="ga-h3">2. Genuine Smiling</h3>
           <p className="ga-text">
-            A smile that reaches the eyes with natural crinkles at the corners is called a Duchenne
-            smile and is very difficult to fake convincingly. When someone smiles this way
+            A smile that reaches the eyes with natural crinkles at the corners is called a <Link to="/dictionary">Duchenne
+            smile</Link> and is very difficult to fake convincingly. When someone smiles this way
             specifically in your presence and the smile appears spontaneously rather than as a
             social performance it is a strong positive signal.
           </p>
@@ -91,7 +97,7 @@ export default function GuideAttractionSignals() {
             Unconsciously copying another person's posture, gestures or speech patterns is one of
             the strongest signals of connection and attraction. It happens naturally when someone
             is genuinely engaged with you. If you notice someone sitting the way you sit,
-            gesturing the way you gesture or adopting similar body positions, this mirroring is a
+            gesturing the way you gesture or adopting similar body positions, this <Link to="/dictionary">mirroring</Link> is a
             very positive sign.
           </p>
         </div>
@@ -198,7 +204,8 @@ export default function GuideAttractionSignals() {
           crinkles and cannot be sustained at the same intensity indefinitely. A polite smile stays
           the same, involves mainly the mouth and can be held as long as social courtesy requires.
           Learning to distinguish these two smiles is one of the most valuable body language skills
-          you can develop.
+          you can develop — see our guide to common <Link to="/guides/myths">body language myths</Link> for more signals that are
+          not what they first appear.
         </p>
       </section>
 

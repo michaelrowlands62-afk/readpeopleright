@@ -46,14 +46,14 @@ export default function GuideBodyLanguageAtParty() {
       <section className="ga-section">
         <h2 className="ga-h2">Reading Genuine Enjoyment</h2>
         <p className="ga-text">
-          One of the most valuable skills at a social gathering is the ability to distinguish between people who are genuinely enjoying themselves and people who are performing enjoyment. Genuine enjoyment produces characteristic physical signals that are difficult to fake. The smile is genuine — reaching the eyes with characteristic lines at the corners rather than being a mouth-only movement. The body is relaxed and comfortable in space. Laughter is full and uncontrolled rather than managed and polite. The person is oriented toward the group or individual they are with and making natural eye contact. When a genuine smile appears and then fades it tends to fade naturally rather than being switched off abruptly — the movement is smooth and organic rather than mechanical.
+          One of the most valuable skills at a social gathering is the ability to distinguish between people who are genuinely enjoying themselves and people who are performing enjoyment. Genuine enjoyment produces characteristic physical signals that are difficult to fake. The smile is genuine — a <Link to="/dictionary">Duchenne smile</Link> reaching the eyes with characteristic lines at the corners rather than being a mouth-only movement. The body is relaxed and comfortable in space. Laughter is full and uncontrolled rather than managed and polite. The person is oriented toward the group or individual they are with and making natural eye contact. When a genuine smile appears and then fades it tends to fade naturally rather than being switched off abruptly — the movement is smooth and organic rather than mechanical.
         </p>
       </section>
 
       <section className="ga-section">
         <h2 className="ga-h2">Recognising When Someone Wants to Leave</h2>
         <p className="ga-text">
-          People rarely say directly that they want to exit a conversation or leave a social gathering. Instead they leak their desire to leave through consistent body language signals that show decreasing engagement. Their body begins to orient away from the group even while their face remains directed toward them. Their weight shifts to the balls of their feet in a preparation-to-move position. They stop initiating contributions to the conversation and begin giving shorter answers. Eye contact reduces. Their facial expression becomes less animated and more neutral. Physical distance may increase — they lean back slightly rather than forward. Touch disappears from the interaction. The cluster of these signals tells you the person has psychologically left even though they have not yet physically departed.
+          People rarely say directly that they want to exit a conversation or leave a social gathering. Instead they leak their desire to leave through consistent body language signals that show decreasing engagement. Their body begins to orient away from the group even while their face remains directed toward them. Their <Link to="/dictionary">weight shifts</Link> to the balls of their feet in a preparation-to-move position. They stop initiating contributions to the conversation and begin giving shorter answers. Eye contact reduces. Their facial expression becomes less animated and more neutral. Physical distance may increase — they lean back slightly rather than forward. Touch disappears from the interaction. The cluster of these signals tells you the person has psychologically left even though they have not yet physically departed.
         </p>
       </section>
 
@@ -67,21 +67,21 @@ export default function GuideBodyLanguageAtParty() {
       <section className="ga-section">
         <h2 className="ga-h2">Recognising Discomfort and Anxiety</h2>
         <p className="ga-text">
-          Social anxiety at parties produces characteristic physical signals. People experiencing social discomfort tend to compress their physical presence — taking up less space, crossing their arms or holding their body in contained ways. Self touching becomes more frequent — touching the neck, adjusting clothing repeatedly, smoothing hair. Their smile tends to be tighter and less genuine. Eye contact may be either very brief or quite intense and searching as they monitor others' reactions to them. They may gravitate toward the edges of rooms or toward familiar faces. Speech may become faster as they rush to fill silences or anxiety may make their speech less fluent than usual. These signals tell you someone is managing anxiety even if their words suggest they are fine.
+          Social <Link to="/guides/nervous-body-language">anxiety</Link> at parties produces characteristic physical signals. People experiencing social discomfort tend to compress their physical presence — taking up less space, crossing their arms or holding their body in contained ways. Self touching becomes more frequent — touching the neck, adjusting clothing repeatedly, smoothing hair. Their smile tends to be tighter and less genuine. Eye contact may be either very brief or quite intense and searching as they monitor others' reactions to them. They may gravitate toward the edges of rooms or toward familiar faces. Speech may become faster as they rush to fill silences or anxiety may make their speech less fluent than usual. These signals tell you someone is managing anxiety even if their words suggest they are fine.
         </p>
       </section>
 
       <section className="ga-section">
         <h2 className="ga-h2">Reading Group Dynamics</h2>
         <p className="ga-text">
-          In group conversations at parties the power dynamics and genuine levels of connection show up visibly in body language. People will naturally orient their body toward whoever they perceive as having the highest status or being the most interesting — this often differs significantly from who is doing the most talking. Genuine leadership in a group conversation shows as people leaning toward the person speaking and maintaining sustained eye contact. Exclusion from a group is communicated through turning the body away or creating a physical circle that does not include someone who is trying to join. Someone who feels they are losing status in a conversation will often display signs of discomfort or will move away. The body language of people in a group tells you their genuine relationship to the group before any words are spoken.
+          In group conversations at parties the <Link to="/guides/power-body-language">power dynamics</Link> and genuine levels of connection show up visibly in body language. People will naturally orient their body toward whoever they perceive as having the highest status or being the most interesting — this often differs significantly from who is doing the most talking. Genuine leadership in a group conversation shows as people leaning toward the person speaking and maintaining sustained eye contact. Exclusion from a group is communicated through turning the body away or creating a physical circle that does not include someone who is trying to join. Someone who feels they are losing status in a conversation will often display signs of discomfort or will move away. The body language of people in a group tells you their genuine relationship to the group before any words are spoken.
         </p>
       </section>
 
       <section className="ga-section">
         <h2 className="ga-h2">The Body Language of Flirtation</h2>
         <p className="ga-text">
-          Flirtation at social gatherings follows a recognisable pattern in body language. The conversation partner becomes suddenly more interesting — eye contact increases, facial expressions become more animated, the body leans forward and orients more fully toward the other person. Preening behaviours often appear — self adjustments, touching of the hair, straightening of clothing. Laughter appears more readily and is more full and genuine than in conversation with others. Mirroring begins to happen unconsciously — posture and gesture timing starts to synchronise. Light touch appears as the person tests receptiveness. The pace of speech may slow slightly as both parties become more invested in the quality of the interaction rather than rushing through it. The body language of flirtation is distinct because it combines increased energy with decreased rushing.
+          <Link to="/guides/attraction-signals">Flirtation</Link> at social gatherings follows a recognisable pattern in body language. The conversation partner becomes suddenly more interesting — eye contact increases, facial expressions become more animated, the body leans forward and orients more fully toward the other person. Preening behaviours often appear — self adjustments, touching of the hair, straightening of clothing. Laughter appears more readily and is more full and genuine than in conversation with others. <Link to="/dictionary">Mirroring</Link> begins to happen unconsciously — posture and gesture timing starts to synchronise. Light touch appears as the person tests receptiveness. The pace of speech may slow slightly as both parties become more invested in the quality of the interaction rather than rushing through it. The body language of flirtation is distinct because it combines increased energy with decreased rushing.
         </p>
       </section>
 
@@ -105,7 +105,7 @@ export default function GuideBodyLanguageAtParty() {
           <p className="ga-cta-text">
             Reading body language at social gatherings helps you connect more genuinely and navigate groups with confidence. Test your social reading skills with our interactive quiz.
           </p>
-          <Link to="/episodes" className="ga-cta-btn">
+          <Link to={`/episodes?category=${encodeURIComponent('First Impressions')}`} className="ga-cta-btn">
             Test Your Social Reading Skills
           </Link>
         </div>

@@ -63,14 +63,14 @@ export default function GuideStressSignals() {
         <div className="ga-h3-block">
           <h3 className="ga-h3">Increased Self Touching</h3>
           <p className="ga-text">
-            The onset of self touching behaviours — touching the face, neck, hair or arms — is often one of the earliest visible signs of rising stress. These self soothing gestures emerge automatically as the nervous system seeks to regulate itself through physical stimulation. The touching of the base of the throat or the back of the neck are particularly common early stress signals. Their significance increases when they appear in response to specific topics or situations rather than consistently throughout an interaction.
+            The onset of <Link to="/dictionary">self touching</Link> behaviours — touching the face, neck, hair or arms — is often one of the earliest visible signs of rising stress, closely related to the patterns covered in our guide to <Link to="/guides/nervous-body-language">nervous body language</Link>. These self soothing gestures emerge automatically as the nervous system seeks to regulate itself through physical stimulation. The touching of the base of the throat or the back of the neck are particularly common early stress signals. Their significance increases when they appear in response to specific topics or situations rather than consistently throughout an interaction.
           </p>
         </div>
 
         <div className="ga-h3-block">
           <h3 className="ga-h3">Postural Changes</h3>
           <p className="ga-text">
-            Rising stress tends to produce characteristic postural changes. Shoulders begin to rise toward the ears as the trapezius muscles tense. The body may begin to fold inward slightly with the chest becoming less open. Weight may shift onto one foot rather than being evenly distributed. The jaw may tighten. These postural changes can be subtle in their early stages — the difference between a person at baseline and a person under mild stress may be only a few millimetres of shoulder height and a slight reduction in chest openness.
+            Rising stress tends to produce characteristic postural changes. Shoulders begin to rise toward the ears as the trapezius muscles tense. The body may begin to fold inward slightly with the chest becoming less open. <Link to="/dictionary">Weight may shift</Link> onto one foot rather than being evenly distributed. The jaw may tighten. These postural changes can be subtle in their early stages — the difference between a person at baseline and a person under mild stress may be only a few millimetres of shoulder height and a slight reduction in chest openness.
           </p>
         </div>
       </section>
@@ -81,7 +81,7 @@ export default function GuideStressSignals() {
         <div className="ga-h3-block">
           <h3 className="ga-h3">Fidgeting and Displacement Activity</h3>
           <p className="ga-text">
-            As stress increases the body seeks more active outlets for its nervous energy. Repetitive movements — tapping fingers or feet, clicking pens, adjusting clothing, reorganising objects — become more pronounced. These displacement activities serve the same regulatory function as self touching but require more physical energy, suggesting a higher level of arousal. Their appearance in someone who was previously still is a reliable indicator of rising internal pressure.
+            As stress increases the body seeks more active outlets for its nervous energy. Repetitive movements — tapping fingers or feet, clicking pens, adjusting clothing, reorganising objects — become more pronounced. These <Link to="/dictionary">displacement activities</Link> serve the same regulatory function as self touching but require more physical energy, suggesting a higher level of arousal. Their appearance in someone who was previously still is a reliable indicator of rising internal pressure.
           </p>
         </div>
 
@@ -95,7 +95,7 @@ export default function GuideStressSignals() {
         <div className="ga-h3-block">
           <h3 className="ga-h3">Eye and Face Signals</h3>
           <p className="ga-text">
-            Moderate stress is reliably visible in the face and eyes. Blink rate tends to increase as cognitive and emotional load rises. The area around the eyes may tighten. The jaw muscles may become visibly active even when the mouth is closed. The lips may press together more frequently. Micro expressions of anxiety or concern may flash across the face before a managed neutral expression reasserts itself. The forehead may show more tension even when no deliberate frowning is occurring.
+            Moderate stress is reliably visible in the face and eyes. <Link to="/dictionary">Blink rate tends to increase</Link> as cognitive and emotional load rises. The area around the eyes may tighten. The jaw muscles may become visibly active even when the mouth is closed. The lips may press together more frequently. Micro expressions of anxiety or concern may flash across the face before a managed neutral expression reasserts itself. The forehead may show more tension even when no deliberate frowning is occurring.
           </p>
         </div>
       </section>
@@ -117,7 +117,7 @@ export default function GuideStressSignals() {
       <section className="ga-section">
         <h2 className="ga-h2">Reading Your Own Stress Signals</h2>
         <p className="ga-text">
-          Many people are surprisingly unaware of their own stress signals until they are pointed out. Recording yourself in moderately pressured situations — a practice presentation, a difficult phone call — and watching back with attention to your physical behaviour can reveal patterns you were completely unaware of. Common discoveries include jaw tension that was felt as normal, shoulder height that was significantly elevated throughout, breathing that was faster and shallower than the person realised and self touching behaviours that occurred repeatedly without conscious awareness.
+          Many people are surprisingly unaware of their own stress signals until they are pointed out. Recording yourself in moderately pressured situations — a <Link to="/guides/public-speaking">practice presentation</Link>, a difficult phone call — and watching back with attention to your physical behaviour can reveal patterns you were completely unaware of. Common discoveries include jaw tension that was felt as normal, shoulder height that was significantly elevated throughout, breathing that was faster and shallower than the person realised and self touching behaviours that occurred repeatedly without conscious awareness.
         </p>
       </section>
 
@@ -134,7 +134,7 @@ export default function GuideStressSignals() {
           <p className="ga-cta-text">
             Understanding stress signals helps you read people more accurately in every situation. Test your body language reading skills with our interactive quiz.
           </p>
-          <Link to="/episodes" className="ga-cta-btn">
+          <Link to={`/episodes?category=${encodeURIComponent('Read Emotions')}`} className="ga-cta-btn">
             Test Your Body Language Skills
           </Link>
         </div>

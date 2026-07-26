@@ -1,15 +1,15 @@
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams, Link } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
 import './Episodes.css'
 
 const CATEGORIES = [
-  { icon: '💑', title: 'Read Your Partner', description: 'Decode the unspoken signals in your closest relationships.' },
-  { icon: '💘', title: 'Attraction Signals', description: 'Spot the signs of interest, chemistry, and genuine connection.' },
-  { icon: '💼', title: 'Workplace & Career', description: 'Read colleagues, bosses, and clients to gain the edge.' },
-  { icon: '🕵️', title: 'Spot a Liar', description: 'Detect deception through body language tells and slip-ups.' },
-  { icon: '😊', title: 'Read Emotions', description: 'Identify what people are really feeling beneath the surface.' },
-  { icon: '⚡', title: 'First Impressions', description: 'Make snap calls as figures flash for just a few seconds.' },
-  { icon: '🔬', title: 'Micro-Expression Expert', description: 'Catch fleeting expressions that last less than a second.' },
+  { icon: '💑', title: 'Read Your Partner', description: 'Decode the unspoken signals in your closest relationships.', guideTo: '/guides/relationship-types', guideLabel: 'Body Language in Different Relationships' },
+  { icon: '💘', title: 'Attraction Signals', description: 'Spot the signs of interest, chemistry, and genuine connection.', guideTo: '/guides/attraction-signals', guideLabel: 'Attraction Signals Explained' },
+  { icon: '💼', title: 'Workplace & Career', description: 'Read colleagues, bosses, and clients to gain the edge.', guideTo: '/guides/workplace-body-language', guideLabel: 'Reading Body Language at Work' },
+  { icon: '🕵️', title: 'Spot a Liar', description: 'Detect deception through body language tells and slip-ups.', guideTo: '/guides/spot-a-liar', guideLabel: 'How to Spot a Liar' },
+  { icon: '😊', title: 'Read Emotions', description: 'Identify what people are really feeling beneath the surface.', guideTo: '/guides/reading-eyes', guideLabel: "How to Read Someone's Eyes" },
+  { icon: '⚡', title: 'First Impressions', description: 'Make snap calls as figures flash for just a few seconds.', guideTo: '/guides/confident-body-language', guideLabel: 'Confident Body Language' },
+  { icon: '🔬', title: 'Micro-Expression Expert', description: 'Catch fleeting expressions that last less than a second.', guideTo: '/guides/lying-signs', guideLabel: 'Body Language Signs Someone is Lying to You' },
 ]
 
 const DIFFICULTIES = [
@@ -62,6 +62,9 @@ export default function Episodes() {
               <span className="category-block-icon">{cat.icon}</span>
               <h3 className="category-block-title">{cat.title}</h3>
               <p className="category-block-desc">{cat.description}</p>
+              <Link to={cat.guideTo} className="category-block-guide-link">
+                Learn more in our {cat.guideLabel} guide →
+              </Link>
             </div>
             <div className="difficulty-buttons">
               {DIFFICULTIES.map((diff) => (

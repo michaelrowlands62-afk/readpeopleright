@@ -20,6 +20,12 @@ const RELATED_GUIDES = [
     accent: 'red',
     description: 'The body language signals that reveal deception. Learn the clusters experts look for and why single signals are never enough.',
   },
+  {
+    title: 'Nervous Body Language',
+    to: '/guides/nervous-body-language',
+    accent: 'purple',
+    description: 'Learn to recognise the signs of anxiety and nervousness in yourself and others, and how to manage them in high pressure situations.',
+  },
 ]
 
 export default function GuideJobInterview() {
@@ -66,8 +72,9 @@ export default function GuideJobInterview() {
         <p className="ga-text">
           Sit toward the front of the chair rather than sinking back into it. Keep your back
           straight but not rigid. Lean forward very slightly to signal engagement. Avoid crossing
-          your arms which signals defensiveness, and avoid spreading too wide which can seem
-          arrogant in a formal setting. Keep your feet flat on the floor or ankles loosely crossed
+          your arms which signals defensiveness — though it is worth reading our guide to common
+          <Link to="/guides/myths"> body language myths</Link>, since crossed arms are not always as damning as they seem — and
+          avoid spreading too wide which can seem arrogant in a formal setting. Keep your feet flat on the floor or <Link to="/dictionary">ankles loosely crossed</Link>
           rather than legs twisted or bouncing.
         </p>
       </section>
@@ -111,8 +118,8 @@ export default function GuideJobInterview() {
       <section className="ga-section">
         <h2 className="ga-h2">Nervous Habits to Avoid</h2>
         <p className="ga-text">
-          Most people have unconscious nervous habits that appear under pressure. Common ones
-          include touching the face or hair, fidgeting with objects on the table, tapping feet,
+          Most people have unconscious <Link to="/guides/nervous-body-language">nervous habits</Link> that appear under pressure. Common ones
+          include <Link to="/dictionary">touching the face or hair</Link>, fidgeting with objects on the table, tapping feet,
           playing with jewellery or repeatedly clearing the throat. These habits signal anxiety and
           distract from what you are saying. Before your interview identify your specific habits
           and practice managing them in mock interviews or in front of a mirror.
@@ -122,8 +129,9 @@ export default function GuideJobInterview() {
       <section className="ga-section">
         <h2 className="ga-h2">Reading the Interviewer</h2>
         <p className="ga-text">
-          Body language works both ways. Paying attention to the interviewer's signals can give you
-          valuable information about how the interview is going. Leaning forward and increased eye
+          Body language works both ways. Paying attention to the interviewer's signals — a skill
+          worth building further with our guide to <Link to="/guides/workplace-body-language">reading body language at work</Link> — can give you
+          valuable information about how the interview is going. <Link to="/dictionary">Leaning forward</Link> and increased eye
           contact suggests genuine engagement with what you are saying. Leaning back or reduced eye
           contact may suggest they are less convinced. Mirroring your posture is a strong positive
           signal. If you notice disengagement try varying your energy or asking a question to

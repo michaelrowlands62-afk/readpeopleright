@@ -21,6 +21,12 @@ const RELATED_GUIDES = [
     accent: 'purple',
     description: 'Learn to recognise the signs of anxiety and nervousness in yourself and others. Understand what triggers these signals and how to manage them in high pressure situations.',
   },
+  {
+    title: "How to Read Someone's Eyes",
+    to: '/guides/reading-eyes',
+    accent: 'gold',
+    description: 'The eyes reveal more than any other feature. Learn to read pupil dilation, eye contact patterns and gaze direction.',
+  },
 ]
 
 export default function GuidePublicSpeaking() {
@@ -53,21 +59,21 @@ export default function GuidePublicSpeaking() {
       <section className="ga-section">
         <h2 className="ga-h2">Posture and Stance</h2>
         <p className="ga-text">
-          The foundation of confident public speaking is a grounded physical stance. Stand with your feet roughly shoulder width apart and your weight evenly distributed on both feet. This grounded stance signals stability and calm authority. Avoid shifting your weight from foot to foot which signals nervousness and distracts the audience. Keep your shoulders back and your chest open — a collapsed chest and rounded shoulders signal low confidence and reduce the power of your voice by compressing your lungs. Your spine should be naturally upright without rigidity. Think of the stance as settled and present rather than military or performative.
+          The foundation of confident public speaking is a grounded physical stance. Stand with your feet roughly shoulder width apart and your weight evenly distributed on both feet. This <Link to="/dictionary">grounded stance</Link> signals stability and calm authority. Avoid shifting your weight from foot to foot which signals nervousness and distracts the audience. Keep your shoulders back and your chest open — a collapsed chest and rounded shoulders signal low confidence and reduce the power of your voice by compressing your lungs. Your spine should be naturally upright without rigidity. Think of the stance as settled and present rather than military or performative.
         </p>
       </section>
 
       <section className="ga-section">
         <h2 className="ga-h2">Gestures</h2>
         <p className="ga-text">
-          Natural gestures that accompany and emphasise your speech are one of the most powerful tools available to a speaker. Research shows that speakers who gesture naturally are perceived as more warm, engaging and competent than those who keep their hands still or hidden. Keep your gestures within the space in front of your body — large wild gestures that extend far to the sides look uncontrolled. Use deliberate open palm gestures to emphasise key points and signal honesty. Avoid pointing at the audience which reads as accusatory, and avoid repetitive habitual gestures that become distracting through their predictability.
+          Natural gestures that accompany and emphasise your speech are one of the most powerful tools available to a speaker. Research shows that speakers who gesture naturally are perceived as more warm, engaging and competent than those who keep their hands still or hidden. Keep your gestures within the space in front of your body — large wild gestures that extend far to the sides look uncontrolled. Use deliberate <Link to="/dictionary">open palm gestures</Link> to emphasise key points and signal honesty. Avoid pointing at the audience which reads as accusatory, and avoid repetitive habitual gestures that become distracting through their predictability.
         </p>
       </section>
 
       <section className="ga-section">
         <h2 className="ga-h2">Eye Contact</h2>
         <p className="ga-text">
-          Eye contact is the primary way speakers create connection with their audience. The most effective approach is to make genuine sustained eye contact with individual people in the room rather than scanning the room in a mechanical sweep or looking at the back wall. Hold eye contact with one person for a complete thought — roughly three to five seconds — before moving to another. Distribute your attention across different parts of the room over the course of your talk. Eye contact with individual audience members makes each person feel directly addressed and transforms a presentation from a broadcast into a conversation.
+          <Link to="/guides/reading-eyes">Eye contact</Link> is the primary way speakers create connection with their audience. The most effective approach is to make genuine sustained eye contact with individual people in the room rather than scanning the room in a mechanical sweep or looking at the back wall. Hold eye contact with one person for a complete thought — roughly three to five seconds — before moving to another. Distribute your attention across different parts of the room over the course of your talk. Eye contact with individual audience members makes each person feel directly addressed and transforms a presentation from a broadcast into a conversation.
         </p>
       </section>
 
@@ -88,7 +94,7 @@ export default function GuidePublicSpeaking() {
       <section className="ga-section">
         <h2 className="ga-h2">Managing Nervous Energy</h2>
         <p className="ga-text">
-          Some degree of nervous arousal before public speaking is not only normal but beneficial — it sharpens attention and increases energy. The problem is when this arousal becomes visible in ways that undermine your credibility. The most effective physical management strategies are slow controlled diaphragmatic breathing which directly activates the calm response in the nervous system, deliberate adoption of an expansive confident stance before you speak which has been shown to reduce stress hormones, and purposeful physical movement which burns off excess adrenaline. Trying to suppress nervous energy rarely works — channelling it into deliberate expressive gesture is far more effective.
+          Some degree of <Link to="/guides/nervous-body-language">nervous arousal</Link> before public speaking is not only normal but beneficial — it sharpens attention and increases energy. The problem is when this arousal becomes visible in ways that undermine your credibility. The most effective physical management strategies are slow controlled diaphragmatic breathing which directly activates the calm response in the nervous system, deliberate adoption of an <Link to="/dictionary">expansive confident stance</Link> before you speak which has been shown to reduce stress hormones, and purposeful physical movement which burns off excess adrenaline. Trying to suppress nervous energy rarely works — channelling it into deliberate expressive gesture is far more effective.
         </p>
       </section>
 

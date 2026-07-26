@@ -75,7 +75,7 @@ export default function GuideConfidentBodyLanguage() {
       <section className="ga-section">
         <h2 className="ga-h2">4. Use Open Hand Gestures</h2>
         <p className="ga-text">
-          Visible open palms are one of the oldest trust and confidence signals in human
+          Visible <Link to="/dictionary">open palms</Link> are one of the oldest trust and confidence signals in human
           communication. When you gesture with open hands rather than pointing or keeping hands
           hidden, you signal both confidence and honesty. Keep your hands visible during
           conversations — hands hidden in pockets or behind the back can read as either nervous or
@@ -99,7 +99,7 @@ export default function GuideConfidentBodyLanguage() {
         <p className="ga-text">
           Touching your face, neck, hair or clothing during conversation signals self-consciousness
           and anxiety. Every time you catch yourself doing this, gently lower your hand. This is
-          one of the hardest habits to break because it is unconscious, but reducing self-touch
+          one of the hardest habits to break because it is unconscious, but reducing <Link to="/dictionary">self-touch</Link>
           immediately changes how confident you appear to others.
         </p>
       </section>
@@ -131,7 +131,7 @@ export default function GuideConfidentBodyLanguage() {
           Subtle mirroring of another person's posture and gestures builds rapport and signals
           social ease — both markers of confidence. Confident people mirror naturally and
           selectively. They do not copy every movement but gradually and naturally adopt similar
-          postures. This works particularly well in interviews, meetings and first meetings where
+          postures. This works particularly well in <Link to="/guides/job-interview">interviews</Link>, meetings and first meetings where
           you want to build connection quickly.
         </p>
       </section>
@@ -141,7 +141,7 @@ export default function GuideConfidentBodyLanguage() {
         <p className="ga-text">
           Confident people plant their feet. Shifting weight constantly from foot to foot, pointing
           feet toward exits or crossing ankles tightly all signal discomfort. When standing,
-          distribute your weight evenly on both feet and keep them relatively still. This grounding
+          distribute your weight evenly on both feet and keep them relatively still. This <Link to="/dictionary">grounding</Link>
           creates a physical stability that reads directly as emotional confidence to everyone
           watching.
         </p>

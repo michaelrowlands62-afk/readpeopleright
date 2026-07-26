@@ -53,14 +53,14 @@ export default function GuideMaleAttractionSignals() {
       <section className="ga-section">
         <h2 className="ga-h2">Body Orientation and Proximity</h2>
         <p className="ga-text">
-          Male attraction produces a consistent pull toward the object of interest. The body naturally orients toward someone found attractive even in group settings — feet, knees and chest all pointing in their direction even when the face is turned elsewhere in conversation. Physical proximity reduces naturally over the course of an interaction as attraction increases. A man who finds reasons to move closer, who reduces the distance between you when an opportunity arises and whose body consistently points toward you regardless of where his face is directed is showing you genuine interest through his physical positioning.
+          Male attraction produces a consistent pull toward the object of interest. The <Link to="/dictionary">body naturally orients</Link> toward someone found attractive even in group settings — feet, knees and chest all pointing in their direction even when the face is turned elsewhere in conversation. Physical proximity reduces naturally over the course of an interaction as attraction increases. A man who finds reasons to move closer, who reduces the distance between you when an opportunity arises and whose body consistently points toward you regardless of where his face is directed is showing you genuine interest through his physical positioning.
         </p>
       </section>
 
       <section className="ga-section">
         <h2 className="ga-h2">Eye Contact Patterns</h2>
         <p className="ga-text">
-          Men experiencing genuine attraction tend to display characteristic eye contact patterns. Initial eye contact may be brief and quickly broken as the person processes the attraction and manages the self consciousness that accompanies it. As confidence increases or as interest is reciprocated the eye contact tends to become more sustained and warmer. Watch for the eyebrow flash — a quick raise of both eyebrows lasting approximately one fifth of a second upon making eye contact — which is a universal signal of positive recognition and interest that is very difficult to produce deliberately. Repeated eye contact from across a room with deliberate return to your gaze is one of the clearest signals of interest available.
+          Men experiencing genuine attraction tend to display characteristic eye contact patterns. Initial eye contact may be brief and quickly broken as the person processes the attraction and manages the self consciousness that accompanies it. As confidence increases or as interest is reciprocated the eye contact tends to become more sustained and warmer. Watch for the <Link to="/dictionary">eyebrow flash</Link> — a quick raise of both eyebrows lasting approximately one fifth of a second upon making eye contact — which is a universal signal of positive recognition and interest that is very difficult to produce deliberately. Repeated eye contact from across a room with deliberate return to your gaze is one of the clearest signals of interest available, the same dynamic covered in our guide to <Link to="/guides/social-situations">reading body language at a party</Link>.
         </p>
       </section>
 
@@ -74,7 +74,7 @@ export default function GuideMaleAttractionSignals() {
       <section className="ga-section">
         <h2 className="ga-h2">Mirroring</h2>
         <p className="ga-text">
-          Unconscious mirroring of posture, gesture and movement timing is one of the most reliable signals of genuine attraction and rapport in both men and women. When a man is genuinely attracted to and engaged with someone he will naturally and unconsciously begin to adopt similar postures, match their movement timing and mirror their energy level. This mirroring happens below conscious awareness and is therefore difficult to fake — deliberately mirroring someone feels effortful and slightly unnatural while genuine mirroring flows automatically from genuine interest.
+          Unconscious <Link to="/dictionary">mirroring</Link> of posture, gesture and movement timing is one of the most reliable signals of genuine attraction and rapport in both men and women. When a man is genuinely attracted to and engaged with someone he will naturally and unconsciously begin to adopt similar postures, match their movement timing and mirror their energy level. This mirroring happens below conscious awareness and is therefore difficult to fake — deliberately mirroring someone feels effortful and slightly unnatural while genuine mirroring flows automatically from genuine interest.
         </p>
       </section>
 

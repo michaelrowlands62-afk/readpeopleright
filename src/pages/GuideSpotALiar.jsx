@@ -20,6 +20,12 @@ const RELATED_GUIDES = [
     accent: 'gold',
     description: 'Everything you think you know about body language — fact checked. The most common misconceptions explained.',
   },
+  {
+    title: 'Body Language Signs Someone is Lying to You',
+    to: '/guides/lying-signs',
+    accent: 'purple',
+    description: 'A personal guide to spotting deception in everyday situations. The signals that reveal dishonesty in partners, colleagues and friends.',
+  },
 ]
 
 export default function GuideSpotALiar() {
@@ -71,7 +77,7 @@ export default function GuideSpotALiar() {
             Micro-expressions are involuntary facial expressions lasting a fraction of a second —
             typically between 1/25th and 1/5th of a second. They occur before the person has time
             to consciously mask their true emotion. Common micro-expressions that may indicate
-            deception include a flash of contempt, a brief expression of fear, or a flicker of
+            deception include a <Link to="/dictionary">flash of contempt</Link>, a brief expression of fear, or a flicker of
             disgust quickly replaced by a neutral or smiling face. They require training to spot
             reliably but are one of the most scientifically validated indicators of concealed
             emotion.
@@ -94,7 +100,7 @@ export default function GuideSpotALiar() {
           <h3 className="ga-h3">Self-Soothing Gestures Under Pressure</h3>
           <p className="ga-text">
             When someone is being deceptive, the stress of maintaining the lie triggers physical
-            discomfort. The body responds with self-soothing gestures — touching the face, stroking
+            discomfort. The body responds with <Link to="/dictionary">self-soothing gestures</Link> — touching the face, stroking
             the neck, rubbing the hands together, pulling at clothing. These gestures are not proof
             of lying but they are reliable indicators of stress. The crucial question is whether
             these gestures appear specifically in response to certain topics or questions, or
@@ -117,7 +123,7 @@ export default function GuideSpotALiar() {
           <h3 className="ga-h3">Timing and Freeze Responses</h3>
           <p className="ga-text">
             Truthful answers tend to come naturally and at a consistent pace. Deceptive answers may
-            be preceded by an unusually long pause — the person is constructing rather than
+            be preceded by <Link to="/dictionary">an unusually long pause</Link> — the person is constructing rather than
             recalling. Alternatively a very rapid answer to a sensitive question can also be
             significant — sometimes people rehearse their lie and deliver it too quickly compared
             to their normal speech pattern. A sudden physical freeze or reduction in movement when
@@ -131,8 +137,8 @@ export default function GuideSpotALiar() {
         <h2 className="ga-h2">What NOT to Read as Deception</h2>
         <p className="ga-text">
           Nervousness is not the same as deception. Many honest people become visibly anxious when
-          questioned — particularly in high stakes situations like job interviews, medical
-          appointments or difficult conversations with partners. Anxiety looks almost identical to
+          questioned — particularly in high stakes situations like <Link to="/guides/job-interview">job interviews</Link>, medical
+          appointments or <Link to="/guides/arguments">difficult conversations with partners</Link>. Anxiety looks almost identical to
           deception in terms of body language signals. The difference is context. If someone is
           generally nervous throughout an interaction their baseline behaviour is anxious —
           individual signals need to be read against that baseline rather than in isolation.

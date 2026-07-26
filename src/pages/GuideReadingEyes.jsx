@@ -21,6 +21,12 @@ const RELATED_GUIDES = [
     accent: 'green',
     description: 'How to look and feel more confident through body language. Ten changes you can make starting today.',
   },
+  {
+    title: 'Attraction Signals Explained',
+    to: '/guides/attraction-signals',
+    accent: 'pink',
+    description: 'How to tell if someone is genuinely interested. The 12 most reliable attraction signals and what they really mean.',
+  },
 ]
 
 export default function GuideReadingEyes() {
@@ -46,14 +52,14 @@ export default function GuideReadingEyes() {
       <section className="ga-section">
         <h2 className="ga-h2">Eye Contact and What It Reveals</h2>
         <p className="ga-text">
-          Eye contact is one of the most studied aspects of human nonverbal communication. In most Western cultures comfortable sustained eye contact signals confidence, honesty and genuine engagement. However the relationship between eye contact and truthfulness is far more nuanced than popular belief suggests. Research consistently shows that liars do not reliably avoid eye contact — many deliberately increase it because they know the myth. What matters is not whether someone makes eye contact but whether the quality and pattern of their eye contact is consistent with their baseline behaviour and the emotional content of what they are saying.
+          Eye contact is one of the most studied aspects of human nonverbal communication. In most Western cultures comfortable sustained <Link to="/dictionary">eye contact</Link> signals confidence, honesty and genuine engagement. However the relationship between eye contact and truthfulness is far more nuanced than popular belief suggests. Research consistently shows that liars do not reliably avoid eye contact — many deliberately increase it because they know the myth, one of several signals covered in our guide on <Link to="/guides/spot-a-liar">how to spot a liar</Link>. What matters is not whether someone makes eye contact but whether the quality and pattern of their eye contact is consistent with their baseline behaviour and the emotional content of what they are saying.
         </p>
       </section>
 
       <section className="ga-section">
         <h2 className="ga-h2">Pupil Dilation</h2>
         <p className="ga-text">
-          The pupils widen involuntarily in response to genuine interest, attraction and positive emotional arousal. They constrict in response to negative emotion, disgust or concentrated focus. Because pupil response is controlled by the autonomic nervous system it cannot be consciously managed, making it one of the most reliable signals available to the careful observer. Lighting conditions affect pupil size significantly so always compare against the ambient light level before drawing conclusions. In consistent lighting a noticeable dilation during a specific topic or in the presence of a specific person is a genuine signal of positive emotional response.
+          The <Link to="/dictionary">pupils widen involuntarily</Link> in response to genuine interest, <Link to="/guides/attraction-signals">attraction</Link> and positive emotional arousal. They constrict in response to negative emotion, disgust or concentrated focus. Because pupil response is controlled by the autonomic nervous system it cannot be consciously managed, making it one of the most reliable signals available to the careful observer. Lighting conditions affect pupil size significantly so always compare against the ambient light level before drawing conclusions. In consistent lighting a noticeable dilation during a specific topic or in the presence of a specific person is a genuine signal of positive emotional response.
         </p>
       </section>
 
@@ -81,7 +87,7 @@ export default function GuideReadingEyes() {
       <section className="ga-section">
         <h2 className="ga-h2">Eye Block</h2>
         <p className="ga-text">
-          The eye block is an instinctive response to something uncomfortable — a prolonged blink, a downward gaze or even a hand raised toward the eye area. It is a vestige of the physical response to block out something threatening or unpleasant. In conversation an eye block appearing in response to a specific piece of information or question — rather than throughout the interaction — is a signal that the person has found something difficult to hear or is suppressing a reaction to what they know. It is one of the signals that appears most reliably under genuine psychological pressure.
+          The <Link to="/dictionary">eye block</Link> is an instinctive response to something uncomfortable — a prolonged blink, a downward gaze or even a hand raised toward the eye area. It is a vestige of the physical response to block out something threatening or unpleasant. In conversation an eye block appearing in response to a specific piece of information or question — rather than throughout the interaction — is a signal that the person has found something difficult to hear or is suppressing a reaction to what they know. It is one of the signals that appears most reliably under genuine psychological pressure.
         </p>
       </section>
 
@@ -105,7 +111,7 @@ export default function GuideReadingEyes() {
           <p className="ga-cta-text">
             Put your eye reading skills to the test with our interactive body language quiz. Real scenarios, real signals, real learning.
           </p>
-          <Link to="/episodes" className="ga-cta-btn">
+          <Link to={`/episodes?category=${encodeURIComponent('Micro-Expression Expert')}`} className="ga-cta-btn">
             Test Your Body Language Skills
           </Link>
         </div>

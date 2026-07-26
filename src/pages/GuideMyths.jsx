@@ -20,6 +20,12 @@ const RELATED_GUIDES = [
     accent: 'pink',
     description: 'How to tell if someone is genuinely interested. The 12 most reliable attraction signals and what they really mean.',
   },
+  {
+    title: 'Body Language Around The World',
+    to: '/guides/around-the-world',
+    accent: 'purple',
+    description: 'The same gesture means different things in different cultures. The essential guide to avoiding costly misunderstandings.',
+  },
 ]
 
 export default function GuideMyths() {
@@ -41,9 +47,10 @@ export default function GuideMyths() {
         <h2 className="ga-h2">Myth 1: Liars Always Avoid Eye Contact</h2>
         <p className="ga-text">
           This is probably the most widely believed body language myth and one of the least
-          reliable. Multiple studies have found no consistent relationship between gaze aversion
+          reliable. Multiple studies have found no consistent relationship between <Link to="/dictionary">gaze aversion</Link>
           and deception. In fact research shows that many practised liars deliberately increase eye
-          contact because they know this myth and compensate for it. The science is clear, eye
+          contact because they know this myth and compensate for it — see our guide on <Link to="/guides/spot-a-liar">how to spot
+          a liar</Link> for the signals that actually hold up. The science is clear, eye
           contact alone tells you almost nothing about whether someone is being truthful.
         </p>
       </section>
@@ -51,7 +58,7 @@ export default function GuideMyths() {
       <section className="ga-section">
         <h2 className="ga-h2">Myth 2: Crossed Arms Always Mean Defensiveness</h2>
         <p className="ga-text">
-          Crossed arms are almost universally interpreted as a defensive or hostile signal. In
+          <Link to="/dictionary">Crossed arms</Link> are almost universally interpreted as a defensive or hostile signal. In
           reality people cross their arms for dozens of reasons, they are cold, they are
           comfortable, it is a habitual resting position, or the chair they are sitting in does not
           have armrests. Research consistently shows that crossed arms alone are not a reliable
@@ -76,7 +83,7 @@ export default function GuideMyths() {
       <section className="ga-section">
         <h2 className="ga-h2">Myth 4: You Can Always Tell if a Smile is Fake</h2>
         <p className="ga-text">
-          The Duchenne smile, a genuine smile involving the muscles around the eyes, is real and
+          The <Link to="/dictionary">Duchenne smile</Link>, a genuine smile involving the muscles around the eyes, is real and
           research validated. However the idea that you can reliably distinguish genuine from fake
           smiles without training is largely a myth. Studies show that most untrained people
           perform only marginally better than chance when trying to identify fake smiles. The
@@ -88,10 +95,11 @@ export default function GuideMyths() {
       <section className="ga-section">
         <h2 className="ga-h2">Myth 5: Confident People Always Make Direct Eye Contact</h2>
         <p className="ga-text">
-          Sustained direct eye contact is associated with confidence in many Western cultures. But
+          Sustained <Link to="/dictionary">direct eye contact</Link> is associated with confidence in many Western cultures. But
           this relationship does not hold universally. In many Asian, African and Latin American
           cultures sustained eye contact with an authority figure is considered disrespectful
-          rather than confident. Even within Western cultures introverted or highly intelligent
+          rather than confident — our guide to <Link to="/guides/around-the-world">body language around the world</Link> covers many more
+          examples like this. Even within Western cultures introverted or highly intelligent
           people sometimes make less eye contact not because they lack confidence but because they
           are processing information internally. Always read body language in cultural context.
         </p>
@@ -114,7 +122,8 @@ export default function GuideMyths() {
         <h2 className="ga-h2">Myth 7: Mirroring Always Means Someone Likes You</h2>
         <p className="ga-text">
           Mirroring, unconsciously adopting similar postures or gestures to someone else, is indeed
-          associated with rapport and positive connection. However it can also occur simply as a
+          associated with rapport and positive connection — it is one of the <Link to="/guides/attraction-signals">attraction signals</Link> people
+          often ask about. However it can also occur simply as a
           result of shared attention to the same thing, a common cultural background or proximity
           over time. Deliberate mirroring as a rapport building technique also produces the
           physical behaviour without the underlying genuine connection. Like all signals mirroring
@@ -154,7 +163,7 @@ export default function GuideMyths() {
             against genuine scenarios. Our interactive quiz is based on real psychological research
             not popular myths.
           </p>
-          <Link to="/episodes" className="ga-cta-btn">
+          <Link to={`/episodes?category=${encodeURIComponent('Spot a Liar')}`} className="ga-cta-btn">
             Test Your Body Language Skills
           </Link>
         </div>

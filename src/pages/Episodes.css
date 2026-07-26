@@ -71,6 +71,20 @@
   margin: 0;
 }
 
+.category-block-guide-link {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+.category-block-guide-link:hover {
+  color: var(--gold-light);
+  text-decoration: underline;
+}
+
 /* ── Difficulty Buttons ── */
 .difficulty-buttons {
   display: flex;

@@ -60,7 +60,7 @@ export default function GuideNegotiationBodyLanguage() {
       <section className="ga-section">
         <h2 className="ga-h2">Signals of Resistance and Doubt</h2>
         <p className="ga-text">
-          Resistance in a negotiation produces a characteristic physical cluster. The body leans back rather than forward. Arms may cross or hands may move to the table in a containing gesture. The face shows evaluation signals — chin stroking, lips pressed together, the index finger raised to the cheek. Eye contact may reduce or become more assessing. Speech slows and becomes more careful. Questions become more challenging rather than more interested. The steeple gesture — fingertips pressed together — signals confident evaluation of whether the proposal meets requirements. These signals do not mean the negotiation is lost — they mean the other side is not yet convinced and that more information, a different framing or a concession may be needed.
+          Resistance in a negotiation produces a characteristic physical cluster. The body leans back rather than forward. <Link to="/dictionary">Arms may cross</Link> or hands may move to the table in a containing gesture. The face shows evaluation signals — <Link to="/dictionary">chin stroking</Link>, lips pressed together, the index finger raised to the cheek. Eye contact may reduce or become more assessing. Speech slows and becomes more careful. Questions become more challenging rather than more interested. The <Link to="/dictionary">steeple gesture</Link> — fingertips pressed together — signals confident evaluation of whether the proposal meets requirements. These signals do not mean the negotiation is lost — they mean the other side is not yet convinced and that more information, a different framing or a concession may be needed.
         </p>
       </section>
 
@@ -81,7 +81,7 @@ export default function GuideNegotiationBodyLanguage() {
       <section className="ga-section">
         <h2 className="ga-h2">Deceptive Signals in Negotiation</h2>
         <p className="ga-text">
-          Negotiations are environments where deliberate deception is more common than in most interactions — both sides have incentives to misrepresent their true position, level of interest or alternatives. The most common deceptive body language in negotiations involves performing disinterest while genuinely being very interested, and performing confidence while genuinely being under pressure. Performed disinterest tends to be slightly too consistent — the person does not allow the natural fluctuations of genuine engagement to show. Performed confidence under pressure tends to produce the over-controlled body language of someone working hard to maintain a signal rather than the relaxed ease of someone who genuinely has nothing to worry about.
+          Negotiations are environments where deliberate <Link to="/guides/spot-a-liar">deception</Link> is more common than in most interactions — both sides have incentives to misrepresent their true position, level of interest or alternatives. The most common deceptive body language in negotiations involves performing disinterest while genuinely being very interested, and performing confidence while genuinely being under pressure. Performed disinterest tends to be slightly too consistent — the person does not allow the natural fluctuations of genuine engagement to show. Performed confidence under pressure tends to produce the over-controlled body language of someone working hard to maintain a signal rather than the relaxed ease of someone who genuinely has nothing to worry about.
         </p>
       </section>
 
@@ -95,7 +95,7 @@ export default function GuideNegotiationBodyLanguage() {
       <section className="ga-section">
         <h2 className="ga-h2">Power Dynamics in Negotiation</h2>
         <p className="ga-text">
-          The body language of power in negotiations follows the same patterns as power in other contexts but is amplified by the stakes involved. Higher power negotiators take up more space, move more slowly and deliberately, speak at a more measured pace and are more comfortable with silence. They initiate touch more freely during the rapport phases. They ask more questions and answer fewer. They are physically calmer when pressure is applied. Reading these power signals accurately helps you understand the genuine confidence level and alternatives of the person across the table — which is often different from what their words suggest.
+          The body language of <Link to="/guides/power-body-language">power</Link> in negotiations follows the same patterns as power in other contexts but is amplified by the stakes involved. Higher power negotiators take up more space, move more slowly and deliberately, speak at a more measured pace and are more comfortable with silence. They initiate touch more freely during the rapport phases. They ask more questions and answer fewer. They are physically calmer when pressure is applied. Reading these power signals accurately helps you understand the genuine confidence level and alternatives of the person across the table — which is often different from what their words suggest.
         </p>
       </section>
 

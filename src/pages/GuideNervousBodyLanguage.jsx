@@ -21,6 +21,12 @@ const RELATED_GUIDES = [
     accent: 'gold',
     description: 'Master the signals that win interviews. Learn what interviewers are really reading and how to present yourself with confidence.',
   },
+  {
+    title: 'Body Language Signs of Stress',
+    to: '/guides/stress-signals',
+    accent: 'red',
+    description: 'Stress leaks through the body before the mind acknowledges it. Learn to recognise the early physical signals of stress.',
+  },
 ]
 
 export default function GuideNervousBodyLanguage() {
@@ -46,7 +52,7 @@ export default function GuideNervousBodyLanguage() {
       <section className="ga-section">
         <h2 className="ga-h2">Why the Body Shows Nervousness</h2>
         <p className="ga-text">
-          Nervous body language is produced by the autonomic nervous system responding to perceived threat or pressure. When the brain registers stress it triggers the fight or flight response — releasing adrenaline and cortisol, increasing heart rate, heightening muscle tension and preparing the body for action. These physiological changes produce visible physical signals that we read as nervousness even when the person is trying to conceal them. Because these responses are largely automatic they are very difficult to fully suppress, which is why nervous body language tends to leak through even when someone is trying hard to appear calm.
+          Nervous body language is produced by the autonomic nervous system responding to perceived threat or pressure. When the brain registers stress it triggers the fight or flight response — releasing adrenaline and cortisol, increasing heart rate, heightening muscle tension and preparing the body for action, the same physiology behind the <Link to="/guides/stress-signals">signs of stress</Link> covered in our companion guide. These physiological changes produce visible physical signals that we read as nervousness even when the person is trying to conceal them. Because these responses are largely automatic they are very difficult to fully suppress, which is why nervous body language tends to leak through even when someone is trying hard to appear calm.
         </p>
       </section>
 
@@ -56,7 +62,7 @@ export default function GuideNervousBodyLanguage() {
         <div className="ga-h3-block">
           <h3 className="ga-h3">Self Touching</h3>
           <p className="ga-text">
-            Touching the face, neck, hair or arms is one of the most universal nervous signals. These self soothing gestures replicate the comfort of being touched by another person and help regulate anxiety through physical stimulation. Common forms include touching the base of the throat, rubbing the back of the neck, playing with hair, pulling an earlobe, touching the nose or stroking an arm. The significance of self touching as a nervous signal is greatest when it appears in specific response to a topic or question rather than consistently throughout an interaction.
+            <Link to="/dictionary">Touching the face, neck, hair or arms</Link> is one of the most universal nervous signals. These self soothing gestures replicate the comfort of being touched by another person and help regulate anxiety through physical stimulation. Common forms include touching the base of the throat, rubbing the back of the neck, playing with hair, pulling an earlobe, touching the nose or stroking an arm. The significance of self touching as a nervous signal is greatest when it appears in specific response to a topic or question rather than consistently throughout an interaction.
           </p>
         </div>
 
@@ -70,7 +76,7 @@ export default function GuideNervousBodyLanguage() {
         <div className="ga-h3-block">
           <h3 className="ga-h3">Vocal Changes</h3>
           <p className="ga-text">
-            The voice is one of the first things affected by nervousness. Common changes include a rise in pitch as the vocal cords tighten under stress, a faster speaking pace as the person rushes to fill silence, stumbling over words, excessive filler words such as um and er, and a reduction in vocal volume as confidence drops. Swallowing or clearing the throat before speaking is also a common nervous signal as stress causes the throat to tighten and dry.
+            The voice is one of the first things affected by nervousness. Common changes include a <Link to="/dictionary">rise in pitch</Link> as the vocal cords tighten under stress, a faster speaking pace as the person rushes to fill silence, stumbling over words, excessive filler words such as um and er, and a reduction in vocal volume as confidence drops. Swallowing or clearing the throat before speaking is also a common nervous signal as stress causes the throat to tighten and dry.
           </p>
         </div>
 
@@ -84,7 +90,7 @@ export default function GuideNervousBodyLanguage() {
         <div className="ga-h3-block">
           <h3 className="ga-h3">Postural Collapse</h3>
           <p className="ga-text">
-            Anxiety tends to make people physically smaller. Rounded shoulders, a slightly bowed head, arms pulled close to the body and a narrower stance all signal a desire to take up less space and reduce visibility. This is a submission posture — the body signalling that it does not want to be noticed or challenged. In contrast someone who is genuinely relaxed will tend to take up more space naturally and hold their posture with less visible effort.
+            Anxiety tends to make people physically smaller. Rounded shoulders, a slightly bowed head, arms pulled close to the body and a narrower stance all signal a desire to take up less space and reduce visibility. This <Link to="/dictionary">cowering</Link> posture — the body signalling that it does not want to be noticed or challenged. In contrast someone who is genuinely relaxed will tend to take up more space naturally and hold their posture with less visible effort.
           </p>
         </div>
       </section>
@@ -92,14 +98,14 @@ export default function GuideNervousBodyLanguage() {
       <section className="ga-section">
         <h2 className="ga-h2">Nervousness Versus Deception</h2>
         <p className="ga-text">
-          One of the most important distinctions in body language reading is between nervousness and deception. The physical signals are almost identical — increased heart rate, self soothing gestures, vocal changes, averted gaze — because the same autonomic stress response underlies both states. An honest person being questioned about something sensitive will display the same nervous signals as someone who is lying. The key differentiator is not the presence of nervous signals but whether those signals are consistent throughout the interaction or appear specifically in response to certain topics. Nervousness that is present from the start of an interaction and remains consistent throughout suggests genuine anxiety about the situation rather than specific deception.
+          One of the most important distinctions in body language reading is between nervousness and <Link to="/guides/spot-a-liar">deception</Link>. The physical signals are almost identical — increased heart rate, self soothing gestures, vocal changes, averted gaze — because the same autonomic stress response underlies both states. An honest person being questioned about something sensitive will display the same nervous signals as someone who is lying. The key differentiator is not the presence of nervous signals but whether those signals are consistent throughout the interaction or appear specifically in response to certain topics. Nervousness that is present from the start of an interaction and remains consistent throughout suggests genuine anxiety about the situation rather than specific deception.
         </p>
       </section>
 
       <section className="ga-section">
         <h2 className="ga-h2">Nervousness Versus Excitement</h2>
         <p className="ga-text">
-          Nervous body language and excited body language are physiologically almost identical — the same fight or flight response, the same adrenaline, the same physical arousal. The difference is in cognitive interpretation and context. Someone about to give a presentation they are genuinely enthusiastic about may display almost the same physical signals as someone dreading it. The signals to look for to distinguish the two are facial expression — genuine excitement tends to produce positive facial expressions alongside the arousal signals — and body orientation. Excited people tend to move toward the source of their excitement. Nervous people tend to withdraw or create distance from what makes them anxious.
+          Nervous body language and excited body language are physiologically almost identical — the same fight or flight response, the same adrenaline, the same physical arousal. The difference is in cognitive interpretation and context. Someone about to give a <Link to="/guides/public-speaking">presentation</Link> they are genuinely enthusiastic about may display almost the same physical signals as someone dreading it. The signals to look for to distinguish the two are facial expression — genuine excitement tends to produce positive facial expressions alongside the arousal signals — and body orientation. Excited people tend to move toward the source of their excitement. Nervous people tend to withdraw or create distance from what makes them anxious.
         </p>
       </section>
 

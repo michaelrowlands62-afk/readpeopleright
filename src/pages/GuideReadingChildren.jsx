@@ -56,14 +56,14 @@ export default function GuideReadingChildren() {
         <div className="ga-h3-block">
           <h3 className="ga-h3">Physical Withdrawal</h3>
           <p className="ga-text">
-            A child who is anxious or fearful will often make themselves physically smaller — hunching their shoulders, pulling their arms close to their body, dropping their head and avoiding eye contact. In social situations an anxious child will typically stay close to their trusted caregiver, position themselves slightly behind rather than in front, and resist physical separation. These withdrawal signals are among the most reliable indicators of genuine anxiety rather than simple shyness.
+            A child who is anxious or fearful will often make themselves physically smaller — <Link to="/dictionary">hunching their shoulders</Link>, pulling their arms close to their body, dropping their head and avoiding eye contact. In social situations an anxious child will typically stay close to their trusted caregiver, position themselves slightly behind rather than in front, and resist physical separation. These withdrawal signals are among the most reliable indicators of genuine anxiety rather than simple shyness.
           </p>
         </div>
 
         <div className="ga-h3-block">
           <h3 className="ga-h3">Self Soothing Behaviours</h3>
           <p className="ga-text">
-            Children self soothe physically in response to anxiety in ways that are often more visible than those of adults. Thumb sucking in older children who have outgrown the habit, rocking, hair twisting, nail biting, picking at skin and repetitive touching of a comfort object are all physical anxiety responses. The return of self soothing behaviours that a child had previously grown out of is a significant signal that something is causing them distress.
+            Children self soothe physically in response to anxiety in ways that are often more visible than those of adults, the same <Link to="/guides/nervous-body-language">nervous energy</Link> adults display in subtler forms. Thumb sucking in older children who have outgrown the habit, rocking, <Link to="/dictionary">hair twisting</Link>, nail biting, picking at skin and repetitive touching of a comfort object are all physical anxiety responses. The return of self soothing behaviours that a child had previously grown out of is a significant signal that something is causing them distress.
           </p>
         </div>
 
@@ -88,7 +88,7 @@ export default function GuideReadingChildren() {
         <div className="ga-h3-block">
           <h3 className="ga-h3">Genuine Versus Performed Smiling</h3>
           <p className="ga-text">
-            Even young children learn to perform smiles for social purposes — for photographs, for adults who expect cheerfulness. The distinction between a genuine and performed smile is the same in children as in adults — genuine smiles involve the eye muscles producing natural crinkles, appear spontaneously and fade gradually. Performed smiles are confined to the mouth, appear on cue and disappear abruptly. A child who smiles for photographs but whose eyes remain flat is showing you something worth paying attention to.
+            Even young children learn to perform smiles for social purposes — for photographs, for adults who expect cheerfulness. The distinction between a genuine and performed smile is the same in children as in adults — see our guide to <Link to="/guides/reading-eyes">reading someone's eyes</Link> for more on this — genuine smiles involve the eye muscles producing natural crinkles, the hallmark of a <Link to="/dictionary">Duchenne smile</Link>, and appear spontaneously and fade gradually. Performed smiles are confined to the mouth, appear on cue and disappear abruptly. A child who smiles for photographs but whose eyes remain flat is showing you something worth paying attention to.
           </p>
         </div>
       </section>
@@ -131,7 +131,7 @@ export default function GuideReadingChildren() {
           <p className="ga-cta-text">
             Understanding body language in all its forms makes you a more attuned reader of people. Test your skills with our interactive body language quiz.
           </p>
-          <Link to="/episodes" className="ga-cta-btn">
+          <Link to={`/episodes?category=${encodeURIComponent('Read Emotions')}`} className="ga-cta-btn">
             Test Your Body Language Skills
           </Link>
         </div>

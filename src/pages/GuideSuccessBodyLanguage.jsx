@@ -46,7 +46,7 @@ export default function GuideSuccessBodyLanguage() {
       <section className="ga-section">
         <h2 className="ga-h2">They Make People Feel Genuinely Heard</h2>
         <p className="ga-text">
-          One of the most consistently reported qualities of highly effective people is their ability to make others feel genuinely listened to. This is expressed physically through full body orientation toward the person speaking, eye contact that is warm and sustained rather than scanning or distracted, natural nodding that responds to what is actually being said rather than maintaining a rhythmic politeness signal, and the complete absence of phone checking or environmental scanning while someone is speaking. This quality of genuine attention is increasingly rare and therefore increasingly powerful — people remember with unusual vividness the feeling of being truly heard and associate it strongly with the person who provided it.
+          One of the most consistently reported qualities of highly effective people is their ability to make others feel genuinely listened to. This is expressed physically through full body orientation toward the person speaking, eye contact that is warm and sustained rather than scanning or distracted, <Link to="/dictionary">natural nodding</Link> that responds to what is actually being said rather than maintaining a rhythmic politeness signal, and the complete absence of phone checking or environmental scanning while someone is speaking. This quality of genuine attention is increasingly rare and therefore increasingly powerful — people remember with unusual vividness the feeling of being truly heard and associate it strongly with the person who provided it.
         </p>
       </section>
 
@@ -81,14 +81,14 @@ export default function GuideSuccessBodyLanguage() {
       <section className="ga-section">
         <h2 className="ga-h2">They Genuinely Mirror</h2>
         <p className="ga-text">
-          Genuine mirroring — the unconscious adoption of another person's posture, gesture timing and energy level — is one of the most reliable signals of real engagement and one of the most powerful builders of rapport. Successful people tend to be natural mirrors because they are genuinely curious about and attentive to the people they are with. This mirroring is not a technique they apply consciously — it is the automatic physical expression of genuine interest. The practical implication is that developing genuine curiosity about the people you interact with produces the mirroring behaviour as a natural byproduct rather than as a performance.
+          Genuine <Link to="/dictionary">mirroring</Link> — the unconscious adoption of another person's posture, gesture timing and energy level — is one of the most reliable signals of real engagement and one of the most powerful builders of rapport. Successful people tend to be natural mirrors because they are genuinely curious about and attentive to the people they are with. This mirroring is not a technique they apply consciously — it is the automatic physical expression of genuine interest. The practical implication is that developing genuine curiosity about the people you interact with produces the mirroring behaviour as a natural byproduct rather than as a performance.
         </p>
       </section>
 
       <section className="ga-section">
         <h2 className="ga-h2">They Project Calm Under Pressure</h2>
         <p className="ga-text">
-          The ability to maintain physical calm under conditions that would visibly stress most people is one of the most legible and respected qualities in any environment. Successful people in high stakes situations — difficult negotiations, public scrutiny, unexpected crises — tend to show a physical steadiness that signals to everyone around them that the situation is manageable. This calm is not indifference — it is the physical expression of genuine confidence in their own capacity to navigate difficulty. It produces trust and followership in others precisely because it signals that the person is not going to make the situation worse by losing control of themselves.
+          The ability to maintain physical calm under conditions that would visibly stress most people is one of the most legible and respected qualities in any environment. Successful people in high stakes situations — difficult <Link to="/guides/negotiation-body-language">negotiations</Link>, <Link to="/guides/public-speaking">public scrutiny</Link>, unexpected crises — tend to show a <Link to="/dictionary">physical steadiness</Link> that signals to everyone around them that the situation is manageable. This calm is not indifference — it is the physical expression of genuine confidence in their own capacity to navigate difficulty. It produces trust and followership in others precisely because it signals that the person is not going to make the situation worse by losing control of themselves.
         </p>
       </section>
 
@@ -112,7 +112,7 @@ export default function GuideSuccessBodyLanguage() {
           <p className="ga-cta-text">
             Understanding what effective body language looks like helps you both project it and read it in others. Test your skills with our interactive quiz.
           </p>
-          <Link to="/episodes" className="ga-cta-btn">
+          <Link to={`/episodes?category=${encodeURIComponent('Workplace & Career')}`} className="ga-cta-btn">
             Test Your Body Language Skills
           </Link>
         </div>

@@ -21,6 +21,12 @@ const RELATED_GUIDES = [
     accent: 'purple',
     description: 'Learn to recognise the signs of anxiety and nervousness in yourself and others. Understand what triggers these signals and how to manage them in high pressure situations.',
   },
+  {
+    title: 'Body Language in Different Relationships',
+    to: '/guides/relationship-types',
+    accent: 'purple',
+    description: 'Friends, family, colleagues and romantic partners all have different nonverbal languages. Learn to read each type of relationship.',
+  },
 ]
 
 export default function GuideArguments() {
@@ -53,21 +59,21 @@ export default function GuideArguments() {
       <section className="ga-section">
         <h2 className="ga-h2">Escalation Signals</h2>
         <p className="ga-text">
-          Recognising when an argument is escalating from disagreement toward genuine danger is a critical skill. Physical escalation signals include a significant increase in volume and speech rate, finger pointing or jabbing gestures directed at the other person, invasion of personal space by moving physically closer, a reddening of the face from increased blood pressure, clenching of the fists even when not raised, a forward lean of the whole body rather than just the upper body and a quality of physical stillness that precedes explosive movement rather than indicating calm. When multiple escalation signals appear simultaneously the priority should be de-escalation rather than winning the argument.
+          Recognising when an argument is escalating from disagreement toward genuine danger is a critical skill. Physical escalation signals include a significant increase in volume and speech rate, finger pointing or jabbing gestures directed at the other person, invasion of personal space by moving physically closer, a reddening of the face from increased blood pressure, <Link to="/dictionary">clenching of the fists</Link> even when not raised, a forward lean of the whole body rather than just the upper body and a quality of physical stillness that precedes explosive movement rather than indicating calm. When multiple escalation signals appear simultaneously the priority should be de-escalation rather than winning the argument.
         </p>
       </section>
 
       <section className="ga-section">
         <h2 className="ga-h2">Genuine Distress Versus Performance</h2>
         <p className="ga-text">
-          One of the most important distinctions in reading arguments is between genuine emotional distress and performed distress. Genuine distress tends to produce the inner brow raise — the inner corners of the eyebrows pulling upward and together — which is one of the most difficult facial movements to produce voluntarily. It also tends to produce asymmetrical rather than symmetrical facial expressions, real tears rather than eyes that well without spilling, and a quality of physical collapse rather than the more upright posture of performed emotion. Performed distress — crying or showing upset to manipulate rather than from genuine feeling — tends to be more symmetrical, more controlled and more conveniently timed to achieve a specific effect.
+          One of the most important distinctions in reading arguments — closely related to the signals covered in our guide on <Link to="/guides/spot-a-liar">how to spot a liar</Link> — is between genuine emotional distress and performed distress. Genuine distress tends to produce the inner brow raise — the inner corners of the eyebrows pulling upward and together — which is one of the most difficult facial movements to produce voluntarily. It also tends to produce <Link to="/dictionary">asymmetrical</Link> rather than symmetrical facial expressions, real tears rather than eyes that well without spilling, and a quality of physical collapse rather than the more upright posture of performed emotion. Performed distress — crying or showing upset to manipulate rather than from genuine feeling — tends to be more symmetrical, more controlled and more conveniently timed to achieve a specific effect.
         </p>
       </section>
 
       <section className="ga-section">
         <h2 className="ga-h2">Withdrawal Signals</h2>
         <p className="ga-text">
-          Physical withdrawal during an argument is as significant as aggressive escalation. Turning the body away from the other person, crossed arms held tightly, gaze directed at the floor or away from the other person, reduced speech and a physical stillness that looks like shutting down rather than calm — these are signals of emotional withdrawal rather than resolution. The person has not agreed and is not calm — they have disengaged from the argument without resolving it. This state — sometimes called stonewalling — is one of the most reliable predictors of relationship distress because it prevents the repair conversation that arguments need to reach genuine resolution.
+          Physical withdrawal during an argument is as significant as aggressive escalation. Turning the body away from the other person, <Link to="/dictionary">crossed arms</Link> held tightly, gaze directed at the floor or away from the other person, reduced speech and a physical stillness that looks like shutting down rather than calm — these are signals of emotional withdrawal rather than resolution. The person has not agreed and is not calm — they have disengaged from the argument without resolving it. This state — sometimes called stonewalling — is one of the most reliable predictors of relationship distress because it prevents the repair conversation that arguments need to reach genuine resolution.
         </p>
       </section>
 
@@ -81,7 +87,7 @@ export default function GuideArguments() {
       <section className="ga-section">
         <h2 className="ga-h2">Contempt and Why It Matters</h2>
         <p className="ga-text">
-          Of all the emotional expressions that can appear during arguments the most damaging to relationships is contempt. Contempt is expressed through the unilateral lip raise — a one-sided sneer — combined with eye rolling, dismissive sighing or a physical turning away. Research by relationship psychologist John Gottman identified contempt as the single strongest predictor of relationship breakdown — more predictive than the frequency of arguments, the severity of disagreements or the presence of other negative emotions. Contempt signals that one person sees themselves as fundamentally superior to the other rather than as an equal in a disagreement. Recognising it early — in yourself as much as in others — is critical.
+          Of all the emotional expressions that can appear during arguments the most damaging to relationships is contempt. Contempt is expressed through the <Link to="/dictionary">unilateral lip raise</Link> — a one-sided sneer — combined with eye rolling, dismissive sighing or a physical turning away. Research by relationship psychologist John Gottman identified contempt as the single strongest predictor of relationship breakdown across every type of close relationship covered in our guide to <Link to="/guides/relationship-types">body language in different relationships</Link> — more predictive than the frequency of arguments, the severity of disagreements or the presence of other negative emotions. Contempt signals that one person sees themselves as fundamentally superior to the other rather than as an equal in a disagreement. Recognising it early — in yourself as much as in others — is critical.
         </p>
       </section>
 

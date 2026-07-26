@@ -20,6 +20,12 @@ const RELATED_GUIDES = [
     accent: 'red',
     description: 'The body language signals that reveal deception. Learn the clusters experts look for and why single signals are never enough.',
   },
+  {
+    title: 'Reading Body Language in Negotiations',
+    to: '/guides/negotiation-body-language',
+    accent: 'blue',
+    description: 'Negotiations are won and lost in the nonverbal space. Learn to read genuine interest, resistance and readiness to agree.',
+  },
 ]
 
 export default function GuideWorkplaceBodyLanguage() {
@@ -46,7 +52,7 @@ export default function GuideWorkplaceBodyLanguage() {
           about how they are feeling, how a conversation is going and whether your ideas are
           landing well. A boss who leans forward during your presentation is genuinely engaged. One
           who leans back and crosses their arms may be sceptical or unconvinced. Watch for
-          micro expressions of contempt or dismissal which appear briefly before a managed neutral
+          <Link to="/dictionary"> micro expressions of contempt</Link> or dismissal which appear briefly before a managed neutral
           expression takes over. If your boss's feet are pointing toward the door during a meeting
           they are probably thinking about ending it. Pay particular attention to changes from
           their baseline behaviour when you are speaking versus when others are speaking.
@@ -80,9 +86,9 @@ export default function GuideWorkplaceBodyLanguage() {
       <section className="ga-section">
         <h2 className="ga-h2">Reading Negotiation Body Language</h2>
         <p className="ga-text">
-          Negotiations are some of the most body language rich interactions in professional life. A
+          <Link to="/guides/negotiation-body-language">Negotiations</Link> are some of the most body language rich interactions in professional life. A
           counterpart who mirrors your posture is likely building rapport and moving toward
-          agreement. Steepled fingers signal confidence and evaluation. Sudden crossing of arms
+          agreement. <Link to="/dictionary">Steepled fingers</Link> signal confidence and evaluation. Sudden crossing of arms
           after an offer is made often signals rejection even before words confirm it. Leaning back
           and looking at the ceiling signals consideration rather than dismissal. Collecting
           objects like pens or papers toward oneself is a territorial signal often seen when someone
@@ -93,7 +99,7 @@ export default function GuideWorkplaceBodyLanguage() {
       <section className="ga-section">
         <h2 className="ga-h2">Power Dynamics and Status Signals</h2>
         <p className="ga-text">
-          Status expresses itself physically in predictable ways. Higher status individuals tend to
+          <Link to="/guides/power-body-language">Status expresses itself</Link> physically in predictable ways. Higher status individuals tend to
           take up more space, move more slowly and deliberately, initiate touch more often and
           interrupt more freely. Lower status individuals tend to make themselves physically
           smaller, move more quickly and deferentially and wait for permission before acting.
@@ -105,8 +111,9 @@ export default function GuideWorkplaceBodyLanguage() {
       <section className="ga-section">
         <h2 className="ga-h2">Presenting With Confidence</h2>
         <p className="ga-text">
-          How you physically present information matters as much as the content itself. Plant your
-          feet and avoid swaying or shifting weight. Use deliberate open hand gestures to emphasise
+          How you physically present information matters as much as the content itself — our guide
+          to <Link to="/guides/public-speaking">body language for public speaking</Link> covers this in depth. Plant your
+          feet and avoid swaying or shifting weight. Use deliberate <Link to="/dictionary">open hand gestures</Link> to emphasise
           key points. Make eye contact with individuals around the room rather than staring at
           slides or notes. Pause deliberately between points rather than rushing to fill silence.
           Your physical stillness and deliberate pace signal that you are in control of both the
@@ -117,7 +124,7 @@ export default function GuideWorkplaceBodyLanguage() {
       <section className="ga-section">
         <h2 className="ga-h2">Reading Interviews From Both Sides</h2>
         <p className="ga-text">
-          Whether you are being interviewed or conducting interviews, body language provides
+          Whether you are being <Link to="/guides/job-interview">interviewed</Link> or conducting interviews, body language provides
           crucial information. As a candidate the signals you send in the first few seconds shape
           the entire conversation. As an interviewer watch for the gap between what candidates say
           and what their body language reveals. Genuine enthusiasm produces open animated body

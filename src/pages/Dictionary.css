@@ -28,6 +28,27 @@
   margin: 0;
 }
 
+/* ── Guides note ── */
+
+.dict-guides-note {
+  text-align: center;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0 0 32px;
+}
+
+.dict-guides-note a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.dict-guides-note a:hover {
+  color: var(--gold-light);
+  text-decoration: underline;
+}
+
 /* ── Search bar ── */
 
 .dict-search-wrap {

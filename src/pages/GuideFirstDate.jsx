@@ -20,6 +20,12 @@ const RELATED_GUIDES = [
     accent: 'gold',
     description: 'Everything you think you know about body language, fact checked. The most common misconceptions explained.',
   },
+  {
+    title: 'Nervous Body Language',
+    to: '/guides/nervous-body-language',
+    accent: 'purple',
+    description: 'Learn to recognise the signs of anxiety and nervousness in yourself and others, and how to manage them under pressure.',
+  },
 ]
 
 export default function GuideFirstDate() {
@@ -53,11 +59,12 @@ export default function GuideFirstDate() {
       <section className="ga-section">
         <h2 className="ga-h2">Signals of Genuine Interest to Look For</h2>
         <p className="ga-text">
-          Genuine romantic interest produces a predictable cluster of signals. Their body will
+          Genuine romantic interest produces a predictable cluster of signals — the same ones
+          covered in more depth in our guide to <Link to="/guides/attraction-signals">attraction signals</Link>. Their body will
           orient toward you even when distracted. They will lean in during conversation rather than
           maintaining or increasing distance. Their smile will reach their eyes producing natural
-          crinkles at the corners. They will find reasons to make and maintain eye contact. They
-          may unconsciously mirror your posture or gestures. They will become slightly more
+          crinkles at the corners, the hallmark of a <Link to="/dictionary">Duchenne smile</Link>. They will find reasons to make and maintain eye contact. They
+          may unconsciously <Link to="/dictionary">mirror</Link> your posture or gestures. They will become slightly more
           animated and expressive specifically in your presence. No single signal is conclusive but
           three or more appearing consistently together is a strong positive indication.
         </p>
@@ -79,7 +86,7 @@ export default function GuideFirstDate() {
       <section className="ga-section">
         <h2 className="ga-h2">Nervous Energy and What It Means</h2>
         <p className="ga-text">
-          Nervousness on a first date is almost universal and does not indicate disinterest. In
+          <Link to="/guides/nervous-body-language">Nervousness</Link> on a first date is almost universal and does not indicate disinterest. In
           fact visible nervous energy specifically in your presence can itself be a positive
           signal. Someone who fidgets slightly, laughs a little too quickly at your jokes, stumbles
           over their words when speaking to you or appears slightly flustered is someone who is
@@ -96,7 +103,7 @@ export default function GuideFirstDate() {
           interest. Someone who finds reasons to reduce the distance between you, who initiates
           casual touch naturally and who does not pull away when you are physically close is
           showing positive signals. Watch for the first touch and how it is received. A touch on
-          the arm or hand that is met with warmth or reciprocation is a strong signal. One that is
+          the arm or hand — a <Link to="/dictionary">deliberate touch</Link> — that is met with warmth or reciprocation is a strong signal. One that is
           met with a subtle pulling away or tension is worth noting.
         </p>
       </section>

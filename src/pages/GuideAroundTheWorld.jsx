@@ -20,6 +20,12 @@ const RELATED_GUIDES = [
     accent: 'green',
     description: 'How to look and feel more confident through body language. Ten changes you can make starting today.',
   },
+  {
+    title: 'Power Body Language',
+    to: '/guides/power-body-language',
+    accent: 'green',
+    description: 'Understand the nonverbal signals of dominance, status and authority, and how power expresses itself physically.',
+  },
 ]
 
 export default function GuideAroundTheWorld() {
@@ -44,7 +50,8 @@ export default function GuideAroundTheWorld() {
         <h2 className="ga-h2">Eye Contact</h2>
         <p className="ga-text">
           In most Western cultures sustained eye contact signals confidence, honesty and
-          engagement. Avoiding eye contact is often read as dishonest or lacking in confidence.
+          engagement — a widely held assumption we unpack further in our guide to <Link to="/guides/myths">body language
+          myths</Link>. Avoiding eye contact is often read as dishonest or lacking in confidence.
           However in many East Asian cultures including Japan, China and Korea sustained direct eye
           contact with a superior or elder is considered disrespectful and presumptuous. In many
           Middle Eastern cultures prolonged eye contact between men and women who are not relatives
@@ -147,7 +154,8 @@ export default function GuideAroundTheWorld() {
       <section className="ga-section">
         <h2 className="ga-h2">Posture and Status</h2>
         <p className="ga-text">
-          The postures associated with confidence and respect also vary by culture. In many Western
+          The postures associated with confidence and respect also vary by culture, though the
+          underlying signals of <Link to="/guides/power-body-language">status and authority</Link> follow recognisable patterns everywhere. In many Western
           cultures standing tall with open expansive posture signals confidence and high status. In
           some Asian cultures a slightly more deferential posture that occupies less space when in
           the presence of superiors signals appropriate respect rather than lack of confidence.
@@ -162,7 +170,7 @@ export default function GuideAroundTheWorld() {
         <p className="ga-text">
           Despite all this cultural variation some emotional expressions appear to have genuinely
           universal components. The basic expressions of happiness, sadness, fear, anger, disgust
-          and surprise are recognisable across cultures with high reliability. Micro expressions,
+          and surprise are recognisable across cultures with high reliability. <Link to="/dictionary">Micro expressions</Link>,
           the involuntary facial movements that occur before conscious masking, also appear to be
           largely universal. This suggests that while the rules around when and how to display
           emotion vary enormously between cultures, the underlying emotional expressions themselves
@@ -178,7 +186,7 @@ export default function GuideAroundTheWorld() {
             reader of people. Test your body language reading skills across a range of scenarios
             with our interactive quiz.
           </p>
-          <Link to="/episodes" className="ga-cta-btn">
+          <Link to={`/episodes?category=${encodeURIComponent('Read Emotions')}`} className="ga-cta-btn">
             Test Your Body Language Skills
           </Link>
         </div>
