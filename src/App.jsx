@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Episodes from './pages/Episodes'
 import Courses from './pages/Courses'
 import Dictionary from './pages/Dictionary'
+import DictAdamsAppleJump from './pages/DictAdamsAppleJump'
 import DictAdaptorGestures from './pages/DictAdaptorGestures'
 import DictAnchoring from './pages/DictAnchoring'
 import DictAsymmetricalExpression from './pages/DictAsymmetricalExpression'
@@ -75,6 +76,37 @@ import DictHeadShakeDuringAgreement from './pages/DictHeadShakeDuringAgreement'
 import DictHeadTilt from './pages/DictHeadTilt'
 import DictHostilityCluster from './pages/DictHostilityCluster'
 import DictIllustratorGestures from './pages/DictIllustratorGestures'
+import DictIndexFingerDisplay from './pages/DictIndexFingerDisplay'
+import DictInterlacedFingers from './pages/DictInterlacedFingers'
+import DictInwardFeet from './pages/DictInwardFeet'
+import DictJawClenching from './pages/DictJawClenching'
+import DictJuttingChin from './pages/DictJuttingChin'
+import DictKinesicSlip from './pages/DictKinesicSlip'
+import DictKneeBouncing from './pages/DictKneeBouncing'
+import DictLeanAway from './pages/DictLeanAway'
+import DictLeaningIn from './pages/DictLeaningIn'
+import DictLipCompression from './pages/DictLipCompression'
+import DictLipLick from './pages/DictLipLick'
+import DictLipPulling from './pages/DictLipPulling'
+import DictLoadedPause from './pages/DictLoadedPause'
+import DictLockedAnkles from './pages/DictLockedAnkles'
+import DictLoweredHeadNod from './pages/DictLoweredHeadNod'
+import DictMicroexpression from './pages/DictMicroexpression'
+import DictMirroring from './pages/DictMirroring'
+import DictMutualGaze from './pages/DictMutualGaze'
+import DictNoddingFrequency from './pages/DictNoddingFrequency'
+import DictNoseTouch from './pages/DictNoseTouch'
+import DictObjectBarrier from './pages/DictObjectBarrier'
+import DictOpenPalms from './pages/DictOpenPalms'
+import DictOpenStance from './pages/DictOpenStance'
+import DictPowerPose from './pages/DictPowerPose'
+import DictSelfTouching from './pages/DictSelfTouching'
+import DictShoulderShrug from './pages/DictShoulderShrug'
+import DictSteadyPosture from './pages/DictSteadyPosture'
+import DictSteepling from './pages/DictSteepling'
+import DictThroatTouch from './pages/DictThroatTouch'
+import DictVocalPitchRise from './pages/DictVocalPitchRise'
+import DictWeightShifting from './pages/DictWeightShifting'
 import FAQ from './pages/FAQ'
 import PersonalityTest from './pages/PersonalityTest'
 import RelationshipQuiz from './pages/RelationshipQuiz'
@@ -129,6 +161,10 @@ const PAGE_META = {
   '/faq': {
     title: 'Body Language FAQ: Your Questions Answered | BodyLanguageIQ',
     description: 'Answers to the most common body language questions. What does crossed arms mean, how do you spot a liar, what are micro expressions and more.',
+  },
+  '/dictionary/adams-apple-jump': {
+    title: "What is Adam's Apple Jump? Body Language Explained | BodyLanguageIQ",
+    description: "An Adam's apple jump, a hard visible swallow, often signals nervousness or suppressed emotion at a stressful moment. Learn when this cue is meaningful.",
   },
   '/dictionary/adaptor-gestures': {
     title: 'What is Adaptor Gestures? Body Language Explained | BodyLanguageIQ',
@@ -402,6 +438,130 @@ const PAGE_META = {
     title: 'What is Illustrator Gestures? Body Language Explained | BodyLanguageIQ',
     description: 'Illustrator gestures are hand movements that naturally accompany and emphasise speech, indicating genuine engagement and enthusiasm. Learn to spot them.',
   },
+  '/dictionary/index-finger-display': {
+    title: 'What is Index Finger Display? Body Language Explained | BodyLanguageIQ',
+    description: 'Index finger display is a chin rest gesture where a raised finger along the cheek signals critical or skeptical evaluation rather than open agreement.',
+  },
+  '/dictionary/interlaced-fingers': {
+    title: 'What is Interlaced Fingers? Body Language Explained | BodyLanguageIQ',
+    description: 'Interlaced fingers held tightly or raised to chest height signal frustration and restrained tension. Learn to read the grip and hand height accurately.',
+  },
+  '/dictionary/inward-feet': {
+    title: 'What is Inward Feet? Body Language Explained | BodyLanguageIQ',
+    description: 'Inward feet, with toes pointing toward each other, signal submission and shyness in social settings. Learn why the feet reveal hidden discomfort clearly.',
+  },
+  '/dictionary/jaw-clenching': {
+    title: 'What is Jaw Clenching? Body Language Explained | BodyLanguageIQ',
+    description: 'Jaw clenching, a visible tightening of the muscles along the jaw, signals suppressed anger and frustration a person is not expressing openly. Learn to spot it.',
+  },
+  '/dictionary/jutting-chin': {
+    title: 'What is Jutting Chin? Body Language Explained | BodyLanguageIQ',
+    description: 'A jutting chin, pushed forward and slightly upward to expose the throat, signals defiance and assertiveness before confrontation. Learn this confidence cue.',
+  },
+  '/dictionary/kinesic-slip': {
+    title: 'What is Kinesic Slip? Body Language Explained | BodyLanguageIQ',
+    description: 'A kinesic slip is a brief involuntary body movement that contradicts spoken words and reveals true feelings. Learn to spot this reliable deception clue.',
+  },
+  '/dictionary/knee-bouncing': {
+    title: 'What is Knee Bouncing? Body Language Explained | BodyLanguageIQ',
+    description: 'Knee bouncing, a repetitive up and down movement of the knee while seated, signals nervous energy and impatience. Learn why the legs reveal hidden tension.',
+  },
+  '/dictionary/lean-away': {
+    title: 'What is Lean Away? Body Language Explained | BodyLanguageIQ',
+    description: 'Lean away, a subtle backward shift of the upper body during conversation, signals discomfort or a desire for distance. Learn to time this subtle cue well.',
+  },
+  '/dictionary/leaning-in': {
+    title: 'What is Leaning In? Body Language Explained | BodyLanguageIQ',
+    description: 'Leaning in, a forward shift of the upper body toward someone during conversation, signals genuine interest, engagement or attraction. Learn to spot this cue.',
+  },
+  '/dictionary/lip-compression': {
+    title: 'What is Lip Compression? Body Language Explained | BodyLanguageIQ',
+    description: 'Lip compression, a tight pressing together of the lips into a thin line, signals suppressed disagreement or words held back. Learn why this cue reveals tension.',
+  },
+  '/dictionary/lip-lick': {
+    title: 'What is Lip Lick? Body Language Explained | BodyLanguageIQ',
+    description: 'Lip licking, a brief touching of the lips with the tongue, can signal anxiety, anticipation or attraction depending on context. Learn to read the cues.',
+  },
+  '/dictionary/lip-pulling': {
+    title: 'What is Lip Pulling? Body Language Explained | BodyLanguageIQ',
+    description: 'Lip pulling, drawing the lower lip inward between the teeth, signals that a person is holding back words they want to say. Learn to spot this restraint cue.',
+  },
+  '/dictionary/loaded-pause': {
+    title: 'What is Loaded Pause? Body Language Explained | BodyLanguageIQ',
+    description: 'A loaded pause, an unusually long silence before answering, can indicate fabrication when paired with gaze aversion or shifting posture. Learn this clue.',
+  },
+  '/dictionary/locked-ankles': {
+    title: 'What is Locked Ankles? Body Language Explained | BodyLanguageIQ',
+    description: 'Locked ankles, pressed tightly together while seated, signal restraint and the withholding of emotion. Learn why this rigid posture reveals hidden tension.',
+  },
+  '/dictionary/lowered-head-nod': {
+    title: 'What is Lowered Head Nod? Body Language Explained | BodyLanguageIQ',
+    description: 'A lowered head nod, bowed slightly forward while nodding, signals respectful agreement and deference. Learn to spot this measured engagement cue clearly.',
+  },
+  '/dictionary/microexpression': {
+    title: 'What is Microexpression? Body Language Explained | BodyLanguageIQ',
+    description: 'A microexpression is a brief involuntary facial expression revealing true emotion before it can be masked. Learn to spot this universal deception signal.',
+  },
+  '/dictionary/mirroring': {
+    title: 'What is Mirroring? Body Language Explained | BodyLanguageIQ',
+    description: 'Mirroring, the unconscious copying of posture and gestures, signals genuine rapport and connection. Learn to test whether mirroring is real or deliberate.',
+  },
+  '/dictionary/mutual-gaze': {
+    title: 'What is Mutual Gaze? Body Language Explained | BodyLanguageIQ',
+    description: 'Mutual gaze, sustained eye contact held by two people at once, signals genuine attraction and rapport. Learn to distinguish it from one sided staring.',
+  },
+  '/dictionary/nodding-frequency': {
+    title: 'What is Nodding Frequency? Body Language Explained | BodyLanguageIQ',
+    description: 'Nodding frequency, how often and quickly someone nods, reveals eagerness when rapid versus genuine agreement when measured. Learn to read the nodding pace.',
+  },
+  '/dictionary/nose-touch': {
+    title: 'What is Nose Touch? Body Language Explained | BodyLanguageIQ',
+    description: 'Nose touch is a popular deception myth, only meaningful when paired with gaze aversion or a shift in posture at a risky moment. Learn to read it well.',
+  },
+  '/dictionary/object-barrier': {
+    title: 'What is Object Barrier? Body Language Explained | BodyLanguageIQ',
+    description: 'Object barrier, placing an item like a bag or cup between yourself and someone new, signals a need for protection. Learn to read this early defensive cue.',
+  },
+  '/dictionary/open-palms': {
+    title: 'What is Open Palms? Body Language Explained | BodyLanguageIQ',
+    description: 'Open palms, displaying the hands turned upward while speaking, signals honesty and openness. Learn why skilled communicators use this trust building gesture.',
+  },
+  '/dictionary/open-stance': {
+    title: 'What is Open Stance? Body Language Explained | BodyLanguageIQ',
+    description: 'Open stance, standing with feet shoulder width apart facing someone directly, signals confidence and receptiveness. Learn to spot this trust building posture.',
+  },
+  '/dictionary/power-pose': {
+    title: 'What is Power Pose? Body Language Explained | BodyLanguageIQ',
+    description: 'A power pose, an expanded stance with hands on the hips or feet planted apart, signals confidence and dominance. Learn why people use it before stress.',
+  },
+  '/dictionary/self-touching': {
+    title: 'What is Self Touching? Body Language Explained | BodyLanguageIQ',
+    description: 'Self touching, touching your own face, neck or hair during conversation, signals discomfort the body is trying to soothe. Learn to spot a meaningful increase.',
+  },
+  '/dictionary/shoulder-shrug': {
+    title: 'What is Shoulder Shrug? Body Language Explained | BodyLanguageIQ',
+    description: 'A shoulder shrug, a brief raising of one or both shoulders, signals uncertainty, indifference or a lack of confidence. Learn to spot the partial version.',
+  },
+  '/dictionary/steady-posture': {
+    title: 'What is Steady Posture? Body Language Explained | BodyLanguageIQ',
+    description: 'Steady posture, a stable and largely unmoving body position, usually signals genuine calm and confidence. Learn when stillness can instead signal control.',
+  },
+  '/dictionary/steepling': {
+    title: 'What is Steepling? Body Language Explained | BodyLanguageIQ',
+    description: 'Steepling, pressing the fingertips together in a steeple shape, signals confidence and a settled decision. Learn why the height of the steeple matters here.',
+  },
+  '/dictionary/throat-touch': {
+    title: 'What is Throat Touch? Body Language Explained | BodyLanguageIQ',
+    description: 'Throat touch, covering or stroking the base of the neck, is a protective gesture signalling vulnerability or insecurity. Learn to spot this honest cue.',
+  },
+  '/dictionary/vocal-pitch-rise': {
+    title: 'What is Vocal Pitch Rise? Body Language Explained | BodyLanguageIQ',
+    description: "Vocal pitch rise, an increase in the pitch of someone's voice, often accompanies nervous body language. Learn why comparing against a baseline matters.",
+  },
+  '/dictionary/weight-shifting': {
+    title: 'What is Weight Shifting? Body Language Explained | BodyLanguageIQ',
+    description: 'Weight shifting, rocking from one foot to the other while standing, signals impatience or a desire to leave. Learn how its pace reveals rising discomfort.',
+  },
   '/personality-test': {
     title: 'Body Language Personality Test: What Does Your Body Language Say About You | BodyLanguageIQ',
     description: 'Discover your body language personality type. Find out if you are a Connector, Observer, Performer, Diplomat, Protector or Authority at BodyLanguageIQ.',
@@ -557,6 +717,7 @@ function Layout() {
           <Route path="/episodes" element={<Episodes />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/dictionary" element={<Dictionary />} />
+          <Route path="/dictionary/adams-apple-jump" element={<DictAdamsAppleJump />} />
           <Route path="/dictionary/adaptor-gestures" element={<DictAdaptorGestures />} />
           <Route path="/dictionary/anchoring" element={<DictAnchoring />} />
           <Route path="/dictionary/asymmetrical-expression" element={<DictAsymmetricalExpression />} />
@@ -625,6 +786,37 @@ function Layout() {
           <Route path="/dictionary/head-tilt" element={<DictHeadTilt />} />
           <Route path="/dictionary/hostility-cluster" element={<DictHostilityCluster />} />
           <Route path="/dictionary/illustrator-gestures" element={<DictIllustratorGestures />} />
+          <Route path="/dictionary/index-finger-display" element={<DictIndexFingerDisplay />} />
+          <Route path="/dictionary/interlaced-fingers" element={<DictInterlacedFingers />} />
+          <Route path="/dictionary/inward-feet" element={<DictInwardFeet />} />
+          <Route path="/dictionary/jaw-clenching" element={<DictJawClenching />} />
+          <Route path="/dictionary/jutting-chin" element={<DictJuttingChin />} />
+          <Route path="/dictionary/kinesic-slip" element={<DictKinesicSlip />} />
+          <Route path="/dictionary/knee-bouncing" element={<DictKneeBouncing />} />
+          <Route path="/dictionary/lean-away" element={<DictLeanAway />} />
+          <Route path="/dictionary/leaning-in" element={<DictLeaningIn />} />
+          <Route path="/dictionary/lip-compression" element={<DictLipCompression />} />
+          <Route path="/dictionary/lip-lick" element={<DictLipLick />} />
+          <Route path="/dictionary/lip-pulling" element={<DictLipPulling />} />
+          <Route path="/dictionary/loaded-pause" element={<DictLoadedPause />} />
+          <Route path="/dictionary/locked-ankles" element={<DictLockedAnkles />} />
+          <Route path="/dictionary/lowered-head-nod" element={<DictLoweredHeadNod />} />
+          <Route path="/dictionary/microexpression" element={<DictMicroexpression />} />
+          <Route path="/dictionary/mirroring" element={<DictMirroring />} />
+          <Route path="/dictionary/mutual-gaze" element={<DictMutualGaze />} />
+          <Route path="/dictionary/nodding-frequency" element={<DictNoddingFrequency />} />
+          <Route path="/dictionary/nose-touch" element={<DictNoseTouch />} />
+          <Route path="/dictionary/object-barrier" element={<DictObjectBarrier />} />
+          <Route path="/dictionary/open-palms" element={<DictOpenPalms />} />
+          <Route path="/dictionary/open-stance" element={<DictOpenStance />} />
+          <Route path="/dictionary/power-pose" element={<DictPowerPose />} />
+          <Route path="/dictionary/self-touching" element={<DictSelfTouching />} />
+          <Route path="/dictionary/shoulder-shrug" element={<DictShoulderShrug />} />
+          <Route path="/dictionary/steady-posture" element={<DictSteadyPosture />} />
+          <Route path="/dictionary/steepling" element={<DictSteepling />} />
+          <Route path="/dictionary/throat-touch" element={<DictThroatTouch />} />
+          <Route path="/dictionary/vocal-pitch-rise" element={<DictVocalPitchRise />} />
+          <Route path="/dictionary/weight-shifting" element={<DictWeightShifting />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/personality-test" element={<PersonalityTest />} />
           <Route path="/relationship-quiz" element={<RelationshipQuiz />} />

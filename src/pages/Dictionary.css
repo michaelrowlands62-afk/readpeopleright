@@ -210,6 +210,21 @@
   border-radius: 20px;
 }
 
+.dict-card-readmore {
+  display: inline-block;
+  margin-left: 12px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.dict-card-readmore:hover {
+  color: var(--gold-light);
+  text-decoration: underline;
+}
+
 /* ── Responsive ── */
 
 @media (max-width: 600px) {

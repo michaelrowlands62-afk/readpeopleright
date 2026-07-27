@@ -505,6 +505,14 @@ const ENTRIES = [
   },
 ]
 
+function slugify(name) {
+  return name
+    .toLowerCase()
+    .replace(/'/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
 export default function Dictionary() {
   const [search, setSearch]     = useState('')
   const [expanded, setExpanded] = useState(new Set())
@@ -582,6 +590,9 @@ export default function Dictionary() {
                   <div className="dict-card-body">
                     <p className="dict-card-desc">{entry.description}</p>
                     <span className="dict-card-tag">{entry.category}</span>
+                    <Link to={`/dictionary/${slugify(entry.name)}`} className="dict-card-readmore">
+                      Read More →
+                    </Link>
                   </div>
                 </div>
               </div>
