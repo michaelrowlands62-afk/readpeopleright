@@ -4,7 +4,10 @@ import { EPISODES } from '../data/episodes'
 import { supabase } from '../lib/supabase'
 import './Game.css'
 
+const TIMER_SECONDS       = 20
 const POINTS_PER_QUESTION = 10
+const RADIUS              = 40
+const CIRCUMFERENCE = 2 * Math.PI * RADIUS
 
 const imageAssets = import.meta.glob('../assets/images/*', { eager: true })
 
@@ -58,14 +61,18 @@ export default function Game() {
   const [qIndex,       setQIndex]       = useState(0)
   const [selected,     setSelected]     = useState(null)
   const [answered,     setAnswered]     = useState(false)
+  const [timeLeft,     setTimeLeft]     = useState(TIMER_SECONDS)
   const [score,        setScore]        = useState(0)
   const [streak,       setStreak]       = useState(0)
   const [correctCount, setCorrectCount] = useState(0)
   const [lastEarned,   setLastEarned]   = useState(0)
   const [ytMode,       setYtMode]       = useState(false)
-  const [gameScreen,   setGameScreen]   = useState('image')   // 'image' | 'answers' | 'explanation'
+  const [showExplanation, setShowExplanation] = useState(false)
 
+  const timerRef    = useRef(null)
+  const startRef    = useRef(null)
   const answeredRef = useRef(false)
+  const timeLeftRef = useRef(TIMER_SECONDS)
 
   // Refs for animating stat counters
   const scoreElRef  = useRef(null)
@@ -109,15 +116,35 @@ export default function Game() {
     img.src = imageUrl
   }, [qIndex, QUESTIONS, phase])
 
-  // Reset question state (and jump back to the image screen) on each new question
+  // Start / restart timer on each new question
   useEffect(() => {
     if (phase !== 'playing') return
 
     answeredRef.current = false
+    timeLeftRef.current = TIMER_SECONDS
     setSelected(null)
     setAnswered(false)
     setLastEarned(0)
-    setGameScreen('image')
+    setTimeLeft(TIMER_SECONDS)
+
+    startRef.current = performance.now()
+
+    function tick(now) {
+      const remaining = Math.max(0, TIMER_SECONDS - (now - startRef.current) / 1000)
+      setTimeLeft(remaining)
+      timeLeftRef.current = remaining
+
+      if (remaining > 0) {
+        timerRef.current = requestAnimationFrame(tick)
+      } else if (!answeredRef.current) {
+        answeredRef.current = true
+        setAnswered(true)
+        setStreak(0)
+      }
+    }
+
+    timerRef.current = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(timerRef.current)
   }, [qIndex, phase])
 
   async function startPlaying(diff, cat) {
@@ -198,11 +225,14 @@ export default function Game() {
   function handleAnswer(idx) {
     if (answeredRef.current) return
     answeredRef.current = true
+    cancelAnimationFrame(timerRef.current)
 
+    const snapped = timeLeftRef.current
     const q = QUESTIONS[qIndex]
 
     setSelected(idx)
     setAnswered(true)
+    setTimeLeft(snapped)
 
     if (idx === q.correct) {
       const earned = POINTS_PER_QUESTION
@@ -217,6 +247,8 @@ export default function Game() {
   }
 
   function handleNext() {
+    cancelAnimationFrame(timerRef.current)
+    setShowExplanation(false)
     if (qIndex + 1 >= QUESTIONS.length) {
       setPhase('results')
     } else {
@@ -420,8 +452,11 @@ export default function Game() {
   }
 
   // ── Playing ───────────────────────────────────────────────────────────────
-  const q         = QUESTIONS[qIndex]
-  const isCorrect = selected === q.correct
+  const q           = QUESTIONS[qIndex]
+  const dashOffset  = CIRCUMFERENCE * (1 - timeLeft / TIMER_SECONDS)
+  const clockColor  = timeLeft < 5 ? '#e05555' : '#c9a84c'
+  const displayTime = Math.min(TIMER_SECONDS, Math.ceil(timeLeft))
+  const isCorrect   = selected === q.correct
   const timedOut  = answered && selected === null
   const isLast    = qIndex === QUESTIONS.length - 1
 
@@ -471,129 +506,116 @@ export default function Game() {
         </header>
       )}
 
-      {ytMode ? (
-        <>
-          {/* QUESTION */}
-          <div className="game-question">
-            <p className="game-q-num">Question {qIndex + 1} of {QUESTIONS.length}</p>
-            <h2 className="game-prompt">{q.prompt}</h2>
-          </div>
+      {/* QUESTION */}
+      <div className="game-question">
+        <p className="game-q-num">Question {qIndex + 1} of {QUESTIONS.length}</p>
+        <h2 className="game-prompt">{q.prompt}</h2>
+      </div>
 
-          {/* FIGURE */}
-          <div className="game-mid">
-            <div className="game-figure">
-              {q.imageUrl
-                ? <img key={q.imageUrl} src={q.imageUrl} alt="" className="question-img" />
-                : q.image
-                ? <img key={q.image} src={getAssetUrl(q.image)} alt="" className="question-img" />
-                : <SilhouetteSVG />
-              }
-            </div>
-          </div>
+      {/* MID: CLOCK LEFT + FIGURE RIGHT */}
+      <div className="game-mid">
+        <div className="game-clock-wrap">
+          <svg className="game-clock-svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r={RADIUS} className="game-clock-track" />
+            <circle
+              cx="50" cy="50" r={RADIUS}
+              className="game-clock-fill"
+              style={{
+                strokeDasharray: `${CIRCUMFERENCE} ${CIRCUMFERENCE}`,
+                strokeDashoffset: dashOffset,
+                stroke: clockColor,
+              }}
+              transform="rotate(-90 50 50)"
+            />
+            <text
+              x="50" y="50"
+              className="game-clock-num"
+              style={{ fill: clockColor }}
+            >
+              {displayTime}
+            </text>
+          </svg>
+        </div>
+        <div className="game-figure">
+          {q.imageUrl
+            ? <img key={q.imageUrl} src={q.imageUrl} alt="" className="question-img" />
+            : q.image
+            ? <img key={q.image} src={getAssetUrl(q.image)} alt="" className="question-img" />
+            : <SilhouetteSVG />
+          }
+        </div>
+      </div>
 
-          {/* YT EXIT */}
-          <button
-            className="game-yt-exit"
-            onClick={() => toggleYt(false)}
-            aria-label="Exit YT Mode"
-          >
-            ✕
-          </button>
-        </>
-      ) : (
-        <>
-          {/* SCREEN 1: IMAGE */}
-          {gameScreen === 'image' && (
-            <div className="game-screen-image" style={{ display: 'flex', flexDirection: 'column' }}>
-              <div className="game-figure" style={{ flex: 'none', height: '320px', width: '100%', overflow: 'hidden', flexShrink: 0 }}>
-                {q.imageUrl
-                  ? <img key={q.imageUrl} src={q.imageUrl} alt="" className="question-img" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }} />
-                  : q.image
-                  ? <img key={q.image} src={getAssetUrl(q.image)} alt="" className="question-img" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }} />
-                  : <SilhouetteSVG />
-                }
-              </div>
-              <div className="game-question" style={{ flex: '0 1 auto', minHeight: 0, overflow: 'hidden', padding: '6px 24px 2px' }}>
-                <p className="game-q-num">Question {qIndex + 1} of {QUESTIONS.length}</p>
-                <h2 className="game-prompt">{q.prompt}</h2>
-              </div>
+      {/* ANSWERS */}
+      {!ytMode && (
+        <div className="game-answers">
+          {q.answers.map((ans, i) => {
+            let cls = 'game-answer'
+            if (answered) {
+              if (i === q.correct)  cls += ' game-answer--correct'
+              else if (i === selected) cls += ' game-answer--wrong'
+            }
+            return (
               <button
-                className="start-btn"
-                style={{ alignSelf: 'center', margin: '6px 24px 10px', padding: '12px 40px', flexShrink: 0 }}
-                onClick={() => setGameScreen('answers')}
+                key={i}
+                className={cls}
+                onClick={() => handleAnswer(i)}
+                disabled={answered}
               >
-                Answer
+                {ans}
               </button>
-            </div>
-          )}
+            )
+          })}
+        </div>
+      )}
 
-          {/* SCREEN 2: ANSWERS */}
-          {gameScreen === 'answers' && (
-            <div className="game-screen-answers" style={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0 }}>
-              <div className="game-question">
-                <p className="game-q-num">Question {qIndex + 1} of {QUESTIONS.length}</p>
-                <h2 className="game-prompt">{q.prompt}</h2>
+      {/* ACTION BUTTONS */}
+      {!ytMode && answered && !showExplanation && (
+        <div className="game-action-buttons">
+          <button className="game-action-btn game-action-btn--secondary" onClick={() => setShowExplanation(true)}>
+            See Explanation
+          </button>
+          <button className="game-action-btn game-action-btn--primary" onClick={handleNext}>
+            {isLast ? 'See Results' : 'Next Question'} →
+          </button>
+        </div>
+      )}
+
+      {/* EXPLANATION PANEL */}
+      {!ytMode && showExplanation && (
+        <div className="game-explanation-panel">
+          <div className="game-explanation-content">
+            <div className={`game-explanation-header${isCorrect ? ' game-explanation-header--correct' : timedOut ? '' : ' game-explanation-header--wrong'}`}>
+              <div className="game-explanation-icon">
+                {timedOut ? '⏱' : isCorrect ? '✓' : '✗'}
               </div>
-
-              <div className="game-answers" style={{ gridTemplateColumns: '1fr' }}>
-                {q.answers.map((ans, i) => {
-                  let cls = 'game-answer'
-                  if (answered) {
-                    if (i === q.correct)  cls += ' game-answer--correct'
-                    else if (i === selected) cls += ' game-answer--wrong'
-                  }
-                  return (
-                    <button
-                      key={i}
-                      className={cls}
-                      onClick={() => handleAnswer(i)}
-                      disabled={answered}
-                    >
-                      {ans}
-                    </button>
-                  )
-                })}
-              </div>
-
-              {answered && (
-                <div className="game-action-buttons">
-                  <button className="game-action-btn game-action-btn--secondary" onClick={() => setGameScreen('explanation')}>
-                    See Explanation
-                  </button>
-                  <button className="game-action-btn game-action-btn--primary" onClick={handleNext}>
-                    {isLast ? 'See Results' : 'Next Question'} →
-                  </button>
-                </div>
-              )}
+              <p className="game-explanation-title">
+                {timedOut
+                  ? `Time's up · It was "${q.answers[q.correct]}"`
+                  : isCorrect
+                  ? `+${lastEarned} pts`
+                  : `It was "${q.answers[q.correct]}"`}
+              </p>
             </div>
-          )}
-
-          {/* SCREEN 3: EXPLANATION */}
-          {gameScreen === 'explanation' && (
-            <div className="game-explanation-panel">
-              <div className="game-explanation-content">
-                <div className={`game-explanation-header${isCorrect ? ' game-explanation-header--correct' : timedOut ? '' : ' game-explanation-header--wrong'}`}>
-                  <div className="game-explanation-icon">
-                    {timedOut ? '⏱' : isCorrect ? '✓' : '✗'}
-                  </div>
-                  <p className="game-explanation-title">
-                    {timedOut
-                      ? `Time's up · It was "${q.answers[q.correct]}"`
-                      : isCorrect
-                      ? `+${lastEarned} pts`
-                      : `It was "${q.answers[q.correct]}"`}
-                  </p>
-                </div>
-                <div className="game-explanation-body">
-                  <p className="game-explanation-text">{q.fact}</p>
-                </div>
-                <button className="game-explanation-next" onClick={handleNext}>
-                  {isLast ? 'See Results' : 'Next Question'} →
-                </button>
-              </div>
+            <div className="game-explanation-body">
+              <p className="game-explanation-text">{q.fact}</p>
             </div>
-          )}
-        </>
+            <button className="game-explanation-next" onClick={handleNext}>
+              {isLast ? 'See Results' : 'Next Question'} →
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* YT EXIT */}
+      {ytMode && (
+        <button
+          className="game-yt-exit"
+          onClick={() => toggleYt(false)}
+          aria-label="Exit YT Mode"
+        >
+          ✕
+        </button>
       )}
     </div>
   )
