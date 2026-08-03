@@ -196,7 +196,7 @@
   line-height: 1.28;
 }
 
-/* ── MID ROW: CLOCK + FIGURE ── */
+/* ── MID ROW: FIGURE ── */
 
 .game-mid {
   display: flex;
@@ -206,43 +206,6 @@
   flex: 1;
   min-height: 180px;
   max-height: 240px;
-}
-
-.game-clock-wrap {
-  width: 150px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--card);
-  border-radius: 12px;
-}
-
-.game-clock-svg {
-  width: 120px;
-  height: 120px;
-}
-
-.game-clock-track {
-  fill: none;
-  stroke: var(--border);
-  stroke-width: 7;
-}
-
-.game-clock-fill {
-  fill: none;
-  stroke-width: 7;
-  stroke-linecap: round;
-  transition: stroke-dashoffset 80ms linear, stroke 0.3s ease;
-}
-
-.game-clock-num {
-  font-family: var(--sans);
-  font-size: 26px;
-  font-weight: 700;
-  text-anchor: middle;
-  dominant-baseline: central;
-  transition: fill 0.3s ease;
 }
 
 /* ── FIGURE DISPLAY ── */
@@ -277,9 +240,14 @@
 }
 
 @media (max-width: 767px) {
+  .game-mid {
+    min-height: 55vh;
+    max-height: none;
+  }
+
   .question-img {
     object-fit: cover;
-    object-position: center top;
+    object-position: center;
   }
 }
 
