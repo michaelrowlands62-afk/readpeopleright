@@ -505,7 +505,7 @@ export default function Game() {
           {/* SCREEN 1: IMAGE */}
           {gameScreen === 'image' && (
             <div className="game-screen-image" style={{ display: 'flex', flexDirection: 'column' }}>
-              <div className="game-figure" style={{ flex: 'none', height: '320px', width: '100%', overflow: 'hidden', flexShrink: 0 }}>
+              <div className="game-figure">
                 {q.imageUrl
                   ? <img key={q.imageUrl} src={q.imageUrl} alt="" className="question-img" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }} />
                   : q.image

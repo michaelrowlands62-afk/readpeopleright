@@ -251,6 +251,24 @@
   }
 }
 
+/* ── IMAGE SCREEN FRAME ── */
+
+.game-screen-image .game-figure {
+  flex: none;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .game-screen-image .game-figure {
+    max-width: 500px;
+    height: 70vh;
+    margin: 0 auto;
+  }
+}
+
 /* ── ANSWER GRID ── */
 
 .game-answers {
